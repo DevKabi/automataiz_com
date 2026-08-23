@@ -243,13 +243,13 @@ export default function PricingSection({
 
       {/* 3. THREE PRICING CARDS */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {/* ======================================================================
               PLAN 01: STARTUP
              ====================================================================== */}
           <ScrollReveal delay={0.1}>
             <Card3D glowColor="green" className="h-full">
-              <div className="p-8 sm:p-9 rounded-3xl glass-panel border border-white/[0.12] bg-[#070707]/90 space-y-7 flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300 hover:border-brand-green/50 hover:shadow-[0_20px_50px_rgba(24,179,0,0.15)]">
+              <div className="p-6 sm:p-8 lg:p-9 rounded-3xl glass-panel border border-white/[0.12] bg-[#070707]/90 space-y-6 sm:space-y-7 flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300 hover:border-brand-green/50 hover:shadow-[0_20px_50px_rgba(24,179,0,0.15)]">
                 {/* Top Badge */}
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-green/15 border border-brand-green/30 text-brand-green text-[11px] font-mono font-bold uppercase tracking-wider">
@@ -354,7 +354,7 @@ export default function PricingSection({
              ====================================================================== */}
           <ScrollReveal delay={0.2}>
             <Card3D glowColor="gold" className="h-full">
-              <div className="p-8 sm:p-9 rounded-3xl glass-panel border-2 border-brand-gold/60 ring-2 ring-brand-green/40 bg-gradient-to-b from-[#11190a]/90 via-[#070707]/95 to-[#191508]/90 space-y-7 flex flex-col justify-between h-full relative overflow-hidden shadow-[0_25px_60px_rgba(244,200,0,0.18)] transition-all duration-300 hover:border-brand-gold hover:scale-[1.02]">
+              <div className="p-6 sm:p-8 lg:p-9 rounded-3xl glass-panel border-2 border-brand-gold/60 ring-2 ring-brand-green/40 bg-gradient-to-b from-[#11190a]/90 via-[#070707]/95 to-[#191508]/90 space-y-6 sm:space-y-7 flex flex-col justify-between h-full relative overflow-hidden shadow-[0_25px_60px_rgba(244,200,0,0.18)] transition-all duration-300 hover:border-brand-gold hover:scale-[1.02]">
                 {/* Glowing Top Recommended Banner */}
                 <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold animate-pulse" />
 
@@ -470,7 +470,7 @@ export default function PricingSection({
              ====================================================================== */}
           <ScrollReveal delay={0.3}>
             <Card3D glowColor="lime" className="h-full">
-              <div className="p-8 sm:p-9 rounded-3xl glass-panel border border-brand-gold/30 bg-[#070707]/90 space-y-7 flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300 hover:border-brand-gold/60 hover:shadow-[0_20px_50px_rgba(244,200,0,0.12)]">
+              <div className="p-6 sm:p-8 lg:p-9 rounded-3xl glass-panel border border-brand-gold/30 bg-[#070707]/90 space-y-6 sm:space-y-7 flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300 hover:border-brand-gold/60 hover:shadow-[0_20px_50px_rgba(244,200,0,0.12)]">
                 {/* Top Badge */}
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.08] border border-white/[0.15] text-neutral-200 text-[11px] font-mono font-bold uppercase tracking-wider">
@@ -547,8 +547,8 @@ export default function PricingSection({
       {/* 4. TRUST & GUARANTEES SECTION */}
       <ScrollReveal>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-white/[0.1] bg-gradient-to-r from-[#091508] via-[#080808] to-[#141205]">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl glass-panel border border-white/[0.1] bg-gradient-to-r from-[#091508] via-[#080808] to-[#141205]">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 text-center">
               {[
                 { title: "30-Day Guarantee", desc: "100% Money Back", icon: RotateCcw, color: "text-brand-green" },
                 { title: "No Hidden Charges", desc: "Transparent Billing", icon: ShieldCheck, color: "text-brand-gold" },
@@ -560,13 +560,13 @@ export default function PricingSection({
                 const Icon = item.icon;
                 return (
                   <div key={idx} className="space-y-2 flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
-                      <Icon className={`w-6 h-6 ${item.color}`} />
+                    <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
+                      <Icon className={`w-5 sm:w-6 h-5 sm:h-6 ${item.color}`} />
                     </div>
                     <div className="font-display font-bold text-xs sm:text-sm text-white">
                       {item.title}
                     </div>
-                    <div className="text-[11px] text-neutral-400 font-mono">
+                    <div className="text-[10px] sm:text-[11px] text-neutral-400 font-mono">
                       {item.desc}
                     </div>
                   </div>
@@ -582,7 +582,7 @@ export default function PricingSection({
         <div className="text-xs font-mono uppercase tracking-widest text-neutral-400 font-bold">
           Accepted Enterprise Payment Methods &amp; Gateways
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
           {[
             "Razorpay",
             "UPI",
@@ -596,7 +596,7 @@ export default function PricingSection({
           ].map((method, idx) => (
             <div
               key={idx}
-              className="px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs font-mono font-medium text-neutral-300 hover:border-brand-green/40 hover:text-white transition-all shadow-sm"
+              className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] text-[11px] sm:text-xs font-mono font-medium text-neutral-300 hover:border-brand-green/40 hover:text-white transition-all shadow-sm"
             >
               {method}
             </div>
@@ -606,14 +606,14 @@ export default function PricingSection({
 
       {/* 6. DETAILED FEATURE COMPARISON TABLE */}
       {showComparison && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono mb-3">
                 <Layers className="w-3.5 h-3.5" />
                 <span>Granular Capability Matrix</span>
               </div>
-              <h3 className="text-3xl sm:text-4xl font-display font-bold text-white">
+              <h3 className="text-2xl sm:text-4xl font-display font-bold text-white">
                 Compare Plans in Detail
               </h3>
               <p className="text-xs sm:text-sm text-neutral-400 mt-2">
@@ -622,9 +622,15 @@ export default function PricingSection({
             </div>
           </ScrollReveal>
 
+          {/* Mobile Swipe Cue */}
+          <div className="lg:hidden flex items-center justify-center gap-2 py-2 px-4 rounded-xl bg-brand-green/10 border border-brand-green/20 text-brand-green text-xs font-mono">
+            <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
+            <span>Swipe horizontally to compare all plan tiers</span>
+          </div>
+
           <ScrollReveal>
-            <div className="rounded-3xl glass-panel border border-white/[0.1] overflow-hidden overflow-x-auto">
-              <table className="w-full text-left border-collapse min-w-[720px]">
+            <div className="rounded-3xl glass-panel border border-white/[0.1] overflow-hidden overflow-x-auto touch-scroll">
+              <table className="w-full text-left border-collapse min-w-[680px]">
                 <thead>
                   <tr className="border-b border-white/[0.1] bg-black/60">
                     <th className="p-5 text-sm font-display font-bold text-white w-2/5">

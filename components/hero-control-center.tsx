@@ -107,36 +107,36 @@ export default function HeroControlCenter() {
         <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-green to-transparent opacity-40 animate-radar-scan pointer-events-none z-10" />
 
         {/* Top Control Bar */}
-        <div className="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-5 relative z-20">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/[0.08] pb-4 mb-5 relative z-20">
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5">
-              <span className="w-3 h-3 rounded-full bg-red-500/80 border border-red-400 shadow-sm" />
-              <span className="w-3 h-3 rounded-full bg-yellow-500/80 border border-yellow-400 shadow-sm" />
-              <span className="w-3 h-3 rounded-full bg-brand-green/80 border border-brand-green shadow-sm" />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 border border-red-400 shadow-sm" />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 border border-yellow-400 shadow-sm" />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-brand-green/80 border border-brand-green shadow-sm" />
             </div>
             <div className="h-4 w-[1px] bg-white/10" />
             <div className="flex items-center gap-2">
               <Image
                 src="/images/ai-chip.png"
                 alt="AI Chip"
-                width={20}
-                height={20}
+                width={18}
+                height={18}
                 className="animate-spin-slow object-contain"
               />
-              <span className="font-mono text-xs font-semibold tracking-wider text-neutral-200">
+              <span className="font-mono text-[11px] sm:text-xs font-semibold tracking-wider text-neutral-200">
                 AUTOMATAIZ_OS // v2.5.0
               </span>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 font-mono text-[11px] text-brand-green bg-brand-green/10 border border-brand-green/30 px-3 py-1 rounded-full shadow-inner">
+          <div className="flex items-center gap-2 font-mono text-[10px] sm:text-[11px] text-brand-green bg-brand-green/10 border border-brand-green/30 px-3 py-1 rounded-full shadow-inner self-start sm:self-auto">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-ping" />
             <span>AI Brain: 99.8% Efficiency</span>
           </div>
         </div>
 
         {/* Interactive Tabs */}
-        <div className="flex items-center gap-2 mb-5 overflow-x-auto pb-1 scrollbar-none relative z-20">
+        <div className="flex items-center gap-2 mb-5 overflow-x-auto pb-1 scrollbar-none touch-scroll relative z-20">
           {[
             { id: "overview", label: "Executive Cockpit", icon: Activity },
             { id: "ai-agents", label: "Digital Workforce", icon: Bot },

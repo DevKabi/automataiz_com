@@ -276,7 +276,7 @@ export default function IndustriesPage() {
         </p>
 
         {/* Industry Pill Selector */}
-        <div className="mt-10 flex items-center justify-center gap-2.5 overflow-x-auto pb-2 scrollbar-none">
+        <div className="mt-10 flex items-center justify-start sm:justify-center gap-2.5 overflow-x-auto pb-2 touch-scroll scrollbar-none max-w-full">
           {INDUSTRIES_DATA.map((ind) => {
             const isSelected = selectedIndustry.id === ind.id;
             const Icon = ind.icon;
@@ -300,16 +300,16 @@ export default function IndustriesPage() {
 
       {/* Selected Industry Full Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#091508] via-[#080808] to-[#141205] space-y-12 animate-in fade-in duration-300">
+        <div className="p-5 sm:p-10 lg:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#091508] via-[#080808] to-[#141205] space-y-8 sm:space-y-12 animate-in fade-in duration-300">
           {/* Header info */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 border-b border-white/[0.08] pb-8">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 border-b border-white/[0.08] pb-6 sm:pb-8">
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-12 h-12 rounded-2xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green">
                   <selectedIndustry.icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-display font-bold text-white">
+                  <h2 className="text-2xl sm:text-3xl font-display font-bold text-white">
                     {selectedIndustry.name} Operating System
                   </h2>
                   <p className="text-xs sm:text-sm text-neutral-400 font-mono">
@@ -340,7 +340,7 @@ export default function IndustriesPage() {
                   className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center"
                 >
                   <div className="text-xs text-neutral-400">{metric.label}</div>
-                  <div className="font-mono font-bold text-2xl text-brand-green mt-1">
+                  <div className="font-mono font-bold text-xl sm:text-2xl text-brand-green mt-1">
                     {metric.value}
                   </div>
                 </div>
@@ -349,9 +349,9 @@ export default function IndustriesPage() {
           </div>
 
           {/* Pain Points vs Solutions Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Left: Traditional Pain Points */}
-            <div className="p-6 rounded-2xl bg-red-950/15 border border-red-500/20 space-y-4">
+            <div className="p-5 sm:p-6 rounded-2xl bg-red-950/15 border border-red-500/20 space-y-4">
               <h3 className="text-sm font-mono font-bold text-red-400 uppercase tracking-wider">
                 Current Industry Bottlenecks &amp; Revenue Leaks
               </h3>
@@ -366,7 +366,7 @@ export default function IndustriesPage() {
             </div>
 
             {/* Right: Automataiz Solution Modules */}
-            <div className="p-6 rounded-2xl bg-brand-green/10 border border-brand-green/30 space-y-4 shadow-glow-green/20">
+            <div className="p-5 sm:p-6 rounded-2xl bg-brand-green/10 border border-brand-green/30 space-y-4 shadow-glow-green/20">
               <h3 className="text-sm font-mono font-bold text-brand-green uppercase tracking-wider">
                 Automataiz Dedicated Vertical Capabilities
               </h3>
@@ -386,7 +386,7 @@ export default function IndustriesPage() {
             <h3 className="text-xs font-mono uppercase tracking-widest text-brand-lime font-semibold">
               End-to-End Autonomous Workflow Sequence
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
               {selectedIndustry.workflow.map((step, idx) => (
                 <div
                   key={idx}

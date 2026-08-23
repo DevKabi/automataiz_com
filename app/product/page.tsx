@@ -116,7 +116,7 @@ export default function ProductPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {workflowSteps.map((step, idx) => {
               const isSelected = activeWorkflowStep === idx;
               return (
@@ -180,7 +180,7 @@ export default function ProductPage() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <ScrollReveal delay={0.1}>
               <Card3D glowColor="green" className="h-full">
                 <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
@@ -249,7 +249,7 @@ export default function ProductPage() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <ScrollReveal delay={0.1}>
               <Card3D glowColor="gold" className="h-full">
                 <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
@@ -318,7 +318,7 @@ export default function ProductPage() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <ScrollReveal delay={0.1}>
               <Card3D glowColor="green" className="h-full">
                 <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">

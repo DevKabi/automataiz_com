@@ -54,9 +54,9 @@ export default function Footer() {
         </div>
 
         {/* Footer Navigation Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10 pb-16 border-b border-white/[0.08]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10 pb-16 border-b border-white/[0.08]">
           {/* Brand Col */}
-          <div className="col-span-2 space-y-4">
+          <div className="col-span-1 sm:col-span-2 space-y-4">
             <Link href="/" className="inline-block group">
               <Image
                 src="/images/logo.png"
@@ -321,14 +321,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <div className="flex items-center gap-3">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500 text-center md:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
             <span className="font-mono">© {new Date().getFullYear()} Automataiz Technologies. All rights reserved.</span>
-            <span className="text-neutral-700">|</span>
+            <span className="hidden sm:inline text-neutral-700">|</span>
             <span className="text-neutral-400">Official Tagline: &quot;The Future of Business. Automated.&quot;</span>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 sm:gap-6">
             <Link href="/privacy" className="hover:text-neutral-300 transition-colors">
               Privacy Policy
             </Link>

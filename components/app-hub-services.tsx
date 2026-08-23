@@ -609,9 +609,9 @@ export default function AppHubServices() {
         </div>
 
         {/* Category Navigation Bar matching the exact screenshots */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-10">
           {/* Category Tabs */}
-          <div className="flex items-center gap-1.5 bg-[#0a0a0a] p-1.5 rounded-2xl border border-white/[0.08] overflow-x-auto max-w-full scrollbar-none shadow-xl">
+          <div className="flex items-center gap-1.5 bg-[#0a0a0a] p-1.5 rounded-2xl border border-white/[0.08] overflow-x-auto max-w-full touch-scroll scrollbar-none shadow-xl">
             {CATEGORIES.map((cat) => {
               const Icon = cat.icon;
               const isSelected = activeCategory === cat.id;
@@ -651,14 +651,14 @@ export default function AppHubServices() {
         </div>
 
         {/* Services Grid matching the exact card design */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredServices.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.id}
                 onClick={() => setSelectedService(service)}
-                className={`p-6 rounded-3xl glass-panel border ${service.colorScheme.border} bg-gradient-to-br ${service.colorScheme.bg} transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl cursor-pointer relative group flex flex-col justify-between`}
+                className={`p-5 sm:p-6 rounded-3xl glass-panel border ${service.colorScheme.border} bg-gradient-to-br ${service.colorScheme.bg} transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl cursor-pointer relative group flex flex-col justify-between`}
               >
                 <div>
                   {/* Top Bar with Icon & NEW Badge */}
@@ -691,7 +691,7 @@ export default function AppHubServices() {
 
                 {/* Highlights footer */}
                 <div className="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-neutral-400 truncate max-w-[200px]">
+                  <span className="text-neutral-400 truncate max-w-[180px] sm:max-w-[200px]">
                     {service.highlights[0]}
                   </span>
                   <span className="text-brand-green group-hover:translate-x-0.5 transition-transform flex items-center gap-1 font-bold">
@@ -706,7 +706,7 @@ export default function AppHubServices() {
         {/* Modal / Detail Drawer for Selected Service */}
         {selectedService && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200">
-            <div className="relative w-full max-w-lg rounded-3xl bg-[#090909] border border-white/[0.15] p-6 sm:p-8 shadow-2xl space-y-6">
+            <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl bg-[#090909] border border-white/[0.15] p-6 sm:p-8 shadow-2xl space-y-6">
               {/* Close */}
               <button
                 onClick={() => setSelectedService(null)}

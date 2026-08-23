@@ -45,13 +45,13 @@ export default function CeoDashboardDemo() {
         </div>
 
         {/* Dashboard Frame */}
-        <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/[0.12] bg-[#080808]/90 shadow-2xl relative overflow-hidden">
+        <div className="p-4 sm:p-8 rounded-3xl glass-panel border border-white/[0.12] bg-[#080808]/90 shadow-2xl relative overflow-hidden">
           {/* Top Bar */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-5 mb-6">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-brand-green animate-pulse" />
               <div>
-                <h3 className="text-lg font-display font-bold text-white">
+                <h3 className="text-base sm:text-lg font-display font-bold text-white">
                   CEO Executive Intelligence Cockpit
                 </h3>
                 <p className="text-xs text-neutral-400 font-mono">
@@ -61,7 +61,7 @@ export default function CeoDashboardDemo() {
             </div>
 
             {/* Pillar Selector Pills */}
-            <div className="flex items-center gap-1.5 bg-white/[0.03] p-1 rounded-2xl border border-white/[0.06] overflow-x-auto max-w-full">
+            <div className="flex items-center gap-1.5 bg-white/[0.03] p-1 rounded-2xl border border-white/[0.06] overflow-x-auto max-w-full touch-scroll scrollbar-none w-full sm:w-auto">
               {[
                 { id: "ai", label: "AI Intelligence Layer", color: "text-brand-green" },
                 { id: "marketing", label: "Marketing", color: "text-brand-gold" },

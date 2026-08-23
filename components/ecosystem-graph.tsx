@@ -167,7 +167,7 @@ export default function EcosystemGraph() {
         </div>
 
         {/* 12-Module Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {MODULES.map((mod) => {
             const Icon = mod.icon;
             const isSelected = selectedModule.id === mod.id;
@@ -212,11 +212,11 @@ export default function EcosystemGraph() {
         </div>
 
         {/* Selected Module Deep-Dive Spotlight Card */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl glass-panel border border-brand-gold/30 bg-gradient-to-r from-[#0d160b] via-[#090909] to-[#171406]">
+        <div className="mt-10 sm:mt-12 p-5 sm:p-8 rounded-3xl glass-panel border border-brand-gold/30 bg-gradient-to-r from-[#0d160b] via-[#090909] to-[#171406]">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-black/60 border border-brand-green/50 flex items-center justify-center text-brand-green shrink-0 shadow-glow-green/40">
-                <selectedModule.icon className="w-7 h-7" />
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-black/60 border border-brand-green/50 flex items-center justify-center text-brand-green shrink-0 shadow-glow-green/40">
+                <selectedModule.icon className="w-6 sm:w-7 h-6 sm:h-7" />
               </div>
               <div>
                 <div className="flex items-center gap-2">

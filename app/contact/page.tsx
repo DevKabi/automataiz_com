@@ -64,7 +64,7 @@ export default function ContactPage() {
           {/* Left: Contact Info & Headquarters (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
             {/* HQ Card */}
-            <div className="p-8 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#091608] via-[#080808] to-[#141205] space-y-6">
+            <div className="p-5 sm:p-8 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#091608] via-[#080808] to-[#141205] space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-black/60 border border-brand-green/40 flex items-center justify-center">
                   <Image
@@ -211,7 +211,7 @@ export default function ContactPage() {
 
           {/* Right: Booking Form (7 Cols) */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-white/[0.12] bg-[#090909]/90 shadow-2xl relative overflow-hidden">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-3xl glass-panel border border-white/[0.12] bg-[#090909]/90 shadow-2xl relative overflow-hidden">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                   <div className="mb-4">

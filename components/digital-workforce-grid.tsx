@@ -138,7 +138,7 @@ export default function DigitalWorkforceGrid() {
         </div>
 
         {/* 6 AI Agents Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {AI_AGENTS.map((agent) => {
             const Icon = agent.icon;
             const isSelected = selectedAgent.id === agent.id;
@@ -146,7 +146,7 @@ export default function DigitalWorkforceGrid() {
               <div
                 key={agent.id}
                 onClick={() => setSelectedAgent(agent)}
-                className={`p-6 rounded-3xl glass-panel glass-panel-hover cursor-pointer transition-all duration-300 relative group overflow-hidden ${
+                className={`p-5 sm:p-6 rounded-3xl glass-panel glass-panel-hover cursor-pointer transition-all duration-300 relative group overflow-hidden ${
                   isSelected
                     ? "border-brand-green ring-1 ring-brand-green/50 bg-brand-green/[0.06] shadow-glow-green/30"
                     : ""
@@ -197,10 +197,10 @@ export default function DigitalWorkforceGrid() {
         </div>
 
         {/* AI Studio Featurette Box */}
-        <div className="mt-12 p-7 sm:p-9 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-r from-[#0d1c0b] via-[#080808] to-[#1a1705] flex flex-col lg:flex-row items-center justify-between gap-6">
-          <div className="flex items-start gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-black/80 border border-brand-gold/50 flex items-center justify-center text-brand-gold shrink-0 shadow-glow-gold/40">
-              <Sparkles className="w-7 h-7" />
+        <div className="mt-10 sm:mt-12 p-5 sm:p-8 lg:p-9 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-r from-[#0d1c0b] via-[#080808] to-[#1a1705] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-black/80 border border-brand-gold/50 flex items-center justify-center text-brand-gold shrink-0 shadow-glow-gold/40">
+              <Sparkles className="w-6 sm:w-7 h-6 sm:h-7" />
             </div>
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-mono text-brand-gold font-bold uppercase tracking-wider">

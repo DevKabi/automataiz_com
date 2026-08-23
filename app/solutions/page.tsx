@@ -125,7 +125,7 @@ export default function SolutionsPage() {
         </p>
 
         {/* Pillar Selector Tabs */}
-        <div className="mt-10 flex items-center justify-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <div className="mt-10 flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 touch-scroll scrollbar-none max-w-full">
           {[
             { id: "marketing", label: "1. Marketing OS" },
             { id: "sales", label: "2. Sales OS" },
@@ -154,12 +154,12 @@ export default function SolutionsPage() {
       {/* Active Pillar Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#091508] via-[#080808] to-[#141205] space-y-10 animate-in fade-in duration-300 shadow-[0_20px_50px_rgba(24,179,0,0.1)]">
+          <div className="p-5 sm:p-10 lg:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#091508] via-[#080808] to-[#141205] space-y-8 sm:space-y-10 animate-in fade-in duration-300 shadow-[0_20px_50px_rgba(24,179,0,0.1)]">
             <div className="space-y-3">
               <span className={`text-xs font-mono px-3 py-1 rounded-full border ${pillars[activePillarTab].color}`}>
                 {pillars[activePillarTab].subtitle}
               </span>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
+              <h2 className="text-2xl sm:text-4xl font-display font-bold text-white">
                 {pillars[activePillarTab].title}
               </h2>
               <p className="text-sm sm:text-base text-neutral-300 max-w-3xl leading-relaxed">
@@ -172,7 +172,7 @@ export default function SolutionsPage() {
               <h3 className="text-xs font-mono uppercase tracking-widest text-brand-gold font-semibold mb-4">
                 Core Capabilities &amp; Built-In Modules
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {pillars[activePillarTab].capabilities.map((cap, idx) => (
                   <div
                     key={idx}
