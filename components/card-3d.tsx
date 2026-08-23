@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from "framer-motion";
 
 interface Card3DProps {
   children: React.ReactNode;
@@ -34,6 +34,17 @@ export default function Card3D({
   const lightX = useTransform(mouseX, [0, 1], ["0%", "100%"]);
   const lightY = useTransform(mouseY, [0, 1], ["0%", "100%"]);
 
+  const glowRgba =
+    glowColor === "gold"
+      ? "rgba(244, 200, 0, 0.22)"
+      : glowColor === "lime"
+      ? "rgba(117, 184, 0, 0.22)"
+      : glowColor === "default"
+      ? "rgba(255, 255, 255, 0.12)"
+      : "rgba(24, 179, 0, 0.25)";
+
+  const specularBackground = useMotionTemplate`radial-gradient(circle 350px at ${lightX} ${lightY}, ${glowRgba} 0%, transparent 70%)`;
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
@@ -51,20 +62,6 @@ export default function Card3D({
     setIsHovered(false);
     mouseX.set(0.5);
     mouseY.set(0.5);
-  };
-
-  const getGlowBg = () => {
-    switch (glowColor) {
-      case "gold":
-        return "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(244, 200, 0, 0.18) 0%, transparent 65%)";
-      case "lime":
-        return "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(117, 184, 0, 0.18) 0%, transparent 65%)";
-      case "default":
-        return "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.12) 0%, transparent 65%)";
-      case "green":
-      default:
-        return "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(24, 179, 0, 0.22) 0%, transparent 65%)";
-    }
   };
 
   return (
@@ -92,9 +89,7 @@ export default function Card3D({
           <motion.div
             className="pointer-events-none absolute -inset-px rounded-3xl opacity-100 transition-opacity duration-300 z-10"
             style={{
-              background: getGlowBg(),
-              ["--mouse-x" as string]: lightX,
-              ["--mouse-y" as string]: lightY,
+              background: specularBackground,
             }}
           />
         )}
