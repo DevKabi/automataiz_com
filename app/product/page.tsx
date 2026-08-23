@@ -28,6 +28,8 @@ import {
   Target,
 } from "lucide-react";
 import AppHubServices from "@/components/app-hub-services";
+import ScrollReveal from "@/components/scroll-reveal";
+import Card3D from "@/components/card-3d";
 
 export default function ProductPage() {
   const [activeWorkflowStep, setActiveWorkflowStep] = useState(0);
@@ -179,44 +181,62 @@ export default function ProductPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green">
-                <Magnet className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Funnels &amp; Landing Pages</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Build high-converting multi-step lead capture flows, appointment funnels, webinar funnels, and application funnels. Integrated zero-delay form capture.
-              </p>
-              <div className="text-[11px] font-mono text-brand-green pt-2 border-t border-white/[0.06]">
-                Replaces: ClickFunnels, Leadpages, Unbounce
-              </div>
-            </div>
+            <ScrollReveal delay={0.1}>
+              <Card3D glowColor="green" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green shadow-glow-green/20">
+                      <Magnet className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">Funnels &amp; Landing Pages</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Build high-converting multi-step lead capture flows, appointment funnels, webinar funnels, and application funnels. Integrated zero-delay form capture.
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-green pt-2 border-t border-white/[0.06]">
+                    Replaces: ClickFunnels, Leadpages, Unbounce
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold">
-                <Zap className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Ad Launcher &amp; Analytics</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Launch and optimize Meta Ads, Google Ads, and YouTube campaigns directly. AI Ad Assistant suggests hooks, copy, audience targeting, and budget allocations.
-              </p>
-              <div className="text-[11px] font-mono text-brand-gold pt-2 border-t border-white/[0.06]">
-                Replaces: AdEspresso, Madgicx, Complex Ad Managers
-              </div>
-            </div>
+            <ScrollReveal delay={0.2}>
+              <Card3D glowColor="gold" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold shadow-glow-gold/20">
+                      <Zap className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">Ad Launcher &amp; Analytics</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Launch and optimize Meta Ads, Google Ads, and YouTube campaigns directly. AI Ad Assistant suggests hooks, copy, audience targeting, and budget allocations.
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-gold pt-2 border-t border-white/[0.06]">
+                    Replaces: AdEspresso, Madgicx, Complex Ad Managers
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">AI Social &amp; Content Engine</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Generate and schedule daily social posts, Instagram carousels, video scripts, and weekly email newsletters. Content calendar with autonomous auto-posting.
-              </p>
-              <div className="text-[11px] font-mono text-brand-lime pt-2 border-t border-white/[0.06]">
-                Replaces: Buffer, Hootsuite, Copy.ai
-              </div>
-            </div>
+            <ScrollReveal delay={0.3}>
+              <Card3D glowColor="lime" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
+                      <Sparkles className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">AI Social &amp; Content Engine</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Generate and schedule daily social posts, Instagram carousels, video scripts, and weekly email newsletters. Content calendar with autonomous auto-posting.
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-lime pt-2 border-t border-white/[0.06]">
+                    Replaces: Buffer, Hootsuite, Copy.ai
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
           </div>
         </div>
 
@@ -230,44 +250,62 @@ export default function ProductPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold">
-                <Users2 className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Unified CRM &amp; Pipeline</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Organize every prospect with custom fields, lead scores, communication history, and visual deal pipelines (New Lead → Qualified → Demo → Proposal → Won).
-              </p>
-              <div className="text-[11px] font-mono text-brand-gold pt-2 border-t border-white/[0.06]">
-                Replaces: HubSpot, Pipedrive, Zoho CRM
-              </div>
-            </div>
+            <ScrollReveal delay={0.1}>
+              <Card3D glowColor="gold" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold shadow-glow-gold/20">
+                      <Users2 className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">Unified CRM &amp; Pipeline</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Organize every prospect with custom fields, lead scores, communication history, and visual deal pipelines (New Lead → Qualified → Demo → Proposal → Won).
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-gold pt-2 border-t border-white/[0.06]">
+                    Replaces: HubSpot, Pipedrive, Zoho CRM
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green">
-                <Inbox className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Unified Inbox &amp; WhatsApp WABA</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Official WhatsApp Business API integration with broadcast campaigns, multi-agent chat, shared team inboxes, automated template messaging, and email/SMS sync.
-              </p>
-              <div className="text-[11px] font-mono text-brand-green pt-2 border-t border-white/[0.06]">
-                Replaces: Wati, Interakt, Zendesk
-              </div>
-            </div>
+            <ScrollReveal delay={0.2}>
+              <Card3D glowColor="green" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green shadow-glow-green/20">
+                      <Inbox className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">Unified Inbox &amp; WhatsApp WABA</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Official WhatsApp Business API integration with broadcast campaigns, multi-agent chat, shared team inboxes, automated template messaging, and email/SMS sync.
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-green pt-2 border-t border-white/[0.06]">
+                    Replaces: Wati, Interakt, Zendesk
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
-                <PhoneCall className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Telecalling &amp; Smart IVR</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Built-in click-to-dial telecalling, automatic call recording, speech-to-text sentiment analytics, and intelligent inbound IVR call routing.
-              </p>
-              <div className="text-[11px] font-mono text-brand-lime pt-2 border-t border-white/[0.06]">
-                Replaces: Exotel, Knowlarity, Cloud Telephony
-              </div>
-            </div>
+            <ScrollReveal delay={0.3}>
+              <Card3D glowColor="lime" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
+                      <PhoneCall className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">Telecalling &amp; Smart IVR</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Built-in click-to-dial telecalling, automatic call recording, speech-to-text sentiment analytics, and intelligent inbound IVR call routing.
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-lime pt-2 border-t border-white/[0.06]">
+                    Replaces: Exotel, Knowlarity, Cloud Telephony
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
           </div>
         </div>
 
@@ -281,44 +319,62 @@ export default function ProductPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green">
-                <Bot className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Nova AI &amp; Digital Workforce</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                AI SDR for instant outreach, AI Marketing Manager for campaigns, AI Customer Success agent, and Nova conversational command center for CEO daily briefing.
-              </p>
-              <div className="text-[11px] font-mono text-brand-green pt-2 border-t border-white/[0.06]">
-                Replaces: 3 to 5 Full-Time SDR &amp; Ops Headcount
-              </div>
-            </div>
+            <ScrollReveal delay={0.1}>
+              <Card3D glowColor="green" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green shadow-glow-green/20">
+                      <Bot className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">Nova AI &amp; Digital Workforce</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      AI SDR for instant outreach, AI Marketing Manager for campaigns, AI Customer Success agent, and Nova conversational command center for CEO daily briefing.
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-green pt-2 border-t border-white/[0.06]">
+                    Replaces: 3 to 5 Full-Time SDR &amp; Ops Headcount
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold">
-                <Calendar className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Calendar &amp; Scheduling</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Self-booking calendar links, automated WhatsApp appointment reminders, round-robin team scheduling, and calendar 2-way sync with Google and Outlook.
-              </p>
-              <div className="text-[11px] font-mono text-brand-gold pt-2 border-t border-white/[0.06]">
-                Replaces: Calendly, Acuity, OnceHub
-              </div>
-            </div>
+            <ScrollReveal delay={0.2}>
+              <Card3D glowColor="gold" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold shadow-glow-gold/20">
+                      <Calendar className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">Calendar &amp; Scheduling</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Self-booking calendar links, automated WhatsApp appointment reminders, round-robin team scheduling, and calendar 2-way sync with Google and Outlook.
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-gold pt-2 border-t border-white/[0.06]">
+                    Replaces: Calendly, Acuity, OnceHub
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
-            <div className="p-6 rounded-3xl glass-panel space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
-                <CreditCard className="w-5 h-5" />
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Finance, Invoicing &amp; Wallet</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Recurring SaaS subscriptions, one-time payment links, automated GST invoicing, wallet credit ledger, and real-time CAC/LTV profitability dashboards.
-              </p>
-              <div className="text-[11px] font-mono text-brand-lime pt-2 border-t border-white/[0.06]">
-                Replaces: Chargebee, QuickBooks, FreshBooks
-              </div>
-            </div>
+            <ScrollReveal delay={0.3}>
+              <Card3D glowColor="lime" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-3 h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
+                      <CreditCard className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-white">Finance, Invoicing &amp; Wallet</h4>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Recurring SaaS subscriptions, one-time payment links, automated GST invoicing, wallet credit ledger, and real-time CAC/LTV profitability dashboards.
+                    </p>
+                  </div>
+                  <div className="text-[11px] font-mono text-brand-lime pt-2 border-t border-white/[0.06]">
+                    Replaces: Chargebee, QuickBooks, FreshBooks
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
           </div>
         </div>
       </section>

@@ -16,6 +16,8 @@ import {
   Activity,
   Cpu,
 } from "lucide-react";
+import ScrollReveal from "@/components/scroll-reveal";
+import Card3D from "@/components/card-3d";
 
 export default function SolutionsPage() {
   const [activePillarTab, setActivePillarTab] = useState<
@@ -151,112 +153,123 @@ export default function SolutionsPage() {
 
       {/* Active Pillar Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#091508] via-[#080808] to-[#141205] space-y-10 animate-in fade-in duration-300">
-          <div className="space-y-3">
-            <span className={`text-xs font-mono px-3 py-1 rounded-full border ${pillars[activePillarTab].color}`}>
-              {pillars[activePillarTab].subtitle}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
-              {pillars[activePillarTab].title}
-            </h2>
-            <p className="text-sm sm:text-base text-neutral-300 max-w-3xl leading-relaxed">
-              {pillars[activePillarTab].description}
-            </p>
-          </div>
+        <ScrollReveal>
+          <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#091508] via-[#080808] to-[#141205] space-y-10 animate-in fade-in duration-300 shadow-[0_20px_50px_rgba(24,179,0,0.1)]">
+            <div className="space-y-3">
+              <span className={`text-xs font-mono px-3 py-1 rounded-full border ${pillars[activePillarTab].color}`}>
+                {pillars[activePillarTab].subtitle}
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
+                {pillars[activePillarTab].title}
+              </h2>
+              <p className="text-sm sm:text-base text-neutral-300 max-w-3xl leading-relaxed">
+                {pillars[activePillarTab].description}
+              </p>
+            </div>
 
-          {/* Capabilities Grid */}
-          <div>
-            <h3 className="text-xs font-mono uppercase tracking-widest text-brand-gold font-semibold mb-4">
-              Core Capabilities &amp; Built-In Modules
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {pillars[activePillarTab].capabilities.map((cap, idx) => (
-                <div
-                  key={idx}
-                  className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-xs text-neutral-200 flex items-start gap-3"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">{cap}</span>
-                </div>
-              ))}
+            {/* Capabilities Grid */}
+            <div>
+              <h3 className="text-xs font-mono uppercase tracking-widest text-brand-gold font-semibold mb-4">
+                Core Capabilities &amp; Built-In Modules
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {pillars[activePillarTab].capabilities.map((cap, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-brand-green/30 transition-all text-xs text-neutral-200 flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{cap}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Core KPIs Tracked */}
+            <div className="pt-6 border-t border-white/[0.08]">
+              <h3 className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-3">
+                Telemetry &amp; Key Performance Indicators:
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {pillars[activePillarTab].kpis.map((kpi, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3 rounded-xl bg-black/50 border border-brand-green/20 font-mono text-xs text-brand-green text-center"
+                  >
+                    {kpi}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-
-          {/* Core KPIs Tracked */}
-          <div className="pt-6 border-t border-white/[0.08]">
-            <h3 className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-3">
-              Telemetry &amp; Key Performance Indicators:
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {pillars[activePillarTab].kpis.map((kpi, idx) => (
-                <div
-                  key={idx}
-                  className="p-3 rounded-xl bg-black/50 border border-brand-green/20 font-mono text-xs text-brand-green text-center"
-                >
-                  {kpi}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* The 2040 Vision: The Autonomous Enterprise */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-gold/30 bg-gradient-to-r from-black via-[#161205] to-black space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-xs font-mono">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>Vision 2040 // Chapter 75 Blueprint</span>
-          </div>
+        <ScrollReveal>
+          <Card3D glowColor="gold">
+            <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-gold/30 bg-gradient-to-r from-black via-[#161205] to-black space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-xs font-mono">
+                <Cpu className="w-3.5 h-3.5" />
+                <span>Vision 2040 // Chapter 75 Blueprint</span>
+              </div>
 
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
-            The Autonomous Enterprise
-          </h2>
-          <p className="text-sm text-neutral-300 max-w-3xl leading-relaxed">
-            By 2040, businesses will not ask &quot;Which software tool should we buy?&quot; They will ask &quot;Which Business Operating System should we run our company on?&quot;
-          </p>
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
+                The Autonomous Enterprise
+              </h2>
+              <p className="text-sm text-neutral-300 max-w-3xl leading-relaxed">
+                By 2040, businesses will not ask &quot;Which software tool should we buy?&quot; They will ask &quot;Which Business Operating System should we run our company on?&quot;
+              </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-xs leading-relaxed text-neutral-300">
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-2">
-              <h4 className="font-bold text-white font-display text-base text-brand-green">
-                Human Responsibilities
-              </h4>
-              <p>Vision, Creative Direction, Strategic Relationships, Leadership, Ethics, and Long-Term Judgment.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/[0.08]">
+                <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-1">
+                  <div className="font-mono text-xs text-brand-gold font-bold">Phase 1 (2025-2028)</div>
+                  <div className="text-xs text-white font-bold">Tool Consolidation</div>
+                  <p className="text-[11px] text-neutral-400">Replace disconnected software with 1 BOS platform.</p>
+                </div>
+                <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-1">
+                  <div className="font-mono text-xs text-brand-green font-bold">Phase 2 (2028-2032)</div>
+                  <div className="text-xs text-white font-bold">Digital Workforce</div>
+                  <p className="text-[11px] text-neutral-400">AI agents perform 70%+ of operational execution.</p>
+                </div>
+                <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-1">
+                  <div className="font-mono text-xs text-brand-lime font-bold">Phase 3 (2032-2040)</div>
+                  <div className="text-xs text-white font-bold">Autonomous Enterprise</div>
+                  <p className="text-[11px] text-neutral-400">Fully autonomous operations guided by human strategy.</p>
+                </div>
+              </div>
             </div>
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-2">
-              <h4 className="font-bold text-white font-display text-base text-brand-gold">
-                AI Responsibilities
-              </h4>
-              <p>Instant Telemetry, Workflow Execution, Lead Qualification, Campaign Tuning, 24/7 Support, and Autonomous Scheduling.</p>
-            </div>
-          </div>
-        </div>
+          </Card3D>
+        </ScrollReveal>
       </section>
 
       {/* Bottom CTA */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-r from-black via-[#0a1808] to-black">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
-            Upgrade Your Entire Organization Today
-          </h2>
-          <p className="mt-3 text-sm text-neutral-400 max-w-xl mx-auto">
-            Experience how Automataiz unifies your Marketing, Sales, Operations, and Finance into one seamless system.
-          </p>
-          <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/simulator"
-              className="px-8 py-3.5 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green to-brand-gold hover:opacity-95 shadow-glow-green/40"
-            >
-              Calculate Your Automation ROI
-            </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-3.5 rounded-xl text-xs font-semibold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.12]"
-            >
-              Book Strategy Consultation
-            </Link>
+      <section className="max-w-4xl mx-auto px-4 text-center">
+        <ScrollReveal>
+          <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-r from-black via-[#091408] to-black space-y-4">
+            <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
+              Ready to Upgrade to the 4 Pillars + AI OS?
+            </h3>
+            <p className="text-xs sm:text-sm text-neutral-300 max-w-xl mx-auto">
+              Join hundreds of scaling businesses transforming software chaos into autonomous clarity.
+            </p>
+            <div className="pt-2 flex justify-center gap-3">
+              <Link
+                href="/simulator"
+                className="px-6 py-3 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green to-brand-gold hover:opacity-95 shadow-glow-green/30"
+              >
+                Run Growth Simulator
+              </Link>
+              <Link
+                href="/contact"
+                className="px-6 py-3 rounded-xl text-xs font-semibold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.1]"
+              >
+                Book Strategy Tour
+              </Link>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
     </div>
   );

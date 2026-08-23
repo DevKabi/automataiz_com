@@ -5,8 +5,10 @@ import React, { useEffect, useRef } from "react";
 interface Node {
   x: number;
   y: number;
+  z: number;
   vx: number;
   vy: number;
+  vz: number;
   radius: number;
   color: string;
   glow: string;
@@ -34,10 +36,29 @@ export default function NeuralBackground() {
       active: false,
     };
 
+    interface Wave {
+      x: number;
+      y: number;
+      radius: number;
+      maxRadius: number;
+      opacity: number;
+    }
+    const waves: Wave[] = [];
+
     const handleMouseMove = (e: MouseEvent) => {
       mouse.targetX = e.clientX;
       mouse.targetY = e.clientY;
       mouse.active = true;
+    };
+
+    const handleClick = (e: MouseEvent) => {
+      waves.push({
+        x: e.clientX,
+        y: e.clientY,
+        radius: 5,
+        maxRadius: 280,
+        opacity: 0.8,
+      });
     };
 
     const handleResize = () => {
@@ -47,17 +68,18 @@ export default function NeuralBackground() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("click", handleClick);
     window.addEventListener("resize", handleResize);
 
     // Color palette: AI Chip Green, Lime, and AI Gold
     const colors = [
-      { color: "rgba(24, 179, 0, 0.8)", glow: "rgba(24, 179, 0, 0.4)" }, // Green
-      { color: "rgba(117, 184, 0, 0.8)", glow: "rgba(117, 184, 0, 0.35)" }, // Lime
-      { color: "rgba(244, 200, 0, 0.8)", glow: "rgba(244, 200, 0, 0.35)" }, // Gold
-      { color: "rgba(255, 210, 0, 0.8)", glow: "rgba(255, 210, 0, 0.35)" }, // Yellow
+      { color: "rgba(24, 179, 0, 0.85)", glow: "rgba(24, 179, 0, 0.45)" }, // Green
+      { color: "rgba(117, 184, 0, 0.85)", glow: "rgba(117, 184, 0, 0.4)" }, // Lime
+      { color: "rgba(244, 200, 0, 0.85)", glow: "rgba(244, 200, 0, 0.4)" }, // Gold
+      { color: "rgba(255, 210, 0, 0.85)", glow: "rgba(255, 210, 0, 0.4)" }, // Yellow
     ];
 
-    const nodeCount = Math.min(65, Math.floor((width * height) / 22000));
+    const nodeCount = Math.min(75, Math.floor((width * height) / 19000));
     const nodes: Node[] = [];
 
     for (let i = 0; i < nodeCount; i++) {
@@ -65,8 +87,10 @@ export default function NeuralBackground() {
       nodes.push({
         x: Math.random() * width,
         y: Math.random() * height,
+        z: Math.random() * 300 + 50,
         vx: (Math.random() - 0.5) * 0.45,
         vy: (Math.random() - 0.5) * 0.45,
+        vz: (Math.random() - 0.5) * 0.2,
         radius: Math.random() * 2 + 1.2,
         color: palette.color,
         glow: palette.glow,
@@ -102,6 +126,35 @@ export default function NeuralBackground() {
         ctx.fillRect(0, 0, width, height);
       }
 
+      // Update and draw shockwaves
+      for (let w = waves.length - 1; w >= 0; w--) {
+        const wave = waves[w];
+        wave.radius += 4.5;
+        wave.opacity *= 0.96;
+
+        ctx.beginPath();
+        ctx.arc(wave.x, wave.y, wave.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(24, 179, 0, ${wave.opacity * 0.4})`;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Push nodes near wave
+        for (let i = 0; i < nodes.length; i++) {
+          const n = nodes[i];
+          const dx = n.x - wave.x;
+          const dy = n.y - wave.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (Math.abs(dist - wave.radius) < 25) {
+            n.x += (dx / (dist || 1)) * 1.8;
+            n.y += (dy / (dist || 1)) * 1.8;
+          }
+        }
+
+        if (wave.opacity < 0.02 || wave.radius > wave.maxRadius) {
+          waves.splice(w, 1);
+        }
+      }
+
       // Update and draw connections
       for (let i = 0; i < nodes.length; i++) {
         const n1 = nodes[i];
@@ -109,10 +162,12 @@ export default function NeuralBackground() {
         // Move nodes
         n1.x += n1.vx;
         n1.y += n1.vy;
+        n1.z += n1.vz;
 
-        // Bounce from walls
+        // Bounce from walls & z-bounds
         if (n1.x < 0 || n1.x > width) n1.vx *= -1;
         if (n1.y < 0 || n1.y > height) n1.vy *= -1;
+        if (n1.z < 30 || n1.z > 350) n1.vz *= -1;
 
         // Mouse gentle interaction
         if (mouse.active) {
@@ -131,26 +186,28 @@ export default function NeuralBackground() {
           const n2 = nodes[j];
           const dx = n1.x - n2.x;
           const dy = n1.y - n2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const dz = n1.z - n2.z;
+          const dist3D = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
-          if (dist < maxConnectionDistance) {
-            const alpha = (1 - dist / maxConnectionDistance) * 0.28;
+          if (dist3D < maxConnectionDistance) {
+            const alpha = (1 - dist3D / maxConnectionDistance) * 0.32;
             ctx.beginPath();
             ctx.moveTo(n1.x, n1.y);
             ctx.lineTo(n2.x, n2.y);
             // Gradient stroke between nodes
             const lineGrad = ctx.createLinearGradient(n1.x, n1.y, n2.x, n2.y);
-            lineGrad.addColorStop(0, n1.color.replace("0.8", `${alpha}`));
-            lineGrad.addColorStop(1, n2.color.replace("0.8", `${alpha}`));
+            lineGrad.addColorStop(0, n1.color.replace("0.85", `${alpha}`));
+            lineGrad.addColorStop(1, n2.color.replace("0.85", `${alpha}`));
             ctx.strokeStyle = lineGrad;
-            ctx.lineWidth = 0.85;
+            ctx.lineWidth = 0.9;
             ctx.stroke();
           }
         }
 
-        // Draw node
+        // Draw node with 3D scale
+        const zScale = 250 / (n1.z + 100);
         const pulse = Math.sin(time * 2 + n1.pulsePhase) * 0.5 + 1;
-        const currentRadius = n1.radius * (0.8 + pulse * 0.2);
+        const currentRadius = Math.max(0.8, n1.radius * zScale * (0.8 + pulse * 0.2));
 
         ctx.beginPath();
         ctx.arc(n1.x, n1.y, currentRadius, 0, Math.PI * 2);
@@ -171,6 +228,7 @@ export default function NeuralBackground() {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("click", handleClick);
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
     };
@@ -179,7 +237,7 @@ export default function NeuralBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-65"
+      className="fixed inset-0 pointer-events-none z-0 opacity-75"
       style={{ background: "transparent" }}
     />
   );

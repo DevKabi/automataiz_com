@@ -32,6 +32,9 @@ import CeoDashboardDemo from "@/components/ceo-dashboard-demo";
 import DigitalWorkforceGrid from "@/components/digital-workforce-grid";
 import FounderShowcase from "@/components/founder-showcase";
 import AppHubServices from "@/components/app-hub-services";
+import ScrollReveal from "@/components/scroll-reveal";
+import Card3D from "@/components/card-3d";
+import ParallaxFloat from "@/components/parallax-float";
 
 export default function HomePage() {
   return (
@@ -113,98 +116,110 @@ export default function HomePage() {
       </section>
 
       {/* 2. FLAGSHIP AI BUSINESS GROWTH SIMULATOR */}
-      <GrowthSimulator />
+      <ScrollReveal>
+        <GrowthSimulator />
+      </ScrollReveal>
 
       {/* 3. THE SOFTWARE FRAGMENTATION CRISIS vs THE UNIFIED OS */}
       <section className="relative py-24 sm:py-32 bg-[#050505] overflow-hidden border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono mb-4">
-              <Zap className="w-3.5 h-3.5" />
-              <span>The MSME Crisis &amp; Software Overload</span>
-            </div>
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono mb-4">
+                <Zap className="w-3.5 h-3.5" />
+                <span>The MSME Crisis &amp; Software Overload</span>
+              </div>
 
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
-              &quot;Businesses Do Not Fail Because They Lack Ambition.{" "}
-              <span className="text-gradient-green-gold">They Fail Because They Lack Systems.&quot;</span>
-            </h2>
-            <p className="mt-4 text-sm sm:text-base text-neutral-400">
-              Technology was supposed to make business simpler. Instead, businesses got stuck managing 15 separate subscriptions, broken Zapier connections, and scattered customer data.
-            </p>
-          </div>
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
+                &quot;Businesses Do Not Fail Because They Lack Ambition.{" "}
+                <span className="text-gradient-green-gold">They Fail Because They Lack Systems.&quot;</span>
+              </h2>
+              <p className="mt-4 text-sm sm:text-base text-neutral-400">
+                Technology was supposed to make business simpler. Instead, businesses got stuck managing 15 separate subscriptions, broken Zapier connections, and scattered customer data.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* The Old World */}
-            <div className="p-8 rounded-3xl bg-red-950/10 border border-red-500/20 backdrop-blur-xl space-y-6 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-mono font-bold">
-                  THE FRAGMENTED OLD WORLD
+            <ScrollReveal direction="left">
+              <Card3D glowColor="default" className="h-full">
+                <div className="p-8 rounded-3xl bg-red-950/15 border border-red-500/20 backdrop-blur-xl space-y-6 flex flex-col justify-between h-full">
+                  <div className="space-y-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-mono font-bold">
+                      THE FRAGMENTED OLD WORLD
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-white">
+                      Managing Tools Instead of Managing Outcomes
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+                      One tool for CRM. One for WhatsApp. One for Email. One for Landing Pages. One for Appointments. One for Invoicing. Result: Disconnected teams, lost follow-ups, and ₹2,00,000+/mo in invisible operational leaks.
+                    </p>
+
+                    <ul className="space-y-2.5 text-xs text-neutral-300 pt-2">
+                      <li className="flex items-center gap-2 text-red-400">
+                        <span>✕</span> 15+ logins, passwords, and monthly billing invoices
+                      </li>
+                      <li className="flex items-center gap-2 text-red-400">
+                        <span>✕</span> Data silos: Marketing data doesn&apos;t talk to Sales or Finance
+                      </li>
+                      <li className="flex items-center gap-2 text-red-400">
+                        <span>✕</span> Follow-ups delayed by hours or days—lost sales opportunities
+                      </li>
+                      <li className="flex items-center gap-2 text-red-400">
+                        <span>✕</span> Business owner becomes the central operational bottleneck
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-black/50 border border-red-500/20 text-xs font-mono text-red-400">
+                    Outcome: Chaos, High Headcount Cost, Stagnant Growth
+                  </div>
                 </div>
-                <h3 className="text-2xl font-display font-bold text-white">
-                  Managing Tools Instead of Managing Outcomes
-                </h3>
-                <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-                  One tool for CRM. One for WhatsApp. One for Email. One for Landing Pages. One for Appointments. One for Invoicing. Result: Disconnected teams, lost follow-ups, and ₹2,00,000+/mo in invisible operational leaks.
-                </p>
-
-                <ul className="space-y-2.5 text-xs text-neutral-300 pt-2">
-                  <li className="flex items-center gap-2 text-red-400">
-                    <span>✕</span> 15+ logins, passwords, and monthly billing invoices
-                  </li>
-                  <li className="flex items-center gap-2 text-red-400">
-                    <span>✕</span> Data silos: Marketing data doesn&apos;t talk to Sales or Finance
-                  </li>
-                  <li className="flex items-center gap-2 text-red-400">
-                    <span>✕</span> Follow-ups delayed by hours or days—lost sales opportunities
-                  </li>
-                  <li className="flex items-center gap-2 text-red-400">
-                    <span>✕</span> Business owner becomes the central operational bottleneck
-                  </li>
-                </ul>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-black/50 border border-red-500/20 text-xs font-mono text-red-400">
-                Outcome: Chaos, High Headcount Cost, Stagnant Growth
-              </div>
-            </div>
+              </Card3D>
+            </ScrollReveal>
 
             {/* The Automataiz Way */}
-            <div className="p-8 rounded-3xl bg-brand-green/[0.07] border border-brand-green/40 backdrop-blur-xl space-y-6 flex flex-col justify-between shadow-glow-green/20">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/20 text-brand-green text-xs font-mono font-bold">
-                  THE AUTOMATAIZ OS REVOLUTION
+            <ScrollReveal direction="right">
+              <Card3D glowColor="green" className="h-full">
+                <div className="p-8 rounded-3xl bg-brand-green/[0.08] border border-brand-green/40 backdrop-blur-xl space-y-6 flex flex-col justify-between shadow-glow-green/20 h-full">
+                  <div className="space-y-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/20 text-brand-green text-xs font-mono font-bold">
+                      THE AUTOMATAIZ OS REVOLUTION
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-white">
+                      One Platform. One Database. One Intelligent Brain.
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                      Automataiz converges Marketing, Sales, Operations, and Finance under one unified AI-driven operating system. Human leaders set vision, while AI executes daily workflows.
+                    </p>
+
+                    <ul className="space-y-2.5 text-xs text-neutral-200 pt-2">
+                      <li className="flex items-center gap-2 text-brand-green">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>One unified database and single source of organizational truth</span>
+                      </li>
+                      <li className="flex items-center gap-2 text-brand-green">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>Instant autonomous follow-ups in &lt;90 seconds via WhatsApp &amp; Email</span>
+                      </li>
+                      <li className="flex items-center gap-2 text-brand-green">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>AI SDR and Digital Workforce active 24/7/365</span>
+                      </li>
+                      <li className="flex items-center gap-2 text-brand-green">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>CEO command cockpit gives 5-minute complete business visibility</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-black/60 border border-brand-green/30 text-xs font-mono text-brand-green">
+                    Outcome: Predictable Revenue, System Freedom, High Profitability
+                  </div>
                 </div>
-                <h3 className="text-2xl font-display font-bold text-white">
-                  One Platform. One Database. One Intelligent Brain.
-                </h3>
-                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-                  Automataiz converges Marketing, Sales, Operations, and Finance under one unified AI-driven operating system. Human leaders set vision, while AI executes daily workflows.
-                </p>
-
-                <ul className="space-y-2.5 text-xs text-neutral-200 pt-2">
-                  <li className="flex items-center gap-2 text-brand-green">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>One unified database and single source of organizational truth</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-brand-green">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>Instant autonomous follow-ups in &lt;90 seconds via WhatsApp &amp; Email</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-brand-green">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>AI SDR and Digital Workforce active 24/7/365</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-brand-green">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>CEO command cockpit gives 5-minute complete business visibility</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-black/60 border border-brand-green/30 text-xs font-mono text-brand-green">
-                Outcome: Predictable Revenue, System Freedom, High Profitability
-              </div>
-            </div>
+              </Card3D>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -229,80 +244,104 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Pillar 1: Marketing */}
-            <div className="p-6 rounded-3xl glass-panel glass-panel-hover space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green">
-                <Target className="w-6 h-6" />
-              </div>
-              <div className="text-[11px] font-mono text-brand-green font-bold uppercase">
-                Pillar 1 // Demand
-              </div>
-              <h3 className="text-xl font-display font-bold text-white">
-                Marketing OS
-              </h3>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Generate awareness and predictable lead flow through Funnels, Websites, AI Social, Forms, Chat Widgets, and Ad Launcher.
-              </p>
-              <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
-                Objective: <span className="text-brand-green">Predictable Demand</span>
-              </div>
-            </div>
+            <ScrollReveal delay={0.1}>
+              <Card3D glowColor="green" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-4 h-full flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green shadow-glow-green/20">
+                      <Target className="w-6 h-6" />
+                    </div>
+                    <div className="text-[11px] font-mono text-brand-green font-bold uppercase">
+                      Pillar 1 // Demand
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-white">
+                      Marketing OS
+                    </h3>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Generate awareness and predictable lead flow through Funnels, Websites, AI Social, Forms, Chat Widgets, and Ad Launcher.
+                    </p>
+                  </div>
+                  <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
+                    Objective: <span className="text-brand-green">Predictable Demand</span>
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
             {/* Pillar 2: Sales */}
-            <div className="p-6 rounded-3xl glass-panel glass-panel-hover space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold">
-                <TrendingUp className="w-6 h-6" />
-              </div>
-              <div className="text-[11px] font-mono text-brand-gold font-bold uppercase">
-                Pillar 2 // Revenue
-              </div>
-              <h3 className="text-xl font-display font-bold text-white">
-                Sales OS
-              </h3>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Convert opportunities into revenue via Unified CRM, Pipeline stages, Telecalling, IVR routing, AI Lead Scoring &amp; Consultative selling.
-              </p>
-              <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
-                Objective: <span className="text-brand-gold">High Conversion</span>
-              </div>
-            </div>
+            <ScrollReveal delay={0.2}>
+              <Card3D glowColor="gold" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-4 h-full flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold shadow-glow-gold/20">
+                      <TrendingUp className="w-6 h-6" />
+                    </div>
+                    <div className="text-[11px] font-mono text-brand-gold font-bold uppercase">
+                      Pillar 2 // Revenue
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-white">
+                      Sales OS
+                    </h3>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Convert opportunities into revenue via Unified CRM, Pipeline stages, Telecalling, IVR routing, AI Lead Scoring &amp; Consultative selling.
+                    </p>
+                  </div>
+                  <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
+                    Objective: <span className="text-brand-gold">High Conversion</span>
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
             {/* Pillar 3: Operations */}
-            <div className="p-6 rounded-3xl glass-panel glass-panel-hover space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
-                <CheckCircle2 className="w-6 h-6" />
-              </div>
-              <div className="text-[11px] font-mono text-brand-lime font-bold uppercase">
-                Pillar 3 // Delivery
-              </div>
-              <h3 className="text-xl font-display font-bold text-white">
-                Operations OS
-              </h3>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Deliver consistently at scale through Tasks, HRM, Project Tracking, Workflow Automation, Approvals, and Unified Inbox.
-              </p>
-              <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
-                Objective: <span className="text-brand-lime">Operational Excellence</span>
-              </div>
-            </div>
+            <ScrollReveal delay={0.3}>
+              <Card3D glowColor="lime" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-4 h-full flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
+                      <CheckCircle2 className="w-6 h-6" />
+                    </div>
+                    <div className="text-[11px] font-mono text-brand-lime font-bold uppercase">
+                      Pillar 3 // Delivery
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-white">
+                      Operations OS
+                    </h3>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Deliver consistently at scale through Tasks, HRM, Project Tracking, Workflow Automation, Approvals, and Unified Inbox.
+                    </p>
+                  </div>
+                  <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
+                    Objective: <span className="text-brand-lime">Operational Excellence</span>
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
             {/* Pillar 4: Finance */}
-            <div className="p-6 rounded-3xl glass-panel glass-panel-hover space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
-                <DollarSign className="w-6 h-6" />
-              </div>
-              <div className="text-[11px] font-mono text-neutral-300 font-bold uppercase">
-                Pillar 4 // Health
-              </div>
-              <h3 className="text-xl font-display font-bold text-white">
-                Finance OS
-              </h3>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Measure business health through Invoicing, Subscription Billing, Expense Management, Product Catalog, and Revenue Intelligence.
-              </p>
-              <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
-                Objective: <span className="text-white">Maximized Profitability</span>
-              </div>
-            </div>
+            <ScrollReveal delay={0.4}>
+              <Card3D glowColor="default" className="h-full">
+                <div className="p-6 rounded-3xl glass-panel space-y-4 h-full flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                      <DollarSign className="w-6 h-6" />
+                    </div>
+                    <div className="text-[11px] font-mono text-neutral-300 font-bold uppercase">
+                      Pillar 4 // Health
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-white">
+                      Finance OS
+                    </h3>
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      Measure business health through Invoicing, Subscription Billing, Expense Management, Product Catalog, and Revenue Intelligence.
+                    </p>
+                  </div>
+                  <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
+                    Objective: <span className="text-white">Maximized Profitability</span>
+                  </div>
+                </div>
+              </Card3D>
+            </ScrollReveal>
           </div>
 
           {/* Central AI Layer Banner */}
@@ -336,37 +375,49 @@ export default function HomePage() {
       </section>
 
       {/* 5. INTERACTIVE 12-MODULE ECOSYSTEM HUB */}
-      <EcosystemGraph />
+      <ScrollReveal>
+        <EcosystemGraph />
+      </ScrollReveal>
 
       {/* 5B. APP HUB & COMPREHENSIVE SERVICES MATRIX */}
-      <AppHubServices />
+      <ScrollReveal>
+        <AppHubServices />
+      </ScrollReveal>
 
       {/* 6. DIGITAL WORKFORCE & AI AGENTS */}
-      <DigitalWorkforceGrid />
+      <ScrollReveal>
+        <DigitalWorkforceGrid />
+      </ScrollReveal>
 
       {/* 7. CEO INTELLIGENCE COMMAND CENTER PREVIEW */}
-      <CeoDashboardDemo />
+      <ScrollReveal>
+        <CeoDashboardDemo />
+      </ScrollReveal>
 
       {/* 8. 60-SECOND BOS ASSESSMENT */}
-      <BOSAssessment />
+      <ScrollReveal>
+        <BOSAssessment />
+      </ScrollReveal>
 
       {/* 9. INDUSTRY VERTICALS */}
       <section className="relative py-24 sm:py-32 bg-[#050505] overflow-hidden border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs font-mono mb-4">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Tailored Vertical Operating Systems</span>
-            </div>
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs font-mono mb-4">
+                <Building2 className="w-3.5 h-3.5" />
+                <span>Tailored Vertical Operating Systems</span>
+              </div>
 
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
-              Built Specially For{" "}
-              <span className="text-gradient-green-gold">Your Exact Industry.</span>
-            </h2>
-            <p className="mt-4 text-sm sm:text-base text-neutral-400">
-              Generic software creates users. Industry software creates market leaders. Explore pre-configured workflows, funnels, and AI agents tailored for your vertical.
-            </p>
-          </div>
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
+                Built Specially For{" "}
+                <span className="text-gradient-green-gold">Your Exact Industry.</span>
+              </h2>
+              <p className="mt-4 text-sm sm:text-base text-neutral-400">
+                Generic software creates users. Industry software creates market leaders. Explore pre-configured workflows, funnels, and AI agents tailored for your vertical.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -377,6 +428,7 @@ export default function HomePage() {
                 solution: "Instant WhatsApp trial booking, trainer attendance & automated retention renewals",
                 roi: "+45% Member Retention",
                 color: "text-brand-green border-brand-green/30",
+                glow: "green" as const,
               },
               {
                 title: "Trainers & Coaches",
@@ -385,6 +437,7 @@ export default function HomePage() {
                 solution: "All-in-one LMS, community tiers, payment links, and AI client follow-up",
                 roi: "Save 28 hrs/week",
                 color: "text-brand-gold border-brand-gold/30",
+                glow: "gold" as const,
               },
               {
                 title: "Real Estate Firms",
@@ -393,6 +446,7 @@ export default function HomePage() {
                 solution: "AI SDR qualification, automated broker site-visit routing & buyer pipeline tracking",
                 roi: "3.2x Site Visit Ratio",
                 color: "text-brand-lime border-brand-lime/30",
+                glow: "lime" as const,
               },
               {
                 title: "Schools & Institutes",
@@ -401,6 +455,7 @@ export default function HomePage() {
                 solution: "Admission CRM, counselor IVR dialing, parent WhatsApp notifications & fees tracker",
                 roi: "92% Admission Conversion",
                 color: "text-brand-green border-brand-green/30",
+                glow: "green" as const,
               },
               {
                 title: "Insurance & Finance",
@@ -409,6 +464,7 @@ export default function HomePage() {
                 solution: "Automated policy renewal reminders, instant quote calculators & portfolio memory",
                 roi: "4x Renewal Retention",
                 color: "text-brand-gold border-brand-gold/30",
+                glow: "gold" as const,
               },
               {
                 title: "Agencies & MSMEs",
@@ -417,46 +473,48 @@ export default function HomePage() {
                 solution: "Centralized client portals, Vibe outbound prospecting & real-time CAC/LTV telemetry",
                 roi: "85% Gross Profit Margin",
                 color: "text-neutral-200 border-white/20",
+                glow: "default" as const,
               },
             ].map((ind, i) => {
               const Icon = ind.icon;
               return (
-                <div
-                  key={i}
-                  className="p-6 rounded-3xl glass-panel glass-panel-hover space-y-4 flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white">
-                        <Icon className="w-5 h-5 text-brand-green" />
+                <ScrollReveal key={i} delay={i * 0.08}>
+                  <Card3D glowColor={ind.glow} className="h-full">
+                    <div className="p-6 rounded-3xl glass-panel space-y-4 flex flex-col justify-between h-full">
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white">
+                            <Icon className="w-5 h-5 text-brand-green" />
+                          </div>
+                          <span className={`text-[10px] font-mono px-2.5 py-1 rounded-full border ${ind.color}`}>
+                            {ind.roi}
+                          </span>
+                        </div>
+
+                        <h3 className="font-display font-bold text-xl text-white">
+                          {ind.title}
+                        </h3>
+
+                        <div className="space-y-2 text-xs">
+                          <div className="text-neutral-400">
+                            <strong className="text-red-400 font-mono">Bottleneck:</strong> {ind.pain}
+                          </div>
+                          <div className="text-neutral-300">
+                            <strong className="text-brand-green font-mono">Automataiz OS:</strong> {ind.solution}
+                          </div>
+                        </div>
                       </div>
-                      <span className={`text-[10px] font-mono px-2.5 py-1 rounded-full border ${ind.color}`}>
-                        {ind.roi}
-                      </span>
+
+                      <Link
+                        href="/industries"
+                        className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-brand-green hover:text-brand-lime transition-colors"
+                      >
+                        <span>View Full Vertical Blueprint</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
-
-                    <h3 className="font-display font-bold text-xl text-white">
-                      {ind.title}
-                    </h3>
-
-                    <div className="space-y-2 text-xs">
-                      <div className="text-neutral-400">
-                        <strong className="text-red-400 font-mono">Bottleneck:</strong> {ind.pain}
-                      </div>
-                      <div className="text-neutral-300">
-                        <strong className="text-brand-green font-mono">Automataiz OS:</strong> {ind.solution}
-                      </div>
-                    </div>
-                  </div>
-
-                  <Link
-                    href="/industries"
-                    className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-brand-green hover:text-brand-lime transition-colors"
-                  >
-                    <span>View Full Vertical Blueprint</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
+                  </Card3D>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -469,158 +527,172 @@ export default function HomePage() {
       {/* 11. VALUE-BASED PRICING PREVIEW */}
       <section className="relative py-24 sm:py-32 bg-[#060606] overflow-hidden border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono mb-4">
-              <DollarSign className="w-3.5 h-3.5" />
-              <span>Transparent Pricing Architecture</span>
-            </div>
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono mb-4">
+                <DollarSign className="w-3.5 h-3.5" />
+                <span>Transparent Pricing Architecture</span>
+              </div>
 
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
-              Invest in Business Outcomes,{" "}
-              <span className="text-gradient-green-gold">Not More Software Fees.</span>
-            </h2>
-            <p className="mt-4 text-sm sm:text-base text-neutral-400">
-              Replacing 10+ standalone tools saves an average ₹35,000/mo while recovering Lakhs in missed lead follow-ups.
-            </p>
-          </div>
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
+                Invest in Business Outcomes,{" "}
+                <span className="text-gradient-green-gold">Not More Software Fees.</span>
+              </h2>
+              <p className="mt-4 text-sm sm:text-base text-neutral-400">
+                Replacing 10+ standalone tools saves an average ₹35,000/mo while recovering Lakhs in missed lead follow-ups.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Standard Plan */}
-            <div className="p-8 rounded-3xl glass-panel space-y-6 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">
-                  Standard Business OS
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="font-display font-black text-4xl text-white">₹7,999</span>
-                  <span className="text-xs text-neutral-400 font-mono">/ month</span>
-                </div>
-                <p className="text-xs text-neutral-400">
-                  Or ₹69,999/year (Save 27%). For high-growth MSMEs, agencies, and businesses scaling lead acquisition.
-                </p>
+            <ScrollReveal delay={0.1}>
+              <Card3D glowColor="default" className="h-full">
+                <div className="p-8 rounded-3xl glass-panel space-y-6 flex flex-col justify-between h-full">
+                  <div className="space-y-4">
+                    <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+                      Standard Business OS
+                    </div>
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-display font-black text-4xl text-white">₹7,999</span>
+                      <span className="text-xs text-neutral-400 font-mono">/ month</span>
+                    </div>
+                    <p className="text-xs text-neutral-400">
+                      Or ₹69,999/year (Save 27%). For high-growth MSMEs, agencies, and businesses scaling lead acquisition.
+                    </p>
 
-                <ul className="space-y-2.5 text-xs text-neutral-300 pt-3 border-t border-white/[0.06]">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>Complete Unified CRM &amp; Pipeline Engine</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>Lead Gen Funnels &amp; Landing Page Builder</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>Unified Inbox (WhatsApp WABA, Email, Chat)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>AI Lead Scoring &amp; Automated Follow-Ups</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>Finance, Invoicing &amp; CEO Dashboard</span>
-                  </li>
-                </ul>
-              </div>
+                    <ul className="space-y-2.5 text-xs text-neutral-300 pt-3 border-t border-white/[0.06]">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>Complete Unified CRM &amp; Pipeline Engine</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>Lead Gen Funnels &amp; Landing Page Builder</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>Unified Inbox (WhatsApp WABA, Email, Chat)</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>AI Lead Scoring &amp; Automated Follow-Ups</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>Finance, Invoicing &amp; CEO Dashboard</span>
+                      </li>
+                    </ul>
+                  </div>
 
-              <Link
-                href="/pricing"
-                className="w-full py-3.5 rounded-xl text-xs font-bold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.1] text-center transition-all"
-              >
-                Get Started Standard
-              </Link>
-            </div>
+                  <Link
+                    href="/pricing"
+                    className="w-full py-3.5 rounded-xl text-xs font-bold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.1] text-center transition-all"
+                  >
+                    Get Started Standard
+                  </Link>
+                </div>
+              </Card3D>
+            </ScrollReveal>
 
             {/* Trainers & Coaches Plan (Featured) */}
-            <div className="p-8 rounded-3xl glass-panel border-2 border-brand-green ring-1 ring-brand-green/40 bg-brand-green/[0.05] shadow-glow-green/30 space-y-6 flex flex-col justify-between relative">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gradient-to-r from-brand-green to-brand-gold text-black text-[10px] font-mono font-bold uppercase tracking-widest">
-                MOST POPULAR VERTICAL
-              </div>
+            <ScrollReveal delay={0.2}>
+              <Card3D glowColor="green" className="h-full">
+                <div className="p-8 rounded-3xl glass-panel border-2 border-brand-green ring-1 ring-brand-green/40 bg-brand-green/[0.05] shadow-glow-green/30 space-y-6 flex flex-col justify-between relative h-full">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gradient-to-r from-brand-green to-brand-gold text-black text-[10px] font-mono font-bold uppercase tracking-widest">
+                    MOST POPULAR VERTICAL
+                  </div>
 
-              <div className="space-y-4">
-                <div className="text-xs font-mono uppercase tracking-wider text-brand-green font-bold">
-                  Trainers &amp; Coaches OS
+                  <div className="space-y-4">
+                    <div className="text-xs font-mono uppercase tracking-wider text-brand-green font-bold">
+                      Trainers &amp; Coaches OS
+                    </div>
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-display font-black text-4xl text-white">₹9,999</span>
+                      <span className="text-xs text-neutral-400 font-mono">/ month</span>
+                    </div>
+                    <p className="text-xs text-neutral-300">
+                      Or ₹89,999/year. Includes full Community, Course LMS hosting, Digital Store, and AI Client Retention.
+                    </p>
+
+                    <ul className="space-y-2.5 text-xs text-neutral-200 pt-3 border-t border-white/[0.08]">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                        <span>Everything in Standard Business OS</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
+                        <span>Unlimited Course LMS Hosting &amp; Memberships</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
+                        <span>Community Platform &amp; Gamified Leaderboards</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
+                        <span>Webinar &amp; Live Masterclass Scheduling</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
+                        <span>Digital Store (Ebooks, Templates, Bundles)</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <Link
+                    href="/pricing"
+                    className="w-full py-3.5 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center transition-all shadow-glow-green/40"
+                  >
+                    Launch Coaching OS
+                  </Link>
                 </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="font-display font-black text-4xl text-white">₹9,999</span>
-                  <span className="text-xs text-neutral-400 font-mono">/ month</span>
-                </div>
-                <p className="text-xs text-neutral-300">
-                  Or ₹89,999/year. Includes full Community, Course LMS hosting, Digital Store, and AI Client Retention.
-                </p>
-
-                <ul className="space-y-2.5 text-xs text-neutral-200 pt-3 border-t border-white/[0.08]">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                    <span>Everything in Standard Business OS</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>Unlimited Course LMS Hosting &amp; Memberships</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>Community Platform &amp; Gamified Leaderboards</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>Webinar &amp; Live Masterclass Scheduling</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>Digital Store (Ebooks, Templates, Bundles)</span>
-                  </li>
-                </ul>
-              </div>
-
-              <Link
-                href="/pricing"
-                className="w-full py-3.5 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center transition-all shadow-glow-green/40"
-              >
-                Launch Coaching OS
-              </Link>
-            </div>
+              </Card3D>
+            </ScrollReveal>
 
             {/* Enterprise Plan */}
-            <div className="p-8 rounded-3xl glass-panel space-y-6 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="text-xs font-mono uppercase tracking-wider text-brand-gold">
-                  Enterprise &amp; Reseller
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="font-display font-black text-4xl text-white">Custom</span>
-                </div>
-                <p className="text-xs text-neutral-400">
-                  Custom AI models, White-Label SaaS reseller rights, multi-tenant sub-accounts, and dedicated solutions engineering.
-                </p>
+            <ScrollReveal delay={0.3}>
+              <Card3D glowColor="gold" className="h-full">
+                <div className="p-8 rounded-3xl glass-panel space-y-6 flex flex-col justify-between h-full">
+                  <div className="space-y-4">
+                    <div className="text-xs font-mono uppercase tracking-wider text-brand-gold">
+                      Enterprise &amp; Reseller
+                    </div>
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-display font-black text-4xl text-white">Custom</span>
+                    </div>
+                    <p className="text-xs text-neutral-400">
+                      Custom AI models, White-Label SaaS reseller rights, multi-tenant sub-accounts, and dedicated solutions engineering.
+                    </p>
 
-                <ul className="space-y-2.5 text-xs text-neutral-300 pt-3 border-t border-white/[0.06]">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
-                    <span>Autonomous AI Digital Workforce (AI SDR + Agents)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
-                    <span>White-Label Reseller Portal &amp; Custom Domain</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
-                    <span>Dedicated Solution Architect &amp; 1-on-1 Onboarding</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
-                    <span>Custom API Integrations &amp; Knowledge Vault Train</span>
-                  </li>
-                </ul>
-              </div>
+                    <ul className="space-y-2.5 text-xs text-neutral-300 pt-3 border-t border-white/[0.06]">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
+                        <span>Autonomous AI Digital Workforce (AI SDR + Agents)</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
+                        <span>White-Label Reseller Portal &amp; Custom Domain</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
+                        <span>Dedicated Solution Architect &amp; 1-on-1 Onboarding</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
+                        <span>Custom API Integrations &amp; Knowledge Vault Train</span>
+                      </li>
+                    </ul>
+                  </div>
 
-              <Link
-                href="/contact"
-                className="w-full py-3.5 rounded-xl text-xs font-bold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.1] text-center transition-all"
-              >
-                Talk with Founder / Sales
-              </Link>
-            </div>
+                  <Link
+                    href="/contact"
+                    className="w-full py-3.5 rounded-xl text-xs font-bold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.1] text-center transition-all"
+                  >
+                    Talk with Founder / Sales
+                  </Link>
+                </div>
+              </Card3D>
+            </ScrollReveal>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import NeuralBackground from "@/components/neural-background";
+import ScrollProgress from "@/components/scroll-progress";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,6 +75,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} dark`}>
       <body className="bg-[#050505] text-white min-h-screen flex flex-col relative selection:bg-brand-green selection:text-black">
+        {/* Top Scroll Laser Beam */}
+        <ScrollProgress />
+
         {/* Background Neural Canvas */}
         <NeuralBackground />
 
