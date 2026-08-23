@@ -91,7 +91,7 @@ export default function GrowthSimulator() {
         </div>
 
         {/* Step Indicator Tabs */}
-        <div className="flex items-center justify-center gap-2 mb-10 overflow-x-auto pb-2 scrollbar-none">
+        <div className="flex items-center justify-center gap-2 mb-10 overflow-x-auto pb-2 touch-scroll scrollbar-none">
           {[
             { step: 1, label: "1. Industry" },
             { step: 2, label: "2. Monthly Leads" },
@@ -103,10 +103,10 @@ export default function GrowthSimulator() {
             <button
               key={item.step}
               onClick={() => setActiveStep(item.step)}
-              className={`px-3 py-1.5 rounded-full text-xs font-mono font-medium transition-all shrink-0 ${
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-mono font-semibold transition-all shrink-0 ${
                 activeStep === item.step
                   ? "bg-brand-green text-black font-bold shadow-glow-green/40"
-                  : "bg-white/[0.04] text-neutral-400 hover:text-white border border-white/[0.06]"
+                  : "bg-white/[0.04] text-neutral-300 hover:text-white border border-white/[0.08]"
               }`}
             >
               {item.label}
@@ -122,10 +122,10 @@ export default function GrowthSimulator() {
               {/* Step 1: Industry Selection */}
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <label className="text-xs font-mono uppercase tracking-wider text-brand-green font-semibold">
+                  <label className="text-sm font-mono uppercase tracking-wider text-brand-green font-bold">
                     Step 1: Select Your Industry
                   </label>
-                  <span className="text-[11px] text-neutral-400 font-mono">
+                  <span className="text-xs sm:text-sm text-neutral-300 font-mono">
                     {INDUSTRY_CONFIGS[inputs.industry]?.name}
                   </span>
                 </div>
@@ -137,23 +137,23 @@ export default function GrowthSimulator() {
                       <button
                         key={key}
                         onClick={() => selectIndustry(key)}
-                        className={`p-3 rounded-2xl text-left transition-all border flex items-center gap-2.5 ${
+                        className={`p-3.5 rounded-2xl text-left transition-all border flex items-center gap-2.5 ${
                           isSelected
                             ? "bg-gradient-to-r from-brand-green/20 to-brand-gold/15 border-brand-green text-white shadow-glow-green/20"
-                            : "bg-white/[0.02] border-white/[0.06] text-neutral-400 hover:text-white hover:bg-white/[0.05]"
+                            : "bg-white/[0.02] border-white/[0.06] text-neutral-300 hover:text-white hover:bg-white/[0.05]"
                         }`}
                       >
                         <div
-                          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
+                          className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${
                             isSelected
                               ? "bg-brand-green text-black"
-                              : "bg-white/5 text-neutral-400"
+                              : "bg-white/5 text-neutral-300"
                           }`}
                         >
-                          <Icon className="w-3.5 h-3.5" />
+                          <Icon className="w-4 h-4" />
                         </div>
                         <div className="overflow-hidden">
-                          <div className="text-xs font-semibold truncate">
+                          <div className="text-sm font-semibold truncate">
                             {config.name}
                           </div>
                         </div>
@@ -164,12 +164,12 @@ export default function GrowthSimulator() {
               </div>
 
               {/* Step 2: Monthly Leads Slider */}
-              <div className="pt-4 border-t border-white/[0.06]">
+              <div className="pt-5 border-t border-white/[0.06]">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-semibold">
+                  <label className="text-sm font-mono uppercase tracking-wider text-neutral-200 font-bold">
                     Step 2: Leads Generated Per Month
                   </label>
-                  <span className="font-mono text-sm font-bold text-brand-green">
+                  <span className="font-mono text-base sm:text-lg font-extrabold text-brand-green">
                     {formatNumber(inputs.monthlyLeads)} leads
                   </span>
                 </div>
@@ -184,7 +184,7 @@ export default function GrowthSimulator() {
                   }
                   className="w-full accent-brand-green"
                 />
-                <div className="flex justify-between text-[10px] text-neutral-500 font-mono mt-1">
+                <div className="flex justify-between text-xs text-neutral-400 font-mono mt-1.5">
                   <span>10 leads</span>
                   <span>1,000</span>
                   <span>2,500</span>
@@ -193,12 +193,12 @@ export default function GrowthSimulator() {
               </div>
 
               {/* Step 3: Lead-to-Customer Conversion Rate */}
-              <div className="pt-4 border-t border-white/[0.06]">
+              <div className="pt-5 border-t border-white/[0.06]">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-semibold">
+                  <label className="text-sm font-mono uppercase tracking-wider text-neutral-200 font-bold">
                     Step 3: Conversion Rate
                   </label>
-                  <span className="font-mono text-sm font-bold text-brand-gold">
+                  <span className="font-mono text-base sm:text-lg font-extrabold text-brand-gold">
                     {inputs.conversionRate}%
                   </span>
                 </div>
@@ -216,7 +216,7 @@ export default function GrowthSimulator() {
                   }
                   className="w-full accent-brand-gold"
                 />
-                <div className="flex justify-between text-[10px] text-neutral-500 font-mono mt-1">
+                <div className="flex justify-between text-xs text-neutral-400 font-mono mt-1.5">
                   <span>1%</span>
                   <span>10%</span>
                   <span>20%</span>
@@ -225,12 +225,12 @@ export default function GrowthSimulator() {
               </div>
 
               {/* Step 4: Average Customer Value (INR) */}
-              <div className="pt-4 border-t border-white/[0.06]">
+              <div className="pt-5 border-t border-white/[0.06]">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-semibold">
+                  <label className="text-sm font-mono uppercase tracking-wider text-neutral-200 font-bold">
                     Step 4: Average Deal / Customer Value
                   </label>
-                  <span className="font-mono text-sm font-bold text-white">
+                  <span className="font-mono text-base sm:text-lg font-extrabold text-white">
                     {formatINR(inputs.customerValue)}
                   </span>
                 </div>
@@ -248,7 +248,7 @@ export default function GrowthSimulator() {
                   }
                   className="w-full"
                 />
-                <div className="flex justify-between text-[10px] text-neutral-500 font-mono mt-1">
+                <div className="flex justify-between text-xs text-neutral-400 font-mono mt-1.5">
                   <span>₹2,000</span>
                   <span>₹1 Lakh</span>
                   <span>₹3 Lakh</span>
@@ -257,12 +257,12 @@ export default function GrowthSimulator() {
               </div>
 
               {/* Step 5: Manual Follow-Up Hours Weekly */}
-              <div className="pt-4 border-t border-white/[0.06]">
+              <div className="pt-5 border-t border-white/[0.06]">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-semibold">
+                  <label className="text-sm font-mono uppercase tracking-wider text-neutral-200 font-bold">
                     Step 5: Team Weekly Follow-Up Time
                   </label>
-                  <span className="font-mono text-sm font-bold text-brand-lime">
+                  <span className="font-mono text-base sm:text-lg font-extrabold text-brand-lime">
                     {inputs.followupHoursWeekly} Hours / Wk
                   </span>
                 </div>
@@ -280,7 +280,7 @@ export default function GrowthSimulator() {
                   }
                   className="w-full"
                 />
-                <div className="flex justify-between text-[10px] text-neutral-500 font-mono mt-1">
+                <div className="flex justify-between text-xs text-neutral-400 font-mono mt-1.5">
                   <span>0 hrs</span>
                   <span>20 hrs</span>
                   <span>40 hrs</span>
@@ -289,12 +289,12 @@ export default function GrowthSimulator() {
               </div>
 
               {/* Step 6: Monthly Ad Spend */}
-              <div className="pt-4 border-t border-white/[0.06]">
+              <div className="pt-5 border-t border-white/[0.06]">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-semibold">
+                  <label className="text-sm font-mono uppercase tracking-wider text-neutral-200 font-bold">
                     Step 6: Monthly Marketing / Ad Spend
                   </label>
-                  <span className="font-mono text-sm font-bold text-neutral-200">
+                  <span className="font-mono text-base sm:text-lg font-extrabold text-neutral-200">
                     {formatINR(inputs.monthlyAdSpend)}
                   </span>
                 </div>
@@ -312,7 +312,7 @@ export default function GrowthSimulator() {
                   }
                   className="w-full"
                 />
-                <div className="flex justify-between text-[10px] text-neutral-500 font-mono mt-1">
+                <div className="flex justify-between text-xs text-neutral-400 font-mono mt-1.5">
                   <span>₹0</span>
                   <span>₹1 Lakh</span>
                   <span>₹3 Lakh</span>
@@ -333,9 +333,9 @@ export default function GrowthSimulator() {
                   monthlyAdSpend: 35000,
                 })
               }
-              className="w-full py-2.5 rounded-2xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.06] text-xs font-mono text-neutral-400 hover:text-white flex items-center justify-center gap-2 transition-all"
+              className="w-full py-3.5 rounded-2xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.08] text-sm font-mono font-semibold text-neutral-300 hover:text-white flex items-center justify-center gap-2 transition-all"
             >
-              <RefreshCcw className="w-3.5 h-3.5" />
+              <RefreshCcw className="w-4 h-4" />
               <span>Reset to Standard Benchmark</span>
             </button>
           </div>
@@ -346,15 +346,15 @@ export default function GrowthSimulator() {
             <div className="p-6 sm:p-7 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-br from-[#0a1408] via-[#080808] to-[#121105]">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-neutral-400">
+                  <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-300 font-semibold">
                     Calculated Health Metric
                   </div>
-                  <div className="text-2xl sm:text-3xl font-display font-bold text-white mt-1">
+                  <div className="text-2xl sm:text-4xl font-display font-extrabold text-white mt-1">
                     Business Growth Score™
                   </div>
-                  <div className="flex items-center gap-2 mt-2">
+                  <div className="flex flex-wrap items-center gap-2.5 mt-2.5">
                     <span
-                      className={`px-3 py-0.5 rounded-full text-xs font-mono font-bold ${
+                      className={`px-3.5 py-1 rounded-full text-xs sm:text-sm font-mono font-bold ${
                         results.healthStatus === "GREEN"
                           ? "bg-brand-green/20 text-brand-green border border-brand-green/40"
                           : results.healthStatus === "YELLOW"
@@ -365,19 +365,19 @@ export default function GrowthSimulator() {
                       {results.healthStatus === "GREEN" ? "🟢" : results.healthStatus === "YELLOW" ? "🟡" : "🔴"}{" "}
                       {results.healthLabel}
                     </span>
-                    <span className="text-xs text-neutral-400">
+                    <span className="text-xs sm:text-sm text-neutral-300 font-medium">
                       Operating at ~{results.efficiencyPercent}% efficiency
                     </span>
                   </div>
                 </div>
 
-                <div className="relative w-28 h-28 rounded-2xl bg-black/60 border border-brand-green/40 flex flex-col items-center justify-center p-3 shadow-glow-green/30 shrink-0">
-                  <div className="text-[10px] font-mono text-neutral-400 uppercase">Score</div>
-                  <div className="font-display font-black text-3xl text-white">
+                <div className="relative w-32 h-32 rounded-2xl bg-black/60 border border-brand-green/40 flex flex-col items-center justify-center p-3 shadow-glow-green/30 shrink-0">
+                  <div className="text-xs font-mono text-neutral-400 uppercase font-semibold">Score</div>
+                  <div className="font-display font-black text-3xl sm:text-4xl text-white">
                     {results.growthScore}
-                    <span className="text-xs text-neutral-500 font-normal">/100</span>
+                    <span className="text-sm text-neutral-500 font-normal">/100</span>
                   </div>
-                  <div className="text-[9px] font-mono text-brand-green">
+                  <div className="text-xs font-mono text-brand-green font-bold">
                     IQ {results.businessIqScore}
                   </div>
                 </div>
@@ -393,9 +393,9 @@ export default function GrowthSimulator() {
                   { label: "Follow-Up Speed", val: results.subScores.followupScore, color: "text-brand-green" },
                   { label: "Productivity", val: results.subScores.productivityScore, color: "text-brand-gold" },
                 ].map((score, i) => (
-                  <div key={i} className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                    <div className="text-[11px] text-neutral-400 truncate">{score.label}</div>
-                    <div className={`font-mono font-bold text-sm mt-0.5 ${score.color}`}>
+                  <div key={i} className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                    <div className="text-xs sm:text-sm text-neutral-300 truncate font-medium">{score.label}</div>
+                    <div className={`font-mono font-extrabold text-base sm:text-lg mt-0.5 ${score.color}`}>
                       {score.val}/100
                     </div>
                   </div>
@@ -407,36 +407,36 @@ export default function GrowthSimulator() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Card 1: Current Business Leaks */}
               <div className="p-5 sm:p-6 rounded-3xl bg-red-950/15 border border-red-500/20 backdrop-blur-xl space-y-4">
-                <div className="flex items-center justify-between text-xs font-mono text-red-400">
+                <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-red-400 font-bold">
                   <span className="flex items-center gap-1.5">
                     <AlertTriangle className="w-4 h-4 text-red-400" />
                     CURRENT REVENUE LEAKS
                   </span>
-                  <span>Without Automataiz</span>
+                  <span className="text-xs text-neutral-400 font-normal">Without Automataiz</span>
                 </div>
 
                 <div className="space-y-3">
                   <div>
-                    <div className="text-[11px] text-neutral-400">Estimated Monthly Lost Revenue</div>
-                    <div className="font-mono font-bold text-2xl text-red-400">
+                    <div className="text-xs sm:text-sm text-neutral-300">Estimated Monthly Lost Revenue</div>
+                    <div className="font-mono font-black text-2xl sm:text-3xl text-red-400">
                       {formatINR(results.lostRevenueMonthly)}
-                      <span className="text-xs text-neutral-500 font-normal"> / mo</span>
+                      <span className="text-sm text-neutral-400 font-normal"> / mo</span>
                     </div>
-                    <div className="text-[10px] text-neutral-500 font-mono">
+                    <div className="text-xs text-neutral-400 font-mono mt-0.5">
                       ₹{(results.lostRevenueAnnual / 100000).toFixed(1)} Lakhs / year disappearing
                     </div>
                   </div>
 
-                  <div className="pt-2 border-t border-red-500/10 grid grid-cols-2 gap-2 text-xs">
+                  <div className="pt-3 border-t border-red-500/10 grid grid-cols-2 gap-2 text-xs sm:text-sm">
                     <div>
-                      <div className="text-[10px] text-neutral-400">Lost Leads / Mo</div>
-                      <div className="font-mono font-semibold text-neutral-200">
+                      <div className="text-xs text-neutral-400">Lost Leads / Mo</div>
+                      <div className="font-mono font-bold text-neutral-200 text-sm sm:text-base">
                         {results.leadsLostMonthly} Leads
                       </div>
                     </div>
                     <div>
-                      <div className="text-[10px] text-neutral-400">Hours Wasted</div>
-                      <div className="font-mono font-semibold text-neutral-200">
+                      <div className="text-xs text-neutral-400">Hours Wasted</div>
+                      <div className="font-mono font-bold text-neutral-200 text-sm sm:text-base">
                         {results.hoursWastedMonthly} hrs / mo
                       </div>
                     </div>
@@ -446,38 +446,38 @@ export default function GrowthSimulator() {
 
               {/* Card 2: With Automataiz OS */}
               <div className="p-5 sm:p-6 rounded-3xl bg-brand-green/10 border border-brand-green/40 backdrop-blur-xl space-y-4 shadow-glow-green/20">
-                <div className="flex items-center justify-between text-xs font-mono text-brand-green">
+                <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-brand-green">
                   <span className="flex items-center gap-1.5 font-bold">
                     <Zap className="w-4 h-4 text-brand-green" />
                     WITH AUTOMATAIZ OS
                   </span>
-                  <span className="bg-brand-green/20 px-2 py-0.5 rounded-full text-[10px]">
+                  <span className="bg-brand-green/20 px-2.5 py-0.5 rounded-full text-xs font-bold font-mono">
                     +{results.projectedRevenueIncreasePercent}% LIFT
                   </span>
                 </div>
 
                 <div className="space-y-3">
                   <div>
-                    <div className="text-[11px] text-neutral-300">Projected Monthly Revenue</div>
-                    <div className="font-mono font-bold text-2xl text-white">
+                    <div className="text-xs sm:text-sm text-neutral-200">Projected Monthly Revenue</div>
+                    <div className="font-mono font-black text-2xl sm:text-3xl text-white">
                       {formatINR(results.projectedMonthlyRevenue)}
-                      <span className="text-xs text-brand-green font-normal"> / mo</span>
+                      <span className="text-sm text-brand-green font-normal"> / mo</span>
                     </div>
-                    <div className="text-[10px] text-brand-green font-mono">
+                    <div className="text-xs sm:text-sm text-brand-green font-mono font-semibold mt-0.5">
                       +{formatINR(results.projectedMonthlyProfitIncrease)} Additional Profit/mo
                     </div>
                   </div>
 
-                  <div className="pt-2 border-t border-brand-green/20 grid grid-cols-2 gap-2 text-xs">
+                  <div className="pt-3 border-t border-brand-green/20 grid grid-cols-2 gap-2 text-xs sm:text-sm">
                     <div>
-                      <div className="text-[10px] text-neutral-300">Time Reclaimed</div>
-                      <div className="font-mono font-semibold text-brand-gold">
+                      <div className="text-xs text-neutral-300">Time Reclaimed</div>
+                      <div className="font-mono font-bold text-brand-gold text-sm sm:text-base">
                         {results.projectedTimeSavedMonthly} hrs / mo
                       </div>
                     </div>
                     <div>
-                      <div className="text-[10px] text-neutral-300">Projected ROI</div>
-                      <div className="font-mono font-semibold text-brand-green">
+                      <div className="text-xs text-neutral-300">Projected ROI</div>
+                      <div className="font-mono font-bold text-brand-green text-sm sm:text-base">
                         {results.projectedRoiPercent}%
                       </div>
                     </div>
@@ -487,20 +487,20 @@ export default function GrowthSimulator() {
             </div>
 
             {/* Dynamic AI Diagnostic Recommendations */}
-            <div className="p-5 rounded-3xl glass-panel space-y-3">
-              <div className="flex items-center justify-between text-xs font-mono text-brand-gold border-b border-white/[0.06] pb-2">
+            <div className="p-5 sm:p-6 rounded-3xl glass-panel space-y-3">
+              <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-brand-gold border-b border-white/[0.06] pb-2 font-bold">
                 <span className="flex items-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5" />
+                  <Sparkles className="w-4 h-4" />
                   Dynamic AI Diagnosis & Recommended Strategy
                 </span>
-                <span className="text-[10px] text-neutral-400 font-mono">Nova AI Engine</span>
+                <span className="text-xs text-neutral-400 font-mono">Nova AI Engine</span>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 {results.recommendations.map((rec, idx) => (
                   <div
                     key={idx}
-                    className="flex items-start gap-2.5 p-3 rounded-2xl bg-white/[0.02] border border-white/[0.04] text-xs text-neutral-300"
+                    className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.04] text-xs sm:text-sm text-neutral-200 leading-relaxed"
                   >
                     <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
                     <span>{rec}</span>
@@ -510,22 +510,22 @@ export default function GrowthSimulator() {
             </div>
 
             {/* Achievement Badges & Challenge Leaderboard */}
-            <div className="p-5 rounded-3xl glass-panel space-y-4">
+            <div className="p-5 sm:p-6 rounded-3xl glass-panel space-y-4">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs font-mono text-neutral-300">
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-mono text-neutral-200 font-semibold">
                   <Trophy className="w-4 h-4 text-brand-gold" />
                   <span>Your Unlocked Growth Badges</span>
                 </div>
-                <span className="text-[10px] text-neutral-500 font-mono">Social Proof Benchmark</span>
+                <span className="text-xs text-neutral-400 font-mono">Social Proof Benchmark</span>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {results.badges.map((badge, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded-full text-xs font-mono bg-gradient-to-r from-brand-green/20 to-brand-gold/20 border border-brand-green/40 text-neutral-200 flex items-center gap-1.5"
+                    className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-gradient-to-r from-brand-green/20 to-brand-gold/20 border border-brand-green/40 text-neutral-100 flex items-center gap-2 font-medium"
                   >
-                    <Award className="w-3.5 h-3.5 text-brand-gold" />
+                    <Award className="w-4 h-4 text-brand-gold" />
                     {badge}
                   </span>
                 ))}
@@ -533,42 +533,42 @@ export default function GrowthSimulator() {
 
               {/* Anonymous Industry Leaderboard */}
               <div className="pt-3 border-t border-white/[0.06]">
-                <div className="text-[11px] font-mono text-neutral-400 mb-2">
+                <div className="text-xs sm:text-sm font-mono text-neutral-300 mb-2 font-medium">
                   Top Performing Verticals Operating on Automataiz:
                 </div>
-                <div className="grid grid-cols-3 gap-2 text-center text-xs font-mono">
-                  <div className="p-2 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                    <div className="text-[10px] text-neutral-400">1. Health & Fitness</div>
-                    <div className="text-brand-green font-bold">Score 91</div>
+                <div className="grid grid-cols-3 gap-2.5 text-center text-xs sm:text-sm font-mono">
+                  <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                    <div className="text-xs text-neutral-300">1. Health & Fitness</div>
+                    <div className="text-brand-green font-bold text-sm sm:text-base">Score 91</div>
                   </div>
-                  <div className="p-2 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                    <div className="text-[10px] text-neutral-400">2. Real Estate</div>
-                    <div className="text-brand-gold font-bold">Score 88</div>
+                  <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                    <div className="text-xs text-neutral-300">2. Real Estate</div>
+                    <div className="text-brand-gold font-bold text-sm sm:text-base">Score 88</div>
                   </div>
-                  <div className="p-2 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                    <div className="text-[10px] text-neutral-400">3. Coaches & Trainers</div>
-                    <div className="text-brand-lime font-bold">Score 85</div>
+                  <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                    <div className="text-xs text-neutral-300">3. Coaches & Trainers</div>
+                    <div className="text-brand-lime font-bold text-sm sm:text-base">Score 85</div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Big Action CTA: Download Free AI Business Audit PDF */}
-            <div className="p-6 rounded-3xl bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold text-black shadow-glow-green/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold text-black shadow-glow-green/40 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
-                <h4 className="font-display font-black text-xl tracking-tight">
+                <h4 className="font-display font-black text-xl sm:text-2xl tracking-tight">
                   Get Your Free AI Business Audit Report (PDF)
                 </h4>
-                <p className="text-xs text-black/80 mt-0.5">
+                <p className="text-xs sm:text-sm text-black/85 mt-1 font-medium">
                   Includes full 4-pillar leak roadmap, CAC reduction matrix & 90-day action plan.
                 </p>
               </div>
 
               <button
                 onClick={() => setAuditModalOpen(true)}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-black text-white font-bold text-xs hover:bg-neutral-900 transition-all flex items-center justify-center gap-2 shadow-2xl shrink-0"
+                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-black text-white font-bold text-sm sm:text-base hover:bg-neutral-900 transition-all flex items-center justify-center gap-2 shadow-2xl shrink-0"
               >
-                <FileDown className="w-4 h-4 text-brand-green" />
+                <FileDown className="w-5 h-5 text-brand-green" />
                 <span>Download My Audit PDF</span>
               </button>
             </div>

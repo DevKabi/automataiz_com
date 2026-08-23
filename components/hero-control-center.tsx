@@ -78,9 +78,9 @@ export default function HeroControlCenter() {
       <motion.div
         animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:flex absolute -top-5 -left-6 z-30 items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-[#0a1808]/90 border border-brand-green/40 shadow-xl backdrop-blur-md text-xs font-mono text-brand-green"
+        className="hidden sm:flex absolute -top-5 -left-6 z-30 items-center gap-2 px-4 py-2 rounded-2xl bg-[#0a1808]/90 border border-brand-green/40 shadow-xl backdrop-blur-md text-xs sm:text-sm font-mono text-brand-green font-medium"
       >
-        <span className="w-2 h-2 rounded-full bg-brand-green animate-ping" />
+        <span className="w-2.5 h-2.5 rounded-full bg-brand-green animate-ping" />
         <span>Sub-90s AI Lead Engagement</span>
       </motion.div>
 
@@ -88,9 +88,9 @@ export default function HeroControlCenter() {
       <motion.div
         animate={{ y: [0, 8, 0], rotate: [0, -2, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="hidden sm:flex absolute -bottom-5 -right-6 z-30 items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-[#141208]/90 border border-brand-gold/40 shadow-xl backdrop-blur-md text-xs font-mono text-brand-gold"
+        className="hidden sm:flex absolute -bottom-5 -right-6 z-30 items-center gap-2 px-4 py-2 rounded-2xl bg-[#141208]/90 border border-brand-gold/40 shadow-xl backdrop-blur-md text-xs sm:text-sm font-mono text-brand-gold font-medium"
       >
-        <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
+        <Sparkles className="w-4 h-4 text-brand-gold" />
         <span>₹80,000+ Disconnected SaaS Saved</span>
       </motion.div>
 
@@ -119,18 +119,18 @@ export default function HeroControlCenter() {
               <Image
                 src="/images/ai-chip.png"
                 alt="AI Chip"
-                width={18}
-                height={18}
+                width={20}
+                height={20}
                 className="animate-spin-slow object-contain"
               />
-              <span className="font-mono text-[11px] sm:text-xs font-semibold tracking-wider text-neutral-200">
+              <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-neutral-200">
                 AUTOMATAIZ_OS // v2.5.0
               </span>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 font-mono text-[10px] sm:text-[11px] text-brand-green bg-brand-green/10 border border-brand-green/30 px-3 py-1 rounded-full shadow-inner self-start sm:self-auto">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-ping" />
+          <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-brand-green bg-brand-green/10 border border-brand-green/30 px-3.5 py-1 rounded-full shadow-inner self-start sm:self-auto font-medium">
+            <span className="w-2 h-2 rounded-full bg-brand-green animate-ping" />
             <span>AI Brain: 99.8% Efficiency</span>
           </div>
         </div>
@@ -149,13 +149,13 @@ export default function HeroControlCenter() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 whitespace-nowrap ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
                   isActive
                     ? "bg-brand-green text-black font-bold shadow-glow-green"
-                    : "bg-white/[0.03] text-neutral-400 hover:text-white hover:bg-white/[0.06] border border-white/[0.05]"
+                    : "bg-white/[0.03] text-neutral-300 hover:text-white hover:bg-white/[0.06] border border-white/[0.05]"
                 }`}
               >
-                <Icon className="w-3.5 h-3.5" />
+                <Icon className="w-4 h-4" />
                 <span>{tab.label}</span>
               </button>
             );
@@ -167,81 +167,81 @@ export default function HeroControlCenter() {
           <div className="space-y-4 relative z-20">
             {/* Top Metric Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-brand-green/30 transition-all">
-                <div className="flex items-center justify-between text-neutral-400 text-xs mb-1">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-brand-green/30 transition-all">
+                <div className="flex items-center justify-between text-neutral-300 text-xs sm:text-sm font-medium mb-1">
                   <span>Run-Rate MRR</span>
-                  <TrendingUp className="w-3.5 h-3.5 text-brand-green" />
+                  <TrendingUp className="w-4 h-4 text-brand-green" />
                 </div>
-                <div className="text-xl sm:text-2xl font-mono font-bold text-white tracking-tight">
+                <div className="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight">
                   {formatINR(liveRevenue)}
                 </div>
-                <div className="flex items-center gap-1 mt-1 text-[10px] text-brand-green font-mono">
+                <div className="flex items-center gap-1 mt-1 text-xs text-brand-green font-mono">
                   <span>+28.4%</span>
                   <span className="text-neutral-400">vs last month</span>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-brand-gold/30 transition-all">
-                <div className="flex items-center justify-between text-neutral-400 text-xs mb-1">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-brand-gold/30 transition-all">
+                <div className="flex items-center justify-between text-neutral-300 text-xs sm:text-sm font-medium mb-1">
                   <span>Leads Engaged</span>
-                  <Users className="w-3.5 h-3.5 text-brand-gold" />
+                  <Users className="w-4 h-4 text-brand-gold" />
                 </div>
-                <div className="text-xl sm:text-2xl font-mono font-bold text-brand-gold tracking-tight">
+                <div className="text-2xl sm:text-3xl font-mono font-bold text-brand-gold tracking-tight">
                   {leadCount.toLocaleString("en-IN")}
                 </div>
-                <div className="flex items-center gap-1 mt-1 text-[10px] text-brand-gold font-mono">
+                <div className="flex items-center gap-1 mt-1 text-xs text-brand-gold font-mono">
                   <span>⚡ 98.4%</span>
                   <span className="text-neutral-400">sub-90s response</span>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-brand-lime/30 transition-all">
-                <div className="flex items-center justify-between text-neutral-400 text-xs mb-1">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-brand-lime/30 transition-all">
+                <div className="flex items-center justify-between text-neutral-300 text-xs sm:text-sm font-medium mb-1">
                   <span>Live AI Voice &amp; WA</span>
-                  <PhoneCall className="w-3.5 h-3.5 text-brand-lime" />
+                  <PhoneCall className="w-4 h-4 text-brand-lime" />
                 </div>
-                <div className="text-xl sm:text-2xl font-mono font-bold text-brand-lime tracking-tight">
+                <div className="text-2xl sm:text-3xl font-mono font-bold text-brand-lime tracking-tight">
                   {activeCalls} active
                 </div>
-                <div className="flex items-center gap-1 mt-1 text-[10px] text-brand-lime font-mono">
+                <div className="flex items-center gap-1 mt-1 text-xs text-brand-lime font-mono">
                   <span>0 dropped calls</span>
                 </div>
               </div>
             </div>
 
             {/* Live Telemetry Feed */}
-            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-2.5">
-              <div className="flex items-center justify-between text-xs font-mono text-neutral-400 border-b border-white/[0.05] pb-2">
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-3">
+              <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-neutral-300 border-b border-white/[0.05] pb-2 font-medium">
                 <span>Autonomous Execution Event Feed</span>
-                <span className="text-[10px] text-brand-green flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-ping" />
+                <span className="text-xs text-brand-green flex items-center gap-1 font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-brand-green animate-ping" />
                   Synced
                 </span>
               </div>
 
-              <div className="space-y-2 text-xs">
-                <div className="flex items-center justify-between p-2 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+              <div className="space-y-2 text-xs sm:text-sm">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-brand-green" />
+                    <span className="w-2 h-2 rounded-full bg-brand-green shrink-0" />
                     <span className="text-neutral-200">WhatsApp AI Agent qualified high-ticket lead</span>
                   </div>
-                  <span className="text-[10px] font-mono text-neutral-400">12s ago</span>
+                  <span className="text-xs font-mono text-neutral-400">12s ago</span>
                 </div>
 
-                <div className="flex items-center justify-between p-2 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-brand-gold" />
+                    <span className="w-2 h-2 rounded-full bg-brand-gold shrink-0" />
                     <span className="text-neutral-200">Automated UPI Autopay settlement received</span>
                   </div>
-                  <span className="text-[10px] font-mono text-brand-gold">₹14,999</span>
+                  <span className="text-xs font-mono text-brand-gold font-bold">₹14,999</span>
                 </div>
 
-                <div className="flex items-center justify-between p-2 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-brand-lime" />
+                    <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0" />
                     <span className="text-neutral-200">AI Funnel generated +18.6% conversion on checkout</span>
                   </div>
-                  <span className="text-[10px] font-mono text-neutral-400">1m ago</span>
+                  <span className="text-xs font-mono text-neutral-400">1m ago</span>
                 </div>
               </div>
             </div>
@@ -251,47 +251,47 @@ export default function HeroControlCenter() {
         {/* TAB 2: DIGITAL WORKFORCE */}
         {activeTab === "ai-agents" && (
           <div className="space-y-3 relative z-20">
-            <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex items-center justify-between">
+            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green">
-                  <Bot className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green">
+                  <Bot className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white">Nova AI SDR (Inbound &amp; WhatsApp)</div>
-                  <div className="text-[10px] text-neutral-400">Speed: 42s avg • 1,482 chats resolved</div>
+                  <div className="text-sm sm:text-base font-bold text-white">Nova AI SDR (Inbound &amp; WhatsApp)</div>
+                  <div className="text-xs text-neutral-300">Speed: 42s avg • 1,482 chats resolved</div>
                 </div>
               </div>
-              <span className="px-2 py-0.5 rounded-full bg-brand-green/10 text-brand-green text-[10px] font-mono border border-brand-green/30">
+              <span className="px-2.5 py-1 rounded-full bg-brand-green/10 text-brand-green text-xs font-mono border border-brand-green/30 font-bold">
                 ACTIVE
               </span>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex items-center justify-between">
+            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold">
-                  <DollarSign className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold">
+                  <DollarSign className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white">Nova AI Finance &amp; Tax Reconciler</div>
-                  <div className="text-[10px] text-neutral-400">Zero GST leak • Auto invoice generation</div>
+                  <div className="text-sm sm:text-base font-bold text-white">Nova AI Finance &amp; Tax Reconciler</div>
+                  <div className="text-xs text-neutral-300">Zero GST leak • Auto invoice generation</div>
                 </div>
               </div>
-              <span className="px-2 py-0.5 rounded-full bg-brand-gold/10 text-brand-gold text-[10px] font-mono border border-brand-gold/30">
+              <span className="px-2.5 py-1 rounded-full bg-brand-gold/10 text-brand-gold text-xs font-mono border border-brand-gold/30 font-bold">
                 ACTIVE
               </span>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex items-center justify-between">
+            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
-                  <Zap className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
+                  <Zap className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white">Nova AI Funnel &amp; Ad Optimizer</div>
-                  <div className="text-[10px] text-neutral-400">Autonomous multi-variant A/B copy tests</div>
+                  <div className="text-sm sm:text-base font-bold text-white">Nova AI Funnel &amp; Ad Optimizer</div>
+                  <div className="text-xs text-neutral-300">Autonomous multi-variant A/B copy tests</div>
                 </div>
               </div>
-              <span className="px-2 py-0.5 rounded-full bg-brand-lime/10 text-brand-lime text-[10px] font-mono border border-brand-lime/30">
+              <span className="px-2.5 py-1 rounded-full bg-brand-lime/10 text-brand-lime text-xs font-mono border border-brand-lime/30 font-bold">
                 ACTIVE
               </span>
             </div>
@@ -301,24 +301,24 @@ export default function HeroControlCenter() {
         {/* TAB 3: PIPELINE */}
         {activeTab === "pipeline" && (
           <div className="space-y-3 relative z-20">
-            <div className="grid grid-cols-3 gap-2 text-center text-xs">
-              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <span className="text-[10px] text-neutral-400 uppercase font-mono">New Inbound</span>
-                <div className="text-base font-bold text-white mt-1">42 Leads</div>
-                <div className="text-[9px] text-brand-green">Auto-Qualified</div>
+            <div className="grid grid-cols-3 gap-2.5 text-center text-xs sm:text-sm">
+              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                <span className="text-xs text-neutral-300 uppercase font-mono font-medium">New Inbound</span>
+                <div className="text-lg font-bold text-white mt-1">42 Leads</div>
+                <div className="text-xs text-brand-green font-semibold">Auto-Qualified</div>
               </div>
-              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <span className="text-[10px] text-neutral-400 uppercase font-mono">Demo Booked</span>
-                <div className="text-base font-bold text-brand-gold mt-1">18 Demos</div>
-                <div className="text-[9px] text-neutral-400">Reminders Active</div>
+              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                <span className="text-xs text-neutral-300 uppercase font-mono font-medium">Demo Booked</span>
+                <div className="text-lg font-bold text-brand-gold mt-1">18 Demos</div>
+                <div className="text-xs text-neutral-400">Reminders Active</div>
               </div>
-              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <span className="text-[10px] text-neutral-400 uppercase font-mono">Closed Won</span>
-                <div className="text-base font-bold text-brand-green mt-1">12 Deals</div>
-                <div className="text-[9px] text-brand-green">UPI Paid</div>
+              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                <span className="text-xs text-neutral-300 uppercase font-mono font-medium">Closed Won</span>
+                <div className="text-lg font-bold text-brand-green mt-1">12 Deals</div>
+                <div className="text-xs text-brand-green font-semibold">UPI Paid</div>
               </div>
             </div>
-            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs text-neutral-300">
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs sm:text-sm text-neutral-200 leading-relaxed">
               ⚡ <strong>Zero Pipeline Stagnation:</strong> Leads not responding within 24 hours are automatically engaged with customized 12-touch multi-channel drip sequences.
             </div>
           </div>
@@ -327,27 +327,27 @@ export default function HeroControlCenter() {
         {/* TAB 4: FINANCE */}
         {activeTab === "finance" && (
           <div className="space-y-3 relative z-20">
-            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-2">
-              <div className="flex justify-between text-xs">
-                <span className="text-neutral-400">Gross Collections (MTD):</span>
-                <span className="font-mono font-bold text-white">₹38,42,900</span>
+            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-3">
+              <div className="flex justify-between text-xs sm:text-sm">
+                <span className="text-neutral-300 font-medium">Gross Collections (MTD):</span>
+                <span className="font-mono font-bold text-white text-sm sm:text-base">₹38,42,900</span>
               </div>
-              <div className="flex justify-between text-xs">
-                <span className="text-neutral-400">Recurring UPI Subscriptions:</span>
-                <span className="font-mono font-bold text-brand-green">86.4%</span>
+              <div className="flex justify-between text-xs sm:text-sm">
+                <span className="text-neutral-300 font-medium">Recurring UPI Subscriptions:</span>
+                <span className="font-mono font-bold text-brand-green text-sm sm:text-base">86.4%</span>
               </div>
-              <div className="flex justify-between text-xs">
-                <span className="text-neutral-400">SaaS Consolidation Savings:</span>
-                <span className="font-mono font-bold text-brand-gold">₹84,200 / mo</span>
+              <div className="flex justify-between text-xs sm:text-sm">
+                <span className="text-neutral-300 font-medium">SaaS Consolidation Savings:</span>
+                <span className="font-mono font-bold text-brand-gold text-sm sm:text-base">₹84,200 / mo</span>
               </div>
             </div>
           </div>
         )}
 
         {/* Bottom Status bar */}
-        <div className="mt-5 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono text-neutral-400 relative z-20">
+        <div className="mt-5 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-400 relative z-20">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-3.5 h-3.5 text-brand-green" />
+            <ShieldCheck className="w-4 h-4 text-brand-green" />
             <span>SOC2 / ISO 27001 Logical Encryption Active</span>
           </div>
           <span className="text-neutral-400">Bhubaneswar HQ Node</span>

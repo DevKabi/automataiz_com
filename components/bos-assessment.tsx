@@ -129,14 +129,14 @@ export default function BOSAssessment() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-xs font-mono mb-3">
-            <Activity className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-xs sm:text-sm font-mono mb-3 font-semibold">
+            <Activity className="w-4 h-4" />
             <span>60-Second Diagnostic</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
             Business Operating System Assessment™
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-neutral-400">
+          <p className="mt-3 text-sm sm:text-base text-neutral-300">
             Diagnose your organization across Marketing, Sales, Operations, Finance, and AI Readiness in under 1 minute.
           </p>
         </div>
@@ -146,15 +146,15 @@ export default function BOSAssessment() {
           {!isCompleted ? (
             <div className="space-y-8 animate-in fade-in duration-300">
               {/* Progress bar */}
-              <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-2">
+              <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-neutral-300 mb-2 font-medium">
                 <span>
                   Question {currentStep + 1} of {ASSESSMENT_QUESTIONS.length}
                 </span>
-                <span className="text-brand-green">
+                <span className="text-brand-green font-bold">
                   Pillar: {ASSESSMENT_QUESTIONS[currentStep].pillar}
                 </span>
               </div>
-              <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+              <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-brand-green to-brand-gold transition-all duration-300 rounded-full"
                   style={{
@@ -165,7 +165,7 @@ export default function BOSAssessment() {
 
               {/* Question Text */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-display font-semibold text-white leading-snug">
+                <h3 className="text-xl sm:text-3xl font-display font-bold text-white leading-snug">
                   {ASSESSMENT_QUESTIONS[currentStep].question}
                 </h3>
               </div>
@@ -176,10 +176,10 @@ export default function BOSAssessment() {
                   <button
                     key={idx}
                     onClick={() => handleSelectOption(option.points)}
-                    className="w-full p-4 sm:p-5 rounded-2xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.08] hover:border-brand-green/50 text-left text-sm text-neutral-200 hover:text-white transition-all flex items-center justify-between group"
+                    className="w-full p-4 sm:p-5 rounded-2xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.08] hover:border-brand-green/50 text-left text-sm sm:text-base text-neutral-100 hover:text-white transition-all flex items-center justify-between group font-medium"
                   >
                     <span>{option.label}</span>
-                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-brand-green group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-5 h-5 text-neutral-500 group-hover:text-brand-green group-hover:translate-x-1 transition-all shrink-0 ml-3" />
                   </button>
                 ))}
               </div>
@@ -187,20 +187,20 @@ export default function BOSAssessment() {
           ) : (
             /* Results Screen */
             <div className="space-y-8 animate-in fade-in duration-300">
-              <div className="text-center space-y-2">
+              <div className="text-center space-y-3">
                 <div className="w-16 h-16 rounded-full bg-brand-gold/20 border border-brand-gold text-brand-gold flex items-center justify-center mx-auto shadow-glow-gold">
                   <Sparkles className="w-8 h-8" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-widest text-neutral-400">
+                <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-300 font-semibold">
                   Assessment Complete
                 </div>
-                <h3 className="text-3xl font-display font-bold text-white">
+                <h3 className="text-3xl sm:text-4xl font-display font-extrabold text-white">
                   Your Business OS Score:{" "}
                   <span className="text-gradient-green-gold">
                     {calculatedScores.overallScore}/100
                   </span>
                 </h3>
-                <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto">
+                <p className="text-sm sm:text-base text-neutral-200 max-w-xl mx-auto leading-relaxed">
                   {calculatedScores.overallScore < 60
                     ? "Your business is suffering from heavy software fragmentation and slow follow-ups. Automataiz can streamline operations and recover lost revenue."
                     : "You have strong foundation, but significant revenue is still left on the table due to disconnected tools and lack of AI workforce automation."}
@@ -217,12 +217,12 @@ export default function BOSAssessment() {
                   { label: "AI Readiness", score: calculatedScores.aiReadinessScore, color: "text-brand-green" },
                   { label: "Automation Index", score: calculatedScores.automationScore, color: "text-brand-gold" },
                 ].map((item, idx) => (
-                  <div key={idx} className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
-                    <div className="text-xs text-neutral-400">{item.label}</div>
-                    <div className={`font-mono font-bold text-xl mt-1 ${item.color}`}>
+                  <div key={idx} className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+                    <div className="text-xs sm:text-sm text-neutral-300 font-medium">{item.label}</div>
+                    <div className={`font-mono font-black text-xl sm:text-2xl mt-1 ${item.color}`}>
                       {item.score} / 100
                     </div>
-                    <div className="w-full h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+                    <div className="w-full h-1.5 bg-white/10 rounded-full mt-2.5 overflow-hidden">
                       <div
                         className="h-full bg-brand-green rounded-full"
                         style={{ width: `${item.score}%` }}
@@ -233,12 +233,12 @@ export default function BOSAssessment() {
               </div>
 
               {/* Final Conversion CTA */}
-              <div className="p-6 rounded-2xl bg-gradient-to-r from-[#0d1e0c] via-black to-[#1c1806] border border-brand-green/40 flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#0d1e0c] via-black to-[#1c1806] border border-brand-green/40 flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div>
-                  <h4 className="font-display font-bold text-lg text-white">
+                  <h4 className="font-display font-bold text-lg sm:text-xl text-white">
                     You Could Be Losing Lakhs Every Month Without Knowing It.
                   </h4>
-                  <p className="text-xs text-neutral-300 mt-1">
+                  <p className="text-sm text-neutral-200 mt-1">
                     See exactly how Automataiz can automate, optimize, and scale your business.
                   </p>
                 </div>
@@ -246,13 +246,13 @@ export default function BOSAssessment() {
                 <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
                   <Link
                     href="/simulator"
-                    className="px-5 py-3 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green to-brand-gold hover:opacity-95 text-center shadow-glow-green/30"
+                    className="px-6 py-3.5 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-brand-green to-brand-gold hover:opacity-95 text-center shadow-glow-green/30"
                   >
                     Run Full ROI Simulator
                   </Link>
                   <Link
                     href="/contact"
-                    className="px-5 py-3 rounded-xl text-xs font-semibold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.1] text-center"
+                    className="px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.1] text-center"
                   >
                     Book Strategy Call
                   </Link>
@@ -267,7 +267,7 @@ export default function BOSAssessment() {
                     setAnswers({});
                     setIsCompleted(false);
                   }}
-                  className="text-xs font-mono text-neutral-500 hover:text-neutral-300 underline"
+                  className="text-xs sm:text-sm font-mono text-neutral-400 hover:text-white underline font-medium"
                 >
                   Retake Assessment
                 </button>

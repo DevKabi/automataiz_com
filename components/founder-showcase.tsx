@@ -66,21 +66,21 @@ export default function FounderShowcase() {
             </div>
 
             {/* Quick Stat Pill Grid */}
-            <div className="grid grid-cols-3 gap-2 text-center text-xs font-mono">
-              <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="text-[10px] text-neutral-500">EXPERIENCE</div>
-                <div className="font-bold text-white mt-0.5">7+ Years</div>
-                <div className="text-[9px] text-brand-green">Perf Marketing</div>
+            <div className="grid grid-cols-3 gap-2.5 text-center text-xs sm:text-sm font-mono">
+              <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+                <div className="text-xs text-neutral-400 font-semibold">EXPERIENCE</div>
+                <div className="font-bold text-white mt-1 text-sm sm:text-base">7+ Years</div>
+                <div className="text-xs text-brand-green font-medium">Perf Marketing</div>
               </div>
-              <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="text-[10px] text-neutral-500">LAUNCH DATE</div>
-                <div className="font-bold text-white mt-0.5">Jan 1, 2025</div>
-                <div className="text-[9px] text-brand-gold">Official Live</div>
+              <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+                <div className="text-xs text-neutral-400 font-semibold">LAUNCH DATE</div>
+                <div className="font-bold text-white mt-1 text-sm sm:text-base">Jan 1, 2025</div>
+                <div className="text-xs text-brand-gold font-medium">Official Live</div>
               </div>
-              <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="text-[10px] text-neutral-500">CORE BELIEF</div>
-                <div className="font-bold text-white mt-0.5">Human + AI</div>
-                <div className="text-[9px] text-brand-lime">Collaborative</div>
+              <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+                <div className="text-xs text-neutral-400 font-semibold">CORE BELIEF</div>
+                <div className="font-bold text-white mt-1 text-sm sm:text-base">Human + AI</div>
+                <div className="text-xs text-brand-lime font-medium">Collaborative</div>
               </div>
             </div>
           </div>
@@ -90,11 +90,11 @@ export default function FounderShowcase() {
             <div className="p-6 sm:p-8 rounded-3xl glass-panel space-y-5">
               <Quote className="w-8 h-8 text-brand-green opacity-40" />
 
-              <blockquote className="text-lg sm:text-xl font-display text-white font-medium italic leading-relaxed">
+              <blockquote className="text-lg sm:text-2xl font-display text-white font-medium italic leading-relaxed">
                 &quot;Every business is built twice: first in the mind of the founder, then in reality. The future business will not be operated solely by humans, nor solely by AI. The future belongs to organizations where humans and AI work together.&quot;
               </blockquote>
 
-              <div className="text-xs sm:text-sm text-neutral-300 space-y-3 leading-relaxed">
+              <div className="text-sm sm:text-base text-neutral-200 space-y-3.5 leading-relaxed">
                 <p>
                   Born in Bandhamundi, a small village in Odisha, Debasish Kabi learned the value of resilience, simplicity, and finding solutions with limited resources. After earning his engineering degree in 2011, serving in the Government of Odisha, directing creative projects, and managing safety engineering operations at L&T and Amazon warehouse projects, he launched his first venture in 2018.
                 </p>
@@ -107,34 +107,34 @@ export default function FounderShowcase() {
               </div>
 
               {/* 3 Core Operating Principles */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/[0.06] text-xs">
-                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-                  <div className="font-mono font-bold text-brand-green">Principle #1</div>
-                  <div className="font-semibold text-white mt-1">Simplicity Over Complexity</div>
-                  <div className="text-[11px] text-neutral-400 mt-0.5">Fewer tools that do more.</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-white/[0.06] text-xs sm:text-sm">
+                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                  <div className="font-mono font-bold text-brand-green text-xs sm:text-sm">Principle #1</div>
+                  <div className="font-bold text-white mt-1 text-sm sm:text-base">Simplicity Over Complexity</div>
+                  <div className="text-xs sm:text-sm text-neutral-300 mt-1">Fewer tools that do more.</div>
                 </div>
-                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-                  <div className="font-mono font-bold text-brand-gold">Principle #2</div>
-                  <div className="font-semibold text-white mt-1">Systems Over Effort</div>
-                  <div className="text-[11px] text-neutral-400 mt-0.5">Scale through repeatable systems.</div>
+                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                  <div className="font-mono font-bold text-brand-gold text-xs sm:text-sm">Principle #2</div>
+                  <div className="font-bold text-white mt-1 text-sm sm:text-base">Systems Over Effort</div>
+                  <div className="text-xs sm:text-sm text-neutral-300 mt-1">Scale through repeatable systems.</div>
                 </div>
-                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-                  <div className="font-mono font-bold text-brand-lime">Principle #3</div>
-                  <div className="font-semibold text-white mt-1">Automation Before Hiring</div>
-                  <div className="text-[11px] text-neutral-400 mt-0.5">Automate before increasing headcount.</div>
+                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                  <div className="font-mono font-bold text-brand-lime text-xs sm:text-sm">Principle #3</div>
+                  <div className="font-bold text-white mt-1 text-sm sm:text-base">Automation Before Hiring</div>
+                  <div className="text-xs sm:text-sm text-neutral-300 mt-1">Automate before increasing headcount.</div>
                 </div>
               </div>
 
-              <div className="pt-2 flex items-center justify-between">
+              <div className="pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <Link
                   href="/company"
-                  className="inline-flex items-center gap-2 text-xs font-mono font-bold text-brand-green hover:text-brand-lime transition-colors"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-bold text-brand-green hover:text-brand-lime transition-colors"
                 >
                   <span>Read Full Story &amp; 2030-2040 Vision</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
-                <span className="text-[11px] font-mono text-neutral-500">
+                <span className="text-xs font-mono text-neutral-400">
                   Headquarters: Mancheswar, Bhubaneswar
                 </span>
               </div>

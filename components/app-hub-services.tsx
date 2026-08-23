@@ -619,16 +619,16 @@ export default function AppHubServices() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium transition-all shrink-0 ${
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all shrink-0 ${
                     isSelected
                       ? "bg-white/15 text-white font-bold shadow-sm border border-white/20"
-                      : "text-neutral-400 hover:text-white hover:bg-white/[0.05]"
+                      : "text-neutral-300 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isSelected ? "text-brand-green" : "text-neutral-400"}`} />
+                  <Icon className={`w-4 h-4 ${isSelected ? "text-brand-green" : "text-neutral-400"}`} />
                   <span>{cat.label}</span>
                   {cat.isNew && (
-                    <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 rounded-full bg-brand-green/20 text-brand-green border border-brand-green/40">
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-brand-green/20 text-brand-green border border-brand-green/40">
                       NEW
                     </span>
                   )}
@@ -639,13 +639,13 @@ export default function AppHubServices() {
 
           {/* Search Bar */}
           <div className="relative w-full md:w-64">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
             <input
               type="text"
               placeholder="Search 30+ services..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-white/[0.04] border border-white/[0.1] focus:border-brand-green focus:outline-none text-xs text-white placeholder:text-neutral-500"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.1] focus:border-brand-green focus:outline-none text-sm text-white placeholder:text-neutral-400"
             />
           </div>
         </div>
@@ -664,38 +664,38 @@ export default function AppHubServices() {
                   {/* Top Bar with Icon & NEW Badge */}
                   <div className="flex items-center justify-between mb-4">
                     <div
-                      className={`w-11 h-11 rounded-2xl ${service.colorScheme.iconBg} border flex items-center justify-center`}
+                      className={`w-12 h-12 rounded-2xl ${service.colorScheme.iconBg} border flex items-center justify-center`}
                     >
-                      <Icon className={`w-5 h-5 ${service.colorScheme.iconColor}`} />
+                      <Icon className={`w-6 h-6 ${service.colorScheme.iconColor}`} />
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-mono text-neutral-400 bg-white/[0.04] px-2 py-0.5 rounded-full border border-white/[0.06]">
+                      <span className="text-xs font-mono text-neutral-300 bg-white/[0.04] px-2.5 py-0.5 rounded-full border border-white/[0.08]">
                         {service.categoryLabel}
                       </span>
                       {service.isNew && (
-                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-brand-green/20 text-brand-green border border-brand-green/40 animate-pulse">
+                        <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-brand-green/20 text-brand-green border border-brand-green/40 animate-pulse">
                           NEW
                         </span>
                       )}
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-display font-bold text-white group-hover:text-brand-green transition-colors">
+                  <h3 className="text-lg sm:text-xl font-display font-bold text-white group-hover:text-brand-green transition-colors">
                     {service.name}
                   </h3>
-                  <p className="text-xs text-neutral-300 mt-2 leading-relaxed">
+                  <p className="text-sm text-neutral-200 mt-2 leading-relaxed">
                     {service.desc}
                   </p>
                 </div>
 
                 {/* Highlights footer */}
-                <div className="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-neutral-400 truncate max-w-[180px] sm:max-w-[200px]">
+                <div className="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs sm:text-sm font-mono">
+                  <span className="text-neutral-300 truncate max-w-[180px] sm:max-w-[200px]">
                     {service.highlights[0]}
                   </span>
                   <span className="text-brand-green group-hover:translate-x-0.5 transition-transform flex items-center gap-1 font-bold">
-                    Details <ArrowRight className="w-3 h-3" />
+                    Details <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>

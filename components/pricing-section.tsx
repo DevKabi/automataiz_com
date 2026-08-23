@@ -142,8 +142,8 @@ export default function PricingSection({
       {showTitle && (
         <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-green/20 via-brand-lime/10 to-brand-gold/20 border border-brand-green/40 text-brand-green text-xs font-mono font-bold uppercase tracking-widest mb-5 shadow-glow-green/20">
-              <Sparkles className="w-3.5 h-3.5 text-brand-gold animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-brand-green/20 via-brand-lime/10 to-brand-gold/20 border border-brand-green/40 text-brand-green text-sm font-mono font-bold uppercase tracking-widest mb-5 shadow-glow-green/20">
+              <Sparkles className="w-4 h-4 text-brand-gold animate-pulse" />
               <span>💎 Pricing</span>
             </div>
 
@@ -152,7 +152,7 @@ export default function PricingSection({
               <span className="text-gradient-green-gold">Every Growing Business</span>
             </h2>
 
-            <p className="mt-5 text-sm sm:text-base lg:text-lg text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-base sm:text-lg lg:text-xl text-neutral-200 max-w-2xl mx-auto leading-relaxed">
               Choose the perfect plan for your business today. Start small, scale effortlessly, and upgrade whenever your business grows.
             </p>
           </div>
@@ -162,12 +162,12 @@ export default function PricingSection({
       {/* 2. DUAL TOGGLES: BILLING PERIOD + CURRENCY */}
       <div className="max-w-xl mx-auto px-4 flex flex-col items-center gap-5">
         {/* Billing Period Toggle (Monthly | Yearly) */}
-        <div className="p-1.5 rounded-2xl bg-black/80 border border-white/[0.12] backdrop-blur-xl flex items-center gap-2 shadow-2xl relative">
+        <div className="p-2 rounded-2xl bg-black/80 border border-white/[0.12] backdrop-blur-xl flex items-center gap-2 shadow-2xl relative">
           <button
             type="button"
             onClick={() => setBillingPeriod("monthly")}
-            className={`relative z-10 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-bold transition-all duration-300 ${
-              !isYearly ? "text-black" : "text-neutral-400 hover:text-white"
+            className={`relative z-10 px-6 sm:px-7 py-3 rounded-xl text-sm sm:text-base font-mono font-bold transition-all duration-300 ${
+              !isYearly ? "text-black" : "text-neutral-300 hover:text-white"
             }`}
           >
             {!isYearly && (
@@ -183,8 +183,8 @@ export default function PricingSection({
           <button
             type="button"
             onClick={() => setBillingPeriod("yearly")}
-            className={`relative z-10 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-bold transition-all duration-300 flex items-center gap-2 ${
-              isYearly ? "text-black" : "text-neutral-400 hover:text-white"
+            className={`relative z-10 px-6 sm:px-7 py-3 rounded-xl text-sm sm:text-base font-mono font-bold transition-all duration-300 flex items-center gap-2 ${
+              isYearly ? "text-black" : "text-neutral-300 hover:text-white"
             }`}
           >
             {isYearly && (
@@ -196,7 +196,7 @@ export default function PricingSection({
             )}
             <span className="relative z-10">Yearly Billing</span>
             <span
-              className={`relative z-10 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider ${
+              className={`relative z-10 text-xs font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
                 isYearly
                   ? "bg-black/80 text-brand-gold border border-brand-gold/40"
                   : "bg-brand-green/20 text-brand-green border border-brand-green/40"
@@ -209,14 +209,14 @@ export default function PricingSection({
 
         {/* Currency Toggle (🇮🇳 INR | 🇺🇸 USD) */}
         <div className="flex flex-col items-center gap-2">
-          <div className="p-1 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center gap-1">
+          <div className="p-1.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center gap-1.5">
             <button
               type="button"
               onClick={() => setCurrency("INR")}
-              className={`px-4 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-mono font-bold transition-all ${
                 !isUSD
                   ? "bg-brand-green/20 text-brand-green border border-brand-green/40 shadow-sm"
-                  : "text-neutral-400 hover:text-white"
+                  : "text-neutral-300 hover:text-white"
               }`}
             >
               🇮🇳 INR (₹)
@@ -224,18 +224,18 @@ export default function PricingSection({
             <button
               type="button"
               onClick={() => setCurrency("USD")}
-              className={`px-4 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-mono font-bold transition-all ${
                 isUSD
                   ? "bg-brand-gold/20 text-brand-gold border border-brand-gold/40 shadow-sm"
-                  : "text-neutral-400 hover:text-white"
+                  : "text-neutral-300 hover:text-white"
               }`}
             >
               🇺🇸 USD ($)
             </button>
           </div>
 
-          <p className="text-[11px] font-mono text-neutral-400 text-center flex items-center gap-1.5">
-            <Info className="w-3.5 h-3.5 text-neutral-400 shrink-0" />
+          <p className="text-xs sm:text-sm font-mono text-neutral-300 text-center flex items-center gap-1.5">
+            <Info className="w-4 h-4 text-neutral-400 shrink-0" />
             <span>Approximate USD pricing. Final billing may vary based on exchange rate.</span>
           </p>
         </div>
@@ -252,32 +252,32 @@ export default function PricingSection({
               <div className="p-6 sm:p-8 lg:p-9 rounded-3xl glass-panel border border-white/[0.12] bg-[#070707]/90 space-y-6 sm:space-y-7 flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300 hover:border-brand-green/50 hover:shadow-[0_20px_50px_rgba(24,179,0,0.15)]">
                 {/* Top Badge */}
                 <div className="space-y-4">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-green/15 border border-brand-green/30 text-brand-green text-[11px] font-mono font-bold uppercase tracking-wider">
-                    <Flame className="w-3.5 h-3.5 text-brand-green" />
+                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-green/15 border border-brand-green/30 text-brand-green text-xs font-mono font-bold uppercase tracking-wider">
+                    <Flame className="w-4 h-4 text-brand-green" />
                     <span>🔥 Most Popular for Startups</span>
                   </div>
 
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-white">
+                    <h3 className="text-3xl sm:text-4xl font-display font-black text-white">
                       Startup
                     </h3>
-                    <p className="text-xs text-neutral-400 mt-1">
+                    <p className="text-sm sm:text-base text-neutral-300 mt-1 leading-relaxed">
                       For early-stage companies, solo founders, and growing MSMEs automating lead acquisition.
                     </p>
                   </div>
 
                   {/* Price Block */}
-                  <div className="pt-3 border-t border-white/[0.06] space-y-2">
+                  <div className="pt-4 border-t border-white/[0.06] space-y-2">
                     <div className="flex items-baseline gap-2">
                       {/* Strikethrough Original Price */}
                       {!isUSD ? (
-                        <span className="text-sm sm:text-base font-mono text-neutral-400 line-through">
+                        <span className="text-base sm:text-lg font-mono text-neutral-400 line-through">
                           {isYearly ? "₹95,988/year" : "₹7,999/month"}
                         </span>
                       ) : null}
 
                       {/* Offer Price */}
-                      <span className="text-4xl sm:text-5xl font-display font-black text-white tracking-tight">
+                      <span className="text-5xl sm:text-6xl font-display font-black text-white tracking-tight">
                         {!isUSD
                           ? isYearly
                             ? "₹39,999"
@@ -287,21 +287,21 @@ export default function PricingSection({
                           : "$49"}
                       </span>
 
-                      <span className="text-xs text-neutral-400 font-mono">
+                      <span className="text-sm text-neutral-300 font-mono">
                         {isYearly ? "/year" : "/month"}
                       </span>
                     </div>
 
                     {/* Savings Badge */}
                     {isYearly && !isUSD && (
-                      <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-[11px] font-bold">
-                        <Sparkles className="w-3 h-3" />
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-xs font-bold">
+                        <Sparkles className="w-3.5 h-3.5" />
                         <span>Save ₹55,989/year</span>
                       </div>
                     )}
                     {isYearly && isUSD && (
-                      <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-[11px] font-bold">
-                        <Sparkles className="w-3 h-3" />
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-xs font-bold">
+                        <Sparkles className="w-3.5 h-3.5" />
                         <span>Save 17% vs Monthly</span>
                       </div>
                     )}
@@ -309,10 +309,10 @@ export default function PricingSection({
 
                   {/* Feature Checklist */}
                   <div className="space-y-3 pt-4 border-t border-white/[0.06]">
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-neutral-400 font-bold">
+                    <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-300 font-bold">
                       Included Capabilities:
                     </div>
-                    <ul className="space-y-2.5 text-xs text-neutral-200">
+                    <ul className="space-y-3 text-sm sm:text-base text-neutral-100">
                       {[
                         "AI Business Dashboard",
                         "Website & Funnel Builder",
@@ -326,9 +326,9 @@ export default function PricingSection({
                         "Community",
                         "Basic Analytics",
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
-                          <span>{item}</span>
+                        <li key={i} className="flex items-center gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0" />
+                          <span className="leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -339,7 +339,7 @@ export default function PricingSection({
                 <div className="pt-6">
                   <Link
                     href="/contact?plan=startup"
-                    className="w-full py-4 rounded-2xl text-xs sm:text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-glow-green/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-glow-green/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <span>Start Your Free Trial</span>
                     <ArrowRight className="w-4 h-4" />
@@ -361,38 +361,38 @@ export default function PricingSection({
                 {/* Top Badge */}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-brand-gold/20 to-brand-green/20 border border-brand-gold/50 text-brand-gold text-[11px] font-mono font-black uppercase tracking-widest shadow-glow-gold/30">
-                      <Star className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
+                    <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-brand-gold/20 to-brand-green/20 border border-brand-gold/50 text-brand-gold text-xs font-mono font-black uppercase tracking-widest shadow-glow-gold/30">
+                      <Star className="w-4 h-4 fill-brand-gold text-brand-gold" />
                       <span>⭐ Best Value</span>
                     </div>
 
-                    <span className="text-[10px] font-mono text-brand-green px-2 py-0.5 rounded-full bg-brand-green/10 border border-brand-green/30 font-bold uppercase">
+                    <span className="text-xs font-mono text-brand-green px-2.5 py-0.5 rounded-full bg-brand-green/10 border border-brand-green/30 font-bold uppercase">
                       Recommended
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-white flex items-center gap-2">
+                    <h3 className="text-3xl sm:text-4xl font-display font-black text-white flex items-center gap-2">
                       <span>Growth</span>
-                      <Sparkles className="w-5 h-5 text-brand-gold" />
+                      <Sparkles className="w-6 h-6 text-brand-gold" />
                     </h3>
-                    <p className="text-xs text-neutral-300 mt-1">
+                    <p className="text-sm sm:text-base text-neutral-200 mt-1 leading-relaxed">
                       For high-growth scaleups, agencies, and businesses ready for full automation &amp; AI SDR.
                     </p>
                   </div>
 
                   {/* Price Block */}
-                  <div className="pt-3 border-t border-white/[0.08] space-y-2">
+                  <div className="pt-4 border-t border-white/[0.08] space-y-2">
                     <div className="flex items-baseline gap-2">
                       {/* Strikethrough Original Price */}
                       {!isUSD ? (
-                        <span className="text-sm sm:text-base font-mono text-neutral-400 line-through">
+                        <span className="text-base sm:text-lg font-mono text-neutral-400 line-through">
                           {isYearly ? "₹1,19,988/year" : "₹9,999/month"}
                         </span>
                       ) : null}
 
                       {/* Offer Price */}
-                      <span className="text-4xl sm:text-5xl font-display font-black text-white tracking-tight">
+                      <span className="text-5xl sm:text-6xl font-display font-black text-white tracking-tight">
                         {!isUSD
                           ? isYearly
                             ? "₹69,999"
@@ -402,21 +402,21 @@ export default function PricingSection({
                           : "$85"}
                       </span>
 
-                      <span className="text-xs text-neutral-300 font-mono">
+                      <span className="text-sm text-neutral-300 font-mono">
                         {isYearly ? "/year" : "/month"}
                       </span>
                     </div>
 
                     {/* Savings Badge */}
                     {isYearly && !isUSD && (
-                      <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-[11px] font-bold">
-                        <Sparkles className="w-3 h-3" />
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-xs font-bold">
+                        <Sparkles className="w-3.5 h-3.5" />
                         <span>Save ₹49,989/year</span>
                       </div>
                     )}
                     {isYearly && isUSD && (
-                      <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-[11px] font-bold">
-                        <Sparkles className="w-3 h-3" />
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-xs font-bold">
+                        <Sparkles className="w-3.5 h-3.5" />
                         <span>Save 17% vs Monthly</span>
                       </div>
                     )}
@@ -424,10 +424,10 @@ export default function PricingSection({
 
                   {/* Feature Checklist */}
                   <div className="space-y-3 pt-4 border-t border-white/[0.08]">
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-brand-gold font-bold flex items-center gap-1">
+                    <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-brand-gold font-bold flex items-center gap-1">
                       <span>Everything in Startup, plus:</span>
                     </div>
-                    <ul className="space-y-2.5 text-xs text-neutral-100">
+                    <ul className="space-y-3 text-sm sm:text-base text-neutral-100">
                       {[
                         "Unlimited CRM",
                         "Advanced Automation",
@@ -442,9 +442,9 @@ export default function PricingSection({
                         "Priority Support",
                         "API Access",
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                          <span className="font-medium">{item}</span>
+                        <li key={i} className="flex items-center gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-brand-gold shrink-0" />
+                          <span className="font-medium leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -455,7 +455,7 @@ export default function PricingSection({
                 <div className="pt-6">
                   <Link
                     href="/contact?plan=growth"
-                    className="w-full py-4 rounded-2xl text-xs sm:text-sm font-extrabold text-black bg-gradient-to-r from-brand-gold via-[#ffd200] to-brand-green hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(244,200,0,0.4)] transition-all hover:scale-[1.03] active:scale-[0.98]"
+                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-gold via-[#ffd200] to-brand-green hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(244,200,0,0.4)] transition-all hover:scale-[1.03] active:scale-[0.98]"
                   >
                     <span>Book a Demo</span>
                     <ArrowRight className="w-4 h-4" />
@@ -473,38 +473,38 @@ export default function PricingSection({
               <div className="p-6 sm:p-8 lg:p-9 rounded-3xl glass-panel border border-brand-gold/30 bg-[#070707]/90 space-y-6 sm:space-y-7 flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300 hover:border-brand-gold/60 hover:shadow-[0_20px_50px_rgba(244,200,0,0.12)]">
                 {/* Top Badge */}
                 <div className="space-y-4">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.08] border border-white/[0.15] text-neutral-200 text-[11px] font-mono font-bold uppercase tracking-wider">
-                    <Building2 className="w-3.5 h-3.5 text-brand-lime" />
+                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.15] text-neutral-200 text-xs font-mono font-bold uppercase tracking-wider">
+                    <Building2 className="w-4 h-4 text-brand-lime" />
                     <span>Enterprise</span>
                   </div>
 
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-white">
+                    <h3 className="text-3xl sm:text-4xl font-display font-black text-white">
                       Enterprise
                     </h3>
-                    <p className="text-xs text-neutral-400 mt-1">
+                    <p className="text-sm sm:text-base text-neutral-300 mt-1 leading-relaxed">
                       Tailored solutions for enterprises with custom workflows, integrations and dedicated support.
                     </p>
                   </div>
 
                   {/* Price Block */}
-                  <div className="pt-3 border-t border-white/[0.06] space-y-2">
+                  <div className="pt-4 border-t border-white/[0.06] space-y-2">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-4xl sm:text-5xl font-display font-black text-white tracking-tight">
+                      <span className="text-5xl sm:text-6xl font-display font-black text-white tracking-tight">
                         Custom Pricing
                       </span>
                     </div>
-                    <div className="text-xs font-mono text-brand-lime font-bold">
+                    <div className="text-sm font-mono text-brand-lime font-bold">
                       Contact Sales for Tailored Deployment
                     </div>
                   </div>
 
                   {/* Feature Checklist */}
                   <div className="space-y-3 pt-4 border-t border-white/[0.06]">
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-neutral-400 font-bold">
+                    <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-300 font-bold">
                       Everything in Growth, plus:
                     </div>
-                    <ul className="space-y-2.5 text-xs text-neutral-200">
+                    <ul className="space-y-3 text-sm sm:text-base text-neutral-100">
                       {[
                         "Unlimited Users",
                         "Dedicated Success Manager",
@@ -519,9 +519,9 @@ export default function PricingSection({
                         "24×7 Premium Support",
                         "SLA",
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0" />
-                          <span>{item}</span>
+                        <li key={i} className="flex items-center gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-brand-lime shrink-0" />
+                          <span className="leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -532,7 +532,7 @@ export default function PricingSection({
                 <div className="pt-6">
                   <Link
                     href="/contact?plan=enterprise"
-                    className="w-full py-4 rounded-2xl text-xs sm:text-sm font-bold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] hover:border-brand-lime/50 text-center flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-bold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] hover:border-brand-lime/50 text-center flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <span>Talk to Sales</span>
                     <ArrowRight className="w-4 h-4" />
@@ -560,13 +560,13 @@ export default function PricingSection({
                 const Icon = item.icon;
                 return (
                   <div key={idx} className="space-y-2 flex flex-col items-center">
-                    <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
-                      <Icon className={`w-5 sm:w-6 h-5 sm:h-6 ${item.color}`} />
+                    <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
+                      <Icon className={`w-6 sm:w-7 h-6 sm:h-7 ${item.color}`} />
                     </div>
-                    <div className="font-display font-bold text-xs sm:text-sm text-white">
+                    <div className="font-display font-bold text-sm sm:text-base text-white">
                       {item.title}
                     </div>
-                    <div className="text-[10px] sm:text-[11px] text-neutral-400 font-mono">
+                    <div className="text-xs sm:text-sm text-neutral-300 font-mono">
                       {item.desc}
                     </div>
                   </div>
@@ -579,10 +579,10 @@ export default function PricingSection({
 
       {/* 5. PAYMENT METHODS */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4">
-        <div className="text-xs font-mono uppercase tracking-widest text-neutral-400 font-bold">
+        <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-300 font-bold">
           Accepted Enterprise Payment Methods &amp; Gateways
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4">
           {[
             "Razorpay",
             "UPI",
@@ -596,7 +596,7 @@ export default function PricingSection({
           ].map((method, idx) => (
             <div
               key={idx}
-              className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] text-[11px] sm:text-xs font-mono font-medium text-neutral-300 hover:border-brand-green/40 hover:text-white transition-all shadow-sm"
+              className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs sm:text-sm font-mono font-medium text-neutral-200 hover:border-brand-green/40 hover:text-white transition-all shadow-sm"
             >
               {method}
             </div>
@@ -609,55 +609,55 @@ export default function PricingSection({
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono mb-3">
-                <Layers className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-sm font-mono mb-3">
+                <Layers className="w-4 h-4" />
                 <span>Granular Capability Matrix</span>
               </div>
-              <h3 className="text-2xl sm:text-4xl font-display font-bold text-white">
+              <h3 className="text-3xl sm:text-5xl font-display font-extrabold text-white">
                 Compare Plans in Detail
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 mt-2">
+              <p className="text-sm sm:text-base text-neutral-300 mt-2">
                 Evaluate which tier aligns with your current scale, team size, and automation needs.
               </p>
             </div>
           </ScrollReveal>
 
           {/* Mobile Swipe Cue */}
-          <div className="lg:hidden flex items-center justify-center gap-2 py-2 px-4 rounded-xl bg-brand-green/10 border border-brand-green/20 text-brand-green text-xs font-mono">
-            <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
+          <div className="lg:hidden flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brand-green/10 border border-brand-green/20 text-brand-green text-xs sm:text-sm font-mono">
+            <ArrowRight className="w-4 h-4 animate-pulse" />
             <span>Swipe horizontally to compare all plan tiers</span>
           </div>
 
           <ScrollReveal>
             <div className="rounded-3xl glass-panel border border-white/[0.1] overflow-hidden overflow-x-auto touch-scroll">
-              <table className="w-full text-left border-collapse min-w-[680px]">
+              <table className="w-full text-left border-collapse min-w-[720px]">
                 <thead>
                   <tr className="border-b border-white/[0.1] bg-black/60">
-                    <th className="p-5 text-sm font-display font-bold text-white w-2/5">
+                    <th className="p-5 text-base sm:text-lg font-display font-bold text-white w-2/5">
                       Platform Modules &amp; Specs
                     </th>
-                    <th className="p-5 text-sm font-display font-bold text-white w-1/5 text-center">
-                      <div className="text-brand-green font-mono text-xs uppercase">Startup</div>
+                    <th className="p-5 text-base sm:text-lg font-display font-bold text-white w-1/5 text-center">
+                      <div className="text-brand-green font-mono text-xs sm:text-sm uppercase">Startup</div>
                       <div>{!isUSD ? (isYearly ? "₹39,999/yr" : "₹3,999/mo") : (isYearly ? "$489/yr" : "$49/mo")}</div>
                     </th>
-                    <th className="p-5 text-sm font-display font-bold text-brand-gold w-1/5 text-center bg-brand-gold/[0.04] border-x border-brand-gold/30">
-                      <div className="text-brand-gold font-mono text-xs uppercase">Growth ⭐</div>
+                    <th className="p-5 text-base sm:text-lg font-display font-bold text-brand-gold w-1/5 text-center bg-brand-gold/[0.04] border-x border-brand-gold/30">
+                      <div className="text-brand-gold font-mono text-xs sm:text-sm uppercase">Growth ⭐</div>
                       <div>{!isUSD ? (isYearly ? "₹69,999/yr" : "₹6,999/mo") : (isYearly ? "$849/yr" : "$85/mo")}</div>
                     </th>
-                    <th className="p-5 text-sm font-display font-bold text-white w-1/5 text-center">
-                      <div className="text-brand-lime font-mono text-xs uppercase">Enterprise</div>
+                    <th className="p-5 text-base sm:text-lg font-display font-bold text-white w-1/5 text-center">
+                      <div className="text-brand-lime font-mono text-xs sm:text-sm uppercase">Enterprise</div>
                       <div>Custom</div>
                     </th>
                   </tr>
                 </thead>
 
-                <tbody className="divide-y divide-white/[0.06] text-xs">
+                <tbody className="divide-y divide-white/[0.06] text-sm sm:text-base">
                   {comparisonModules.map((cat, cIdx) => (
                     <React.Fragment key={cIdx}>
                       <tr className="bg-white/[0.03]">
                         <td
                           colSpan={4}
-                          className="p-3.5 font-mono text-[11px] uppercase tracking-widest text-brand-green font-bold bg-[#091508]/80"
+                          className="p-4 font-mono text-xs sm:text-sm uppercase tracking-widest text-brand-green font-bold bg-[#091508]/80"
                         >
                           {cat.category}
                         </td>
@@ -667,28 +667,28 @@ export default function PricingSection({
                           key={fIdx}
                           className="hover:bg-white/[0.02] transition-colors"
                         >
-                          <td className="p-4 text-neutral-200 font-medium">
+                          <td className="p-4 text-neutral-100 font-medium">
                             {feat.name}
                           </td>
-                          <td className="p-4 text-center text-neutral-400 font-mono">
+                          <td className="p-4 text-center text-neutral-300 font-mono text-sm sm:text-base">
                             {feat.startup === "✔" ? (
-                              <Check className="w-4 h-4 text-brand-green mx-auto" />
+                              <Check className="w-5 h-5 text-brand-green mx-auto" />
                             ) : feat.startup === "—" ? (
-                              <span className="text-neutral-600">—</span>
+                              <span className="text-neutral-500">—</span>
                             ) : (
                               feat.startup
                             )}
                           </td>
-                          <td className="p-4 text-center text-white font-mono bg-brand-gold/[0.03] border-x border-brand-gold/20 font-semibold">
+                          <td className="p-4 text-center text-white font-mono text-sm sm:text-base bg-brand-gold/[0.03] border-x border-brand-gold/20 font-bold">
                             {feat.growth === "✔" ? (
-                              <Check className="w-4 h-4 text-brand-gold mx-auto" />
+                              <Check className="w-5 h-5 text-brand-gold mx-auto" />
                             ) : (
                               feat.growth
                             )}
                           </td>
-                          <td className="p-4 text-center text-neutral-300 font-mono">
+                          <td className="p-4 text-center text-neutral-200 font-mono text-sm sm:text-base">
                             {feat.enterprise === "✔" ? (
-                              <Check className="w-4 h-4 text-brand-lime mx-auto" />
+                              <Check className="w-5 h-5 text-brand-lime mx-auto" />
                             ) : (
                               feat.enterprise
                             )}
@@ -709,11 +709,11 @@ export default function PricingSection({
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs font-mono mb-3">
-                <HelpCircle className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-sm font-mono mb-3">
+                <HelpCircle className="w-4 h-4" />
                 <span>Pricing Questions Answered</span>
               </div>
-              <h3 className="text-3xl sm:text-4xl font-display font-bold text-white">
+              <h3 className="text-3xl sm:text-5xl font-display font-extrabold text-white">
                 Frequently Asked Questions
               </h3>
             </div>
@@ -728,11 +728,11 @@ export default function PricingSection({
                     <button
                       type="button"
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-white hover:text-brand-green transition-colors"
+                      className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-white hover:text-brand-green transition-colors"
                     >
                       <span>{faq.q}</span>
                       <ChevronDown
-                        className={`w-4 h-4 text-brand-green shrink-0 transition-transform duration-300 ${
+                        className={`w-5 h-5 text-brand-green shrink-0 transition-transform duration-300 ${
                           isOpen ? "rotate-180" : "rotate-0"
                         }`}
                       />
@@ -746,7 +746,7 @@ export default function PricingSection({
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-neutral-300 leading-relaxed border-t border-white/[0.04] pt-4">
+                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm sm:text-base text-neutral-200 leading-relaxed border-t border-white/[0.04] pt-4">
                             {faq.a}
                           </div>
                         </motion.div>
@@ -764,22 +764,22 @@ export default function PricingSection({
       <ScrollReveal>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-r from-black via-[#0a1808] to-black space-y-5 shadow-[0_20px_50px_rgba(24,179,0,0.15)]">
-            <h3 className="text-2xl sm:text-4xl font-display font-extrabold text-white">
+            <h3 className="text-3xl sm:text-5xl font-display font-extrabold text-white">
               Still Have Questions? Talk to Our Solutions Team
             </h3>
-            <p className="text-xs sm:text-sm text-neutral-300 max-w-xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-200 max-w-xl mx-auto leading-relaxed">
               Schedule a 1-on-1 strategy session to calculate your exact software savings and get a customized demo for your industry.
             </p>
-            <div className="pt-2 flex flex-col sm:flex-row justify-center gap-4">
+            <div className="pt-3 flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href="/simulator"
-                className="px-8 py-3.5 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 shadow-glow-green/30"
+                className="px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 shadow-glow-green/30"
               >
                 Calculate ROI in Simulator
               </Link>
               <Link
                 href="/contact"
-                className="px-8 py-3.5 rounded-xl text-xs font-semibold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.12]"
+                className="px-8 py-4 rounded-xl text-sm sm:text-base font-semibold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.12]"
               >
                 Schedule Founder Strategy Call
               </Link>

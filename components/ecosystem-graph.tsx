@@ -175,7 +175,7 @@ export default function EcosystemGraph() {
               <div
                 key={mod.id}
                 onClick={() => setSelectedModule(mod)}
-                className={`p-5 rounded-3xl glass-panel glass-panel-hover cursor-pointer transition-all duration-300 relative group overflow-hidden ${
+                className={`p-5 sm:p-6 rounded-3xl glass-panel glass-panel-hover cursor-pointer transition-all duration-300 relative group overflow-hidden ${
                   isSelected
                     ? "border-brand-green ring-1 ring-brand-green/50 bg-brand-green/[0.07] shadow-glow-green/30"
                     : "hover:border-white/20"
@@ -184,26 +184,26 @@ export default function EcosystemGraph() {
                 {/* Top Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <div
-                    className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${mod.color} border flex items-center justify-center`}
+                    className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${mod.color} border flex items-center justify-center`}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-6 h-6" />
                   </div>
-                  <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.08] text-neutral-300">
+                  <span className="text-xs font-mono px-3 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.08] text-neutral-200">
                     {mod.category}
                   </span>
                 </div>
 
-                <h3 className="font-display font-bold text-base text-white group-hover:text-brand-green transition-colors">
+                <h3 className="font-display font-bold text-lg text-white group-hover:text-brand-green transition-colors">
                   {mod.name}
                 </h3>
-                <p className="text-xs text-neutral-400 mt-1.5 line-clamp-2 leading-relaxed">
+                <p className="text-sm text-neutral-300 mt-2 line-clamp-2 leading-relaxed">
                   {mod.desc}
                 </p>
 
-                <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-brand-gold">{mod.metrics}</span>
-                  <span className="text-neutral-500 group-hover:text-white flex items-center gap-1 transition-colors">
-                    Explore <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs sm:text-sm font-mono">
+                  <span className="text-brand-gold font-bold">{mod.metrics}</span>
+                  <span className="text-neutral-400 group-hover:text-white flex items-center gap-1 transition-colors font-medium">
+                    Explore <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </div>
               </div>
@@ -220,18 +220,18 @@ export default function EcosystemGraph() {
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono uppercase tracking-wider text-brand-green">
+                  <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-brand-green font-bold">
                     {selectedModule.category} Module
                   </span>
                   <span className="text-neutral-500">•</span>
-                  <span className="text-xs font-mono text-brand-gold">
+                  <span className="text-xs sm:text-sm font-mono text-brand-gold font-bold">
                     {selectedModule.metrics}
                   </span>
                 </div>
-                <h4 className="text-2xl font-display font-bold text-white mt-1">
+                <h4 className="text-2xl sm:text-3xl font-display font-bold text-white mt-1">
                   {selectedModule.name}
                 </h4>
-                <p className="text-xs sm:text-sm text-neutral-300 mt-1 max-w-2xl leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-200 mt-1 max-w-2xl leading-relaxed">
                   {selectedModule.desc} Fully interconnected with all other 11 modules through the Central AI Intelligence Layer.
                 </p>
               </div>
@@ -239,7 +239,7 @@ export default function EcosystemGraph() {
 
             <Link
               href="/product"
-              className="px-6 py-3 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all shrink-0 flex items-center gap-2 shadow-glow-green/30"
+              className="px-7 py-3.5 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all shrink-0 flex items-center gap-2 shadow-glow-green/30"
             >
               <span>Explore All Features</span>
               <ArrowRight className="w-4 h-4" />

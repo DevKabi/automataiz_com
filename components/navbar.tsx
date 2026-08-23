@@ -69,14 +69,14 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] backdrop-blur-md rounded-full px-4 py-1.5 shadow-inner">
+        <nav className="hidden lg:flex items-center gap-1.5 bg-white/[0.03] border border-white/[0.08] backdrop-blur-md rounded-full px-4 py-2 shadow-inner">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
+                className={`relative px-4 py-1.5 text-sm font-semibold rounded-full transition-all duration-200 flex items-center gap-2 ${
                   isActive
                     ? "text-white bg-white/10 shadow-sm"
                     : "text-neutral-300 hover:text-white hover:bg-white/[0.05]"
@@ -85,7 +85,7 @@ export default function Navbar() {
                 <span>{link.name}</span>
                 {link.badge && (
                   <span
-                    className={`text-[9px] font-mono px-1.5 py-0.2 rounded-full border animate-pulse ${link.badgeColor}`}
+                    className={`text-[11px] font-mono font-bold px-2 py-0.5 rounded-full border animate-pulse ${link.badgeColor}`}
                   >
                     {link.badge}
                   </span>
@@ -97,25 +97,25 @@ export default function Navbar() {
 
         {/* Right Actions */}
         <div className="hidden lg:flex items-center gap-3">
-          <div className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-[11px] font-mono">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono font-semibold">
             <span className="w-2 h-2 rounded-full bg-brand-green animate-ping" />
             <span>AI Core Active</span>
           </div>
 
           <Link
             href="/simulator"
-            className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all shadow-glow-green/30 hover:shadow-glow-gold/50"
+            className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all shadow-glow-green/30 hover:shadow-glow-gold/50"
           >
-            <Sparkles className="w-3.5 h-3.5 text-black" />
+            <Sparkles className="w-4 h-4 text-black" />
             <span>Calculate ROI</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
 
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-xl bg-white/[0.05] border border-white/[0.1] text-neutral-300 hover:text-white"
+          className="lg:hidden p-2.5 rounded-xl bg-white/[0.05] border border-white/[0.1] text-neutral-300 hover:text-white"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -133,16 +133,16 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-all ${
                     isActive
                       ? "bg-brand-green/15 text-brand-green border border-brand-green/30"
-                      : "text-neutral-300 hover:bg-white/[0.05] hover:text-white"
+                      : "text-neutral-200 hover:bg-white/[0.05] hover:text-white"
                   }`}
                 >
                   <span>{link.name}</span>
                   {link.badge && (
                     <span
-                      className={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${link.badgeColor}`}
+                      className={`text-xs font-mono font-bold px-2.5 py-0.5 rounded-full border ${link.badgeColor}`}
                     >
                       {link.badge}
                     </span>
@@ -156,7 +156,7 @@ export default function Navbar() {
             <Link
               href="/simulator"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold shadow-glow-green/40"
+              className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-base font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold shadow-glow-green/40"
             >
               <Sparkles className="w-4 h-4 text-black" />
               <span>Launch Growth Simulator™</span>
@@ -165,7 +165,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-white/[0.08] border border-white/[0.12] hover:bg-white/[0.12]"
+              className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-base font-semibold text-white bg-white/[0.08] border border-white/[0.12] hover:bg-white/[0.12]"
             >
               <span>Book Strategy Demo</span>
             </Link>

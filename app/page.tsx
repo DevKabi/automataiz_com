@@ -92,17 +92,17 @@ export default function HomePage() {
               </div>
 
               {/* Hero Micro Proof Ticker */}
-              <div className="pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-neutral-400 font-mono">
+              <div className="pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-neutral-300 font-mono font-medium">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-brand-green" />
+                  <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
                   <span>Zero Software Fragmentation</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-brand-gold" />
+                  <ShieldCheck className="w-4 h-4 text-brand-gold shrink-0" />
                   <span>Single Source of Truth</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Bot className="w-4 h-4 text-brand-lime" />
+                  <Bot className="w-4 h-4 text-brand-lime shrink-0" />
                   <span>Autonomous AI Digital Workforce</span>
                 </div>
               </div>
@@ -126,8 +126,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono mb-4">
-                <Zap className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs sm:text-sm font-mono mb-4 font-bold">
+                <Zap className="w-4 h-4" />
                 <span>The MSME Crisis &amp; Software Overload</span>
               </div>
 
@@ -135,7 +135,7 @@ export default function HomePage() {
                 &quot;Businesses Do Not Fail Because They Lack Ambition.{" "}
                 <span className="text-gradient-green-gold">They Fail Because They Lack Systems.&quot;</span>
               </h2>
-              <p className="mt-4 text-sm sm:text-base text-neutral-400">
+              <p className="mt-4 text-sm sm:text-lg text-neutral-300">
                 Technology was supposed to make business simpler. Instead, businesses got stuck managing 15 separate subscriptions, broken Zapier connections, and scattered customer data.
               </p>
             </div>
@@ -145,35 +145,39 @@ export default function HomePage() {
             {/* The Old World */}
             <ScrollReveal direction="left">
               <Card3D glowColor="default" className="h-full">
-                <div className="p-8 rounded-3xl bg-red-950/15 border border-red-500/20 backdrop-blur-xl space-y-6 flex flex-col justify-between h-full">
+                <div className="p-8 sm:p-9 rounded-3xl bg-red-950/15 border border-red-500/20 backdrop-blur-xl space-y-6 flex flex-col justify-between h-full">
                   <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-mono font-bold">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-500/20 text-red-400 text-xs sm:text-sm font-mono font-bold">
                       THE FRAGMENTED OLD WORLD
                     </div>
-                    <h3 className="text-2xl font-display font-bold text-white">
+                    <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
                       Managing Tools Instead of Managing Outcomes
                     </h3>
-                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+                    <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
                       One tool for CRM. One for WhatsApp. One for Email. One for Landing Pages. One for Appointments. One for Invoicing. Result: Disconnected teams, lost follow-ups, and ₹2,00,000+/mo in invisible operational leaks.
                     </p>
 
-                    <ul className="space-y-2.5 text-xs text-neutral-300 pt-2">
-                      <li className="flex items-center gap-2 text-red-400">
-                        <span>✕</span> 15+ logins, passwords, and monthly billing invoices
+                    <ul className="space-y-3 text-sm text-neutral-200 pt-2">
+                      <li className="flex items-start gap-2.5 text-red-400">
+                        <span className="font-bold text-base leading-none mt-0.5">✕</span>
+                        <span>15+ logins, passwords, and monthly billing invoices</span>
                       </li>
-                      <li className="flex items-center gap-2 text-red-400">
-                        <span>✕</span> Data silos: Marketing data doesn&apos;t talk to Sales or Finance
+                      <li className="flex items-start gap-2.5 text-red-400">
+                        <span className="font-bold text-base leading-none mt-0.5">✕</span>
+                        <span>Data silos: Marketing data doesn&apos;t talk to Sales or Finance</span>
                       </li>
-                      <li className="flex items-center gap-2 text-red-400">
-                        <span>✕</span> Follow-ups delayed by hours or days—lost sales opportunities
+                      <li className="flex items-start gap-2.5 text-red-400">
+                        <span className="font-bold text-base leading-none mt-0.5">✕</span>
+                        <span>Follow-ups delayed by hours or days—lost sales opportunities</span>
                       </li>
-                      <li className="flex items-center gap-2 text-red-400">
-                        <span>✕</span> Business owner becomes the central operational bottleneck
+                      <li className="flex items-start gap-2.5 text-red-400">
+                        <span className="font-bold text-base leading-none mt-0.5">✕</span>
+                        <span>Business owner becomes the central operational bottleneck</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-black/50 border border-red-500/20 text-xs font-mono text-red-400">
+                  <div className="p-4 rounded-2xl bg-black/50 border border-red-500/20 text-xs sm:text-sm font-mono text-red-400 font-bold">
                     Outcome: Chaos, High Headcount Cost, Stagnant Growth
                   </div>
                 </div>
@@ -183,39 +187,39 @@ export default function HomePage() {
             {/* The Automataiz Way */}
             <ScrollReveal direction="right">
               <Card3D glowColor="green" className="h-full">
-                <div className="p-8 rounded-3xl bg-brand-green/[0.08] border border-brand-green/40 backdrop-blur-xl space-y-6 flex flex-col justify-between shadow-glow-green/20 h-full">
+                <div className="p-8 sm:p-9 rounded-3xl bg-brand-green/[0.08] border border-brand-green/40 backdrop-blur-xl space-y-6 flex flex-col justify-between shadow-glow-green/20 h-full">
                   <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/20 text-brand-green text-xs font-mono font-bold">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-green/20 text-brand-green text-xs sm:text-sm font-mono font-bold">
                       THE AUTOMATAIZ OS REVOLUTION
                     </div>
-                    <h3 className="text-2xl font-display font-bold text-white">
+                    <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
                       One Platform. One Database. One Intelligent Brain.
                     </h3>
-                    <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                    <p className="text-sm sm:text-base text-neutral-200 leading-relaxed">
                       Automataiz converges Marketing, Sales, Operations, and Finance under one unified AI-driven operating system. Human leaders set vision, while AI executes daily workflows.
                     </p>
 
-                    <ul className="space-y-2.5 text-xs text-neutral-200 pt-2">
-                      <li className="flex items-center gap-2 text-brand-green">
-                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                    <ul className="space-y-3 text-sm text-neutral-100 pt-2">
+                      <li className="flex items-start gap-2.5 text-brand-green">
+                        <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
                         <span>One unified database and single source of organizational truth</span>
                       </li>
-                      <li className="flex items-center gap-2 text-brand-green">
-                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                      <li className="flex items-start gap-2.5 text-brand-green">
+                        <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
                         <span>Instant autonomous follow-ups in &lt;90 seconds via WhatsApp &amp; Email</span>
                       </li>
-                      <li className="flex items-center gap-2 text-brand-green">
-                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                      <li className="flex items-start gap-2.5 text-brand-green">
+                        <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
                         <span>AI SDR and Digital Workforce active 24/7/365</span>
                       </li>
-                      <li className="flex items-center gap-2 text-brand-green">
-                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                      <li className="flex items-start gap-2.5 text-brand-green">
+                        <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
                         <span>CEO command cockpit gives 5-minute complete business visibility</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-black/60 border border-brand-green/30 text-xs font-mono text-brand-green">
+                  <div className="p-4 rounded-2xl bg-black/60 border border-brand-green/30 text-xs sm:text-sm font-mono text-brand-green font-bold">
                     Outcome: Predictable Revenue, System Freedom, High Profitability
                   </div>
                 </div>
@@ -229,8 +233,8 @@ export default function HomePage() {
       <section className="relative py-24 sm:py-32 bg-[#070707] overflow-hidden border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-lime/10 border border-brand-lime/30 text-brand-lime text-xs font-mono mb-4">
-              <Layers className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-lime/10 border border-brand-lime/30 text-brand-lime text-xs sm:text-sm font-mono mb-4 font-semibold">
+              <Layers className="w-4 h-4" />
               <span>The Foundational Architecture</span>
             </div>
 
@@ -238,7 +242,7 @@ export default function HomePage() {
               The 4 Foundational Pillars.{" "}
               <span className="text-gradient-green-gold">Connected by AI.</span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-neutral-400">
+            <p className="mt-4 text-sm sm:text-lg text-neutral-300">
               A business lifecycle follows a clear rhythm: Attract (Marketing) → Convert (Sales) → Deliver (Operations) → Measure (Finance).
             </p>
           </div>
@@ -252,18 +256,18 @@ export default function HomePage() {
                     <div className="w-12 h-12 rounded-2xl bg-brand-green/20 border border-brand-green/40 flex items-center justify-center text-brand-green shadow-glow-green/20">
                       <Target className="w-6 h-6" />
                     </div>
-                    <div className="text-[11px] font-mono text-brand-green font-bold uppercase">
+                    <div className="text-xs font-mono text-brand-green font-bold uppercase">
                       Pillar 1 // Demand
                     </div>
-                    <h3 className="text-xl font-display font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-white">
                       Marketing OS
                     </h3>
-                    <p className="text-xs text-neutral-400 leading-relaxed">
+                    <p className="text-sm text-neutral-300 leading-relaxed">
                       Generate awareness and predictable lead flow through Funnels, Websites, AI Social, Forms, Chat Widgets, and Ad Launcher.
                     </p>
                   </div>
-                  <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
-                    Objective: <span className="text-brand-green">Predictable Demand</span>
+                  <div className="pt-3 text-xs sm:text-sm font-mono text-neutral-300 border-t border-white/[0.06]">
+                    Objective: <span className="text-brand-green font-bold">Predictable Demand</span>
                   </div>
                 </div>
               </Card3D>
@@ -277,18 +281,18 @@ export default function HomePage() {
                     <div className="w-12 h-12 rounded-2xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold shadow-glow-gold/20">
                       <TrendingUp className="w-6 h-6" />
                     </div>
-                    <div className="text-[11px] font-mono text-brand-gold font-bold uppercase">
+                    <div className="text-xs font-mono text-brand-gold font-bold uppercase">
                       Pillar 2 // Revenue
                     </div>
-                    <h3 className="text-xl font-display font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-white">
                       Sales OS
                     </h3>
-                    <p className="text-xs text-neutral-400 leading-relaxed">
+                    <p className="text-sm text-neutral-300 leading-relaxed">
                       Convert opportunities into revenue via Unified CRM, Pipeline stages, Telecalling, IVR routing, AI Lead Scoring &amp; Consultative selling.
                     </p>
                   </div>
-                  <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
-                    Objective: <span className="text-brand-gold">High Conversion</span>
+                  <div className="pt-3 text-xs sm:text-sm font-mono text-neutral-300 border-t border-white/[0.06]">
+                    Objective: <span className="text-brand-gold font-bold">High Conversion</span>
                   </div>
                 </div>
               </Card3D>
@@ -302,18 +306,18 @@ export default function HomePage() {
                     <div className="w-12 h-12 rounded-2xl bg-brand-lime/20 border border-brand-lime/40 flex items-center justify-center text-brand-lime">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
-                    <div className="text-[11px] font-mono text-brand-lime font-bold uppercase">
+                    <div className="text-xs font-mono text-brand-lime font-bold uppercase">
                       Pillar 3 // Delivery
                     </div>
-                    <h3 className="text-xl font-display font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-white">
                       Operations OS
                     </h3>
-                    <p className="text-xs text-neutral-400 leading-relaxed">
+                    <p className="text-sm text-neutral-300 leading-relaxed">
                       Deliver consistently at scale through Tasks, HRM, Project Tracking, Workflow Automation, Approvals, and Unified Inbox.
                     </p>
                   </div>
-                  <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
-                    Objective: <span className="text-brand-lime">Operational Excellence</span>
+                  <div className="pt-3 text-xs sm:text-sm font-mono text-neutral-300 border-t border-white/[0.06]">
+                    Objective: <span className="text-brand-lime font-bold">Operational Excellence</span>
                   </div>
                 </div>
               </Card3D>
@@ -327,18 +331,18 @@ export default function HomePage() {
                     <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
                       <DollarSign className="w-6 h-6" />
                     </div>
-                    <div className="text-[11px] font-mono text-neutral-300 font-bold uppercase">
+                    <div className="text-xs font-mono text-neutral-300 font-bold uppercase">
                       Pillar 4 // Health
                     </div>
-                    <h3 className="text-xl font-display font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-white">
                       Finance OS
                     </h3>
-                    <p className="text-xs text-neutral-400 leading-relaxed">
+                    <p className="text-sm text-neutral-300 leading-relaxed">
                       Measure business health through Invoicing, Subscription Billing, Expense Management, Product Catalog, and Revenue Intelligence.
                     </p>
                   </div>
-                  <div className="pt-2 text-[11px] font-mono text-neutral-300 border-t border-white/[0.06]">
-                    Objective: <span className="text-white">Maximized Profitability</span>
+                  <div className="pt-3 text-xs sm:text-sm font-mono text-neutral-300 border-t border-white/[0.06]">
+                    Objective: <span className="text-white font-bold">Maximized Profitability</span>
                   </div>
                 </div>
               </Card3D>
@@ -348,17 +352,17 @@ export default function HomePage() {
           {/* Central AI Layer Banner */}
           <div className="mt-8 p-6 sm:p-8 rounded-3xl glass-panel border border-brand-green/40 bg-gradient-to-r from-[#0b170a] via-[#080808] to-[#171406] flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-brand-green/20 border border-brand-green flex items-center justify-center text-brand-green shrink-0 shadow-glow-green/30">
-                <Bot className="w-6 h-6" />
+              <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-brand-green/20 border border-brand-green flex items-center justify-center text-brand-green shrink-0 shadow-glow-green/30">
+                <Bot className="w-6 sm:w-7 h-6 sm:h-7" />
               </div>
               <div>
-                <div className="text-xs font-mono uppercase tracking-widest text-brand-green font-bold">
+                <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-brand-green font-bold">
                   The Fifth Layer // Central Intelligence
                 </div>
-                <h4 className="text-2xl font-display font-bold text-white mt-1">
+                <h4 className="text-2xl sm:text-3xl font-display font-bold text-white mt-1">
                   The AI Intelligence Layer &amp; Nova Co-Pilot
                 </h4>
-                <p className="text-xs sm:text-sm text-neutral-300 mt-1 max-w-3xl leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-200 mt-1 max-w-3xl leading-relaxed">
                   While other platforms treat AI as an add-on feature, Automataiz treats AI as infrastructure. The AI Brain understands your company context, analyzes trends across all 4 pillars, recommends strategic decisions, and executes workflows.
                 </p>
               </div>
@@ -366,7 +370,7 @@ export default function HomePage() {
 
             <Link
               href="/solutions"
-              className="px-6 py-3.5 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all shrink-0 flex items-center gap-2 shadow-glow-green/30"
+              className="px-7 py-4 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all shrink-0 flex items-center gap-2 shadow-glow-green/30"
             >
               <span>Explore Architecture</span>
               <ArrowRight className="w-4 h-4" />
@@ -405,8 +409,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs font-mono mb-4">
-                <Building2 className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs sm:text-sm font-mono mb-4 font-semibold">
+                <Building2 className="w-4 h-4" />
                 <span>Tailored Vertical Operating Systems</span>
               </div>
 
@@ -414,7 +418,7 @@ export default function HomePage() {
                 Built Specially For{" "}
                 <span className="text-gradient-green-gold">Your Exact Industry.</span>
               </h2>
-              <p className="mt-4 text-sm sm:text-base text-neutral-400">
+              <p className="mt-4 text-sm sm:text-lg text-neutral-300">
                 Generic software creates users. Industry software creates market leaders. Explore pre-configured workflows, funnels, and AI agents tailored for your vertical.
               </p>
             </div>
@@ -481,37 +485,37 @@ export default function HomePage() {
               return (
                 <ScrollReveal key={i} delay={i * 0.08}>
                   <Card3D glowColor={ind.glow} className="h-full">
-                    <div className="p-6 rounded-3xl glass-panel space-y-4 flex flex-col justify-between h-full">
+                    <div className="p-6 sm:p-7 rounded-3xl glass-panel space-y-4 flex flex-col justify-between h-full">
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
-                          <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white">
-                            <Icon className="w-5 h-5 text-brand-green" />
+                          <div className="w-11 h-11 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white">
+                            <Icon className="w-6 h-6 text-brand-green" />
                           </div>
-                          <span className={`text-[10px] font-mono px-2.5 py-1 rounded-full border ${ind.color}`}>
+                          <span className={`text-xs font-mono px-3 py-1 rounded-full border ${ind.color} font-bold`}>
                             {ind.roi}
                           </span>
                         </div>
 
-                        <h3 className="font-display font-bold text-xl text-white">
+                        <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
                           {ind.title}
                         </h3>
 
-                        <div className="space-y-2 text-xs">
-                          <div className="text-neutral-400">
+                        <div className="space-y-2 text-xs sm:text-sm">
+                          <div className="text-neutral-300">
                             <strong className="text-red-400 font-mono">Bottleneck:</strong> {ind.pain}
                           </div>
-                          <div className="text-neutral-300">
-                            <strong className="text-brand-green font-mono">Automataiz OS:</strong> {ind.solution}
+                          <div className="text-neutral-200">
+                            <strong className="text-brand-green font-mono font-semibold">Automataiz OS:</strong> {ind.solution}
                           </div>
                         </div>
                       </div>
 
                       <Link
                         href="/industries"
-                        className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-brand-green hover:text-brand-lime transition-colors"
+                        className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs sm:text-sm font-mono text-brand-green hover:text-brand-lime transition-colors font-bold"
                       >
                         <span>View Full Vertical Blueprint</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </Card3D>

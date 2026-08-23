@@ -155,39 +155,39 @@ export default function DigitalWorkforceGrid() {
                 {/* Top Badge & Status */}
                 <div className="flex items-center justify-between mb-4">
                   <div
-                    className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${agent.color} border flex items-center justify-center`}
+                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${agent.color} border flex items-center justify-center`}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-6 h-6" />
                   </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-black/60 border border-brand-green/40 text-brand-green flex items-center gap-1.5">
+                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-black/60 border border-brand-green/40 text-brand-green flex items-center gap-1.5 font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-ping" />
                     {agent.status}
                   </span>
                 </div>
 
-                <div className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">
+                <div className="text-xs font-mono text-brand-gold uppercase tracking-wider font-semibold">
                   {agent.department}
                 </div>
-                <h3 className="font-display font-bold text-lg text-white mt-1 group-hover:text-brand-green transition-colors">
+                <h3 className="font-display font-bold text-lg sm:text-xl text-white mt-1 group-hover:text-brand-green transition-colors">
                   {agent.name}
                 </h3>
 
                 {/* Key KPIs */}
-                <div className="mt-4 space-y-1.5 text-xs font-mono">
+                <div className="mt-4 space-y-2 text-xs sm:text-sm font-mono">
                   {agent.kpis.map((kpi, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-neutral-300">
-                      <span className="w-1 h-1 rounded-full bg-brand-gold" />
+                    <div key={idx} className="flex items-center gap-2 text-neutral-200">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
                       <span>{kpi}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Responsibilities */}
-                <div className="mt-4 pt-4 border-t border-white/[0.06] space-y-1.5 text-xs text-neutral-400">
+                <div className="mt-4 pt-4 border-t border-white/[0.06] space-y-2 text-xs sm:text-sm text-neutral-300">
                   {agent.responsibilities.slice(0, 2).map((res, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-brand-green shrink-0 mt-0.5" />
-                      <span className="line-clamp-1">{res}</span>
+                    <div key={idx} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
+                      <span className="line-clamp-2 leading-relaxed">{res}</span>
                     </div>
                   ))}
                 </div>
@@ -203,13 +203,13 @@ export default function DigitalWorkforceGrid() {
               <Sparkles className="w-6 sm:w-7 h-6 sm:h-7" />
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-brand-gold font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-brand-gold font-bold uppercase tracking-wider">
                 Automataiz AI Studio™
               </div>
-              <h4 className="text-2xl font-display font-bold text-white mt-1">
+              <h4 className="text-2xl sm:text-3xl font-display font-bold text-white mt-1">
                 Build & Train Custom AI Employees for Your Business
               </h4>
-              <p className="text-xs sm:text-sm text-neutral-300 mt-1 max-w-2xl leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-200 mt-1 max-w-2xl leading-relaxed">
                 Upload your company SOPs, train specialized AI agents on your exact business logic, set custom 3-level approval rules, and deploy them across your CRM, WhatsApp, and workflows.
               </p>
             </div>
@@ -217,7 +217,7 @@ export default function DigitalWorkforceGrid() {
 
           <Link
             href="/product"
-            className="px-6 py-3.5 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all shrink-0 flex items-center gap-2 shadow-glow-green/40"
+            className="px-7 py-4 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all shrink-0 flex items-center gap-2 shadow-glow-green/40"
           >
             <span>Explore AI Studio</span>
             <ArrowRight className="w-4 h-4" />
