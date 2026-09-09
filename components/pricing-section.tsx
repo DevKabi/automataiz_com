@@ -268,16 +268,16 @@ export default function PricingSection({
 
                   {/* Price Block */}
                   <div className="pt-4 border-t border-white/[0.06] space-y-2">
-                    <div className="flex items-baseline gap-2">
-                      {/* Strikethrough Original Price */}
-                      {!isUSD ? (
-                        <span className="text-base sm:text-lg font-mono text-neutral-400 line-through">
-                          {isYearly ? "₹1,19,988/year" : "₹9,999/month"}
-                        </span>
-                      ) : null}
+                    {/* Strikethrough Original Price on separate line */}
+                    {!isUSD && (
+                      <div className="text-xs sm:text-sm font-mono text-neutral-400">
+                        <span className="line-through">{isYearly ? "₹1,19,988/yr regular" : "₹9,999/mo regular"}</span>
+                      </div>
+                    )}
 
-                      {/* Offer Price */}
-                      <span className="text-5xl sm:text-6xl font-display font-black text-white tracking-tight">
+                    {/* Main Offer Price & Frequency */}
+                    <div className="flex flex-wrap items-baseline gap-1.5">
+                      <span className="text-4xl sm:text-5xl font-display font-black text-white tracking-tight leading-none">
                         {!isUSD
                           ? isYearly
                             ? "₹49,999"
@@ -287,22 +287,22 @@ export default function PricingSection({
                           : "$65"}
                       </span>
 
-                      <span className="text-sm text-neutral-300 font-mono">
+                      <span className="text-xs sm:text-sm text-neutral-300 font-mono font-medium">
                         {isYearly ? "/year" : "/month"}
                       </span>
                     </div>
 
                     {/* Savings Badge */}
                     {isYearly && !isUSD && (
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-xs font-bold">
-                        <Sparkles className="w-3.5 h-3.5" />
-                        <span>Save ₹9,989/year (2 Months Free)</span>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-xs font-bold mt-1">
+                        <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                        <span>Save ₹9,989/yr (2 Mo Free)</span>
                       </div>
                     )}
                     {isYearly && isUSD && (
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-xs font-bold">
-                        <Sparkles className="w-3.5 h-3.5" />
-                        <span>Save $131/year (17% OFF)</span>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-xs font-bold mt-1">
+                        <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                        <span>Save $131/yr (17% OFF)</span>
                       </div>
                     )}
                   </div>
@@ -383,16 +383,16 @@ export default function PricingSection({
 
                   {/* Price Block */}
                   <div className="pt-4 border-t border-white/[0.08] space-y-2">
-                    <div className="flex items-baseline gap-2">
-                      {/* Strikethrough Original Price */}
-                      {!isUSD ? (
-                        <span className="text-base sm:text-lg font-mono text-neutral-400 line-through">
-                          {isYearly ? "₹1,79,988/year" : "₹14,999/month"}
-                        </span>
-                      ) : null}
+                    {/* Strikethrough Original Price on separate line */}
+                    {!isUSD && (
+                      <div className="text-xs sm:text-sm font-mono text-neutral-400">
+                        <span className="line-through">{isYearly ? "₹1,79,988/yr regular" : "₹14,999/mo regular"}</span>
+                      </div>
+                    )}
 
-                      {/* Offer Price */}
-                      <span className="text-5xl sm:text-6xl font-display font-black text-white tracking-tight">
+                    {/* Main Offer Price & Frequency */}
+                    <div className="flex flex-wrap items-baseline gap-1.5">
+                      <span className="text-4xl sm:text-5xl font-display font-black text-white tracking-tight leading-none">
                         {!isUSD
                           ? isYearly
                             ? "₹79,999"
@@ -402,22 +402,22 @@ export default function PricingSection({
                           : "$99"}
                       </span>
 
-                      <span className="text-sm text-neutral-300 font-mono">
+                      <span className="text-xs sm:text-sm text-neutral-300 font-mono font-medium">
                         {isYearly ? "/year" : "/month"}
                       </span>
                     </div>
 
                     {/* Savings Badge */}
                     {isYearly && !isUSD && (
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-xs font-bold">
-                        <Sparkles className="w-3.5 h-3.5" />
-                        <span>Save ₹15,989/year (2 Months Free)</span>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-xs font-bold mt-1">
+                        <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                        <span>Save ₹15,989/yr (2 Mo Free)</span>
                       </div>
                     )}
                     {isYearly && isUSD && (
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-xs font-bold">
-                        <Sparkles className="w-3.5 h-3.5" />
-                        <span>Save $199/year (17% OFF)</span>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-xs font-bold mt-1">
+                        <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                        <span>Save $199/yr (17% OFF)</span>
                       </div>
                     )}
                   </div>
@@ -489,12 +489,12 @@ export default function PricingSection({
 
                   {/* Price Block */}
                   <div className="pt-4 border-t border-white/[0.06] space-y-2">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-5xl sm:text-6xl font-display font-black text-white tracking-tight">
+                    <div className="flex flex-wrap items-baseline gap-1.5">
+                      <span className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-white tracking-tight leading-none">
                         Custom Pricing
                       </span>
                     </div>
-                    <div className="text-sm font-mono text-brand-lime font-bold">
+                    <div className="text-xs sm:text-sm font-mono text-brand-lime font-bold">
                       Contact Sales for Tailored Deployment
                     </div>
                   </div>
