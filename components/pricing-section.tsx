@@ -30,6 +30,16 @@ import {
   Globe,
   Users2,
   Database,
+  Wrench,
+  Workflow,
+  Plug,
+  Palette,
+  Target,
+  GraduationCap,
+  TrendingUp,
+  Video,
+  Megaphone,
+  SlidersHorizontal,
 } from "lucide-react";
 import Card3D from "@/components/card-3d";
 import ScrollReveal from "@/components/scroll-reveal";
@@ -132,6 +142,245 @@ export default function PricingSection({
         { name: "REST API & Webhooks Access", startup: "—", growth: "✔ Full Developer API", enterprise: "✔ Dedicated API Gateway" },
         { name: "White-Label Reseller Portal", startup: "—", growth: "—", enterprise: "✔ Complete White-Label" },
         { name: "Support & Security SLA", startup: "Standard Email Support", growth: "Priority Chat & Call Support", enterprise: "24/7 Dedicated SLA & Manager" },
+      ],
+    },
+  ];
+
+  const professionalServices = [
+    {
+      id: "setup-implementation",
+      name: "Setup & Implementation",
+      priceINR: "₹15,000",
+      priceUSD: "$199",
+      type: "One-Time",
+      icon: Wrench,
+      glow: "green" as const,
+      color: "text-brand-green border-brand-green/30 bg-brand-green/10",
+      description: "Complete CRM configuration, sales pipelines, forms, communication channels, and team onboarding.",
+      includes: [
+        "CRM Configuration",
+        "Pipelines Setup",
+        "Forms Setup",
+        "Email Setup",
+        "WhatsApp Setup",
+        "User Onboarding",
+      ],
+    },
+    {
+      id: "workflow-automation",
+      name: "Workflow Automation Setup",
+      priceINR: "₹15,000",
+      priceUSD: "$199",
+      type: "One-Time",
+      icon: Workflow,
+      glow: "gold" as const,
+      color: "text-brand-gold border-brand-gold/30 bg-brand-gold/10",
+      description: "End-to-end multi-branch workflow triggers, operational handoffs, and approval mechanisms.",
+      includes: [
+        "Lead Automation",
+        "HR Automation",
+        "Finance Workflow",
+        "Sales Workflow",
+        "Approval Workflow",
+      ],
+    },
+    {
+      id: "ai-agent-deployment",
+      name: "AI Agent Deployment",
+      priceINR: "₹15,000",
+      priceUSD: "$199",
+      type: "One-Time",
+      icon: Bot,
+      glow: "lime" as const,
+      color: "text-brand-lime border-brand-lime/30 bg-brand-lime/10",
+      description: "Custom-trained autonomous AI agents for sales prospecting, support resolution, and internal intelligence.",
+      includes: [
+        "Sales AI Agent",
+        "HR AI Agent",
+        "Support AI Agent",
+        "Finance AI Agent",
+        "Knowledge Assistant Setup",
+      ],
+    },
+    {
+      id: "integration-services",
+      name: "Integration Services",
+      priceINR: "₹10,000",
+      priceUSD: "$129",
+      type: "One-Time",
+      icon: Plug,
+      glow: "green" as const,
+      color: "text-brand-green border-brand-green/30 bg-brand-green/10",
+      description: "Seamless connectivity with external software, payment gateways, ERPs, and cloud ecosystems.",
+      includes: [
+        "Google Workspace",
+        "WhatsApp Integration",
+        "Razorpay Integration",
+        "Shopify Integration",
+        "WooCommerce Integration",
+        "Tally Integration",
+        "API Integration",
+        "Webhook Integration",
+      ],
+    },
+    {
+      id: "data-migration",
+      name: "Data Migration",
+      priceINR: "₹5,000",
+      priceUSD: "$69",
+      type: "One-Time",
+      icon: Database,
+      glow: "default" as const,
+      color: "text-neutral-200 border-white/20 bg-white/5",
+      description: "Secure historical database cleaning, field mapping, and zero data loss transfer into Automataiz.",
+      includes: [
+        "Excel Import",
+        "CRM Migration",
+        "Historical Data Migration",
+        "Customer Data Transfer",
+      ],
+    },
+    {
+      id: "website-funnel-development",
+      name: "Website & Funnel Development",
+      priceINR: "₹10,000",
+      priceUSD: "$129",
+      type: "One-Time",
+      icon: Globe,
+      glow: "gold" as const,
+      color: "text-brand-gold border-brand-gold/30 bg-brand-gold/10",
+      description: "High-converting sales funnels, lightning-fast landing pages, and lead capture architectures.",
+      includes: [
+        "Landing Pages",
+        "Sales Funnels",
+        "Business Websites",
+        "Lead Capture Systems",
+      ],
+    },
+    {
+      id: "branding-creative-services",
+      name: "Branding & Creative Services",
+      priceINR: "₹30,000",
+      priceUSD: "$389",
+      type: "One-Time",
+      icon: Palette,
+      glow: "lime" as const,
+      color: "text-brand-lime border-brand-lime/30 bg-brand-lime/10",
+      description: "Comprehensive corporate brand identity, social design templates, and high-impact visual kits.",
+      includes: [
+        "Logo Design",
+        "Brand Kit",
+        "Social Media Kit",
+        "Content Branding",
+        "Creative Assets",
+      ],
+    },
+    {
+      id: "marketing-automation-setup",
+      name: "Marketing Automation Setup",
+      priceINR: "₹50,000",
+      priceUSD: "$649",
+      type: "One-Time",
+      icon: Zap,
+      glow: "green" as const,
+      color: "text-brand-green border-brand-green/30 bg-brand-green/10",
+      description: "Multi-channel automated marketing campaigns, WhatsApp broadcasts, and behavioral lead nurturing.",
+      includes: [
+        "Email Automation",
+        "WhatsApp Automation",
+        "Lead Nurturing Systems",
+        "Follow-Up Automation",
+        "Marketing Workflows",
+      ],
+    },
+    {
+      id: "training-onboarding",
+      name: "Training & Onboarding",
+      priceINR: "₹15,000",
+      priceUSD: "$199",
+      type: "One-Time",
+      icon: GraduationCap,
+      glow: "gold" as const,
+      color: "text-brand-gold border-brand-gold/30 bg-brand-gold/10",
+      description: "Live interactive staff workshops, leadership tutorials, and department operational coaching.",
+      includes: [
+        "User Training",
+        "Team Training",
+        "Department Training",
+        "Corporate Workshops",
+      ],
+    },
+    {
+      id: "business-consulting",
+      name: "Business Consulting & Transformation",
+      priceINR: "₹1,00,000 – ₹10,00,000+",
+      priceUSD: "$1,299 – $12,999+",
+      type: "One-Time / Custom",
+      icon: TrendingUp,
+      glow: "lime" as const,
+      color: "text-brand-lime border-brand-lime/30 bg-brand-lime/10",
+      description: "Executive advisory, AI adoption roadmap, process re-engineering, and strategic digital transformation.",
+      includes: [
+        "Business Strategy",
+        "AI Adoption Consulting",
+        "Digital Transformation",
+        "Process Optimization",
+        "Business Growth Roadmap",
+      ],
+    },
+  ];
+
+  const managedServiceBenefits = [
+    {
+      title: "AI & Automation Support",
+      icon: Bot,
+      color: "text-brand-green border-brand-green/30 bg-brand-green/10",
+      items: [
+        "CRM Management & Optimization",
+        "Workflow Updates & Improvements",
+        "Automation Maintenance",
+        "AI Agent Optimization",
+        "Integration Support",
+        "Technical Assistance",
+        "User Support & Guidance",
+        "Monthly Strategy Consultation",
+      ],
+    },
+    {
+      title: "Creative & Content Support",
+      icon: Video,
+      color: "text-brand-gold border-brand-gold/30 bg-brand-gold/10",
+      items: [
+        "15 AI-Generated Social Media Posts Per Month",
+        "15 Custom Creative Designs Per Month",
+        "15 Video Editing Tasks Per Month",
+        "Image Editing & Enhancement",
+        "Content Assistance & Optimization",
+      ],
+    },
+    {
+      title: "Marketing Support",
+      icon: Megaphone,
+      color: "text-brand-lime border-brand-lime/30 bg-brand-lime/10",
+      items: [
+        "Meta Ads Management",
+        "Facebook Ads Management",
+        "Instagram Ads Management",
+        "Google Ads Management",
+        "Campaign Monitoring",
+        "Campaign Optimization",
+        "Lead Generation Support",
+        "Performance Marketing Assistance",
+      ],
+    },
+    {
+      title: "Advertising Management",
+      icon: SlidersHorizontal,
+      color: "text-brand-green border-brand-green/30 bg-brand-green/10",
+      items: [
+        "Ad Campaign Setup",
+        "Ad Campaign Monitoring",
+        "Ad Campaign Optimization",
       ],
     },
   ];
@@ -604,6 +853,226 @@ export default function PricingSection({
         </div>
       </div>
 
+      {/* 5B. PROFESSIONAL SERVICES & IMPLEMENTATION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-sm font-mono font-bold uppercase tracking-widest">
+              <Wrench className="w-4 h-4 text-brand-gold" />
+              <span>Professional Services &amp; Implementation</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
+              Need Help Beyond Software?
+            </h2>
+            <p className="text-base sm:text-lg text-neutral-200 leading-relaxed">
+              Get expert implementation, automation, AI deployment, integrations, training, and business transformation services from the Automataiz team.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* 10 Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {professionalServices.map((service, idx) => {
+            const Icon = service.icon;
+            return (
+              <ScrollReveal key={service.id} delay={(idx % 3) * 0.1}>
+                <Card3D glowColor={service.glow} className="h-full">
+                  <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/[0.1] bg-[#070707]/90 space-y-6 flex flex-col justify-between h-full hover:border-brand-green/40 transition-all">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center ${service.color}`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-neutral-300 uppercase">
+                          {service.type}
+                        </span>
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl sm:text-2xl font-display font-bold text-white">
+                          {service.name}
+                        </h3>
+                        <p className="text-sm text-neutral-300 mt-1 leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+
+                      {/* Price Block */}
+                      <div className="pt-3 border-t border-white/[0.06] flex items-baseline gap-1.5">
+                        <span className="text-2xl sm:text-3xl font-display font-black text-white tracking-tight">
+                          {!isUSD ? service.priceINR : service.priceUSD}
+                        </span>
+                        <span className="text-xs font-mono text-neutral-400">
+                          ({service.type})
+                        </span>
+                      </div>
+
+                      {/* Capabilities Checklist */}
+                      <div className="space-y-2.5 pt-3 border-t border-white/[0.06]">
+                        <div className="text-xs font-mono uppercase tracking-widest text-neutral-300 font-bold">
+                          Includes:
+                        </div>
+                        <ul className="space-y-2 text-xs sm:text-sm text-neutral-100">
+                          {service.includes.map((inc, i) => (
+                            <li key={i} className="flex items-center gap-2.5">
+                              <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" />
+                              <span>{inc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <div className="pt-4 border-t border-white/[0.06]">
+                      <Link
+                        href={`/contact?service=${service.id}`}
+                        className="w-full py-3.5 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-glow-green/20 transition-all"
+                      >
+                        <span>Get Started</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </Card3D>
+              </ScrollReveal>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 5C. MANAGED SERVICES PLAN */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold/15 border border-brand-gold/40 text-brand-gold text-sm font-mono font-bold uppercase tracking-widest shadow-glow-gold/20">
+              <Sparkles className="w-4 h-4 text-brand-gold animate-pulse" />
+              <span>Dedicated Retainer Partner</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
+              Automataiz Managed Services
+            </h2>
+            <p className="text-base sm:text-lg text-neutral-200 leading-relaxed">
+              Your Dedicated AI, Automation &amp; Growth Partner
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Premium Highlighted Card */}
+        <ScrollReveal>
+          <Card3D glowColor="gold" className="w-full">
+            <div className="p-8 sm:p-10 lg:p-12 rounded-3xl glass-panel border-2 border-brand-gold/60 ring-2 ring-brand-green/30 bg-gradient-to-b from-[#141b0b]/90 via-[#070707]/95 to-[#1a1708]/90 space-y-8 relative overflow-hidden shadow-[0_30px_70px_rgba(244,200,0,0.18)]">
+              {/* Top Accent Beam */}
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold animate-pulse" />
+
+              {/* Card Header & Price */}
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/[0.1]">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-gold/20 border border-brand-gold/50 text-brand-gold text-xs font-mono font-black uppercase tracking-widest shadow-glow-gold/30">
+                      <Star className="w-4 h-4 fill-brand-gold text-brand-gold" />
+                      <span>Most Popular</span>
+                    </span>
+                    <span className="text-xs font-mono text-brand-green px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/30 font-bold uppercase">
+                      Dedicated Growth Retainer
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-white flex items-center gap-3">
+                    <span>Managed Services Plan</span>
+                    <Sparkles className="w-7 h-7 text-brand-gold" />
+                  </h3>
+
+                  <p className="text-sm sm:text-base text-neutral-200 max-w-2xl leading-relaxed">
+                    Get continuous support, implementation assistance, automation management, AI optimization, marketing support, and business guidance from the Automataiz team.
+                  </p>
+                </div>
+
+                {/* Price Box & CTA */}
+                <div className="p-6 rounded-2xl bg-black/60 border border-white/[0.12] space-y-4 shrink-0 lg:min-w-[320px] text-center lg:text-right">
+                  <div className="space-y-1">
+                    <div className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
+                      Monthly Retainer
+                    </div>
+                    <div className="text-4xl sm:text-5xl font-display font-black text-white tracking-tight">
+                      {!isUSD ? "₹24,999" : "$329"}
+                      <span className="text-sm text-neutral-300 font-mono font-normal ml-1.5">
+                        / Month
+                      </span>
+                    </div>
+                  </div>
+
+                  <Link
+                    href="/contact?service=managed-services"
+                    className="w-full py-4 rounded-xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-gold via-[#ffd200] to-brand-green hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(244,200,0,0.4)] transition-all"
+                  >
+                    <span>Get Started</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* 4 Benefit Groups Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {managedServiceBenefits.map((group, gIdx) => {
+                  const Icon = group.icon;
+                  return (
+                    <div
+                      key={gIdx}
+                      className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-4"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-xl border flex items-center justify-center ${group.color}`}>
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <h4 className="font-display font-bold text-base sm:text-lg text-white">
+                          {group.title}
+                        </h4>
+                      </div>
+
+                      <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-200">
+                        {group.items.map((item, iIdx) => (
+                          <li key={iIdx} className="flex items-start gap-2.5">
+                            <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
+                            <span className="leading-snug">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Ad Spend Policy Banner */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-[#0a1808]/80 border border-brand-green/30 space-y-2">
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-mono font-bold text-brand-green uppercase tracking-wider">
+                  <ShieldCheck className="w-4 h-4 text-brand-green shrink-0" />
+                  <span>Ad Spend Policy</span>
+                </div>
+                <div className="text-xs sm:text-sm text-neutral-200 space-y-1.5 leading-relaxed">
+                  <p>
+                    • Advertising budget up to <strong className="text-white">₹1,00,000 per month</strong> is managed with <strong className="text-brand-green">no additional management fee</strong>.
+                  </p>
+                  <p>
+                    • For ad budgets above <strong className="text-white">₹1,00,000 per month</strong>, management charges are <strong className="text-brand-gold">10% of the monthly advertising budget</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card3D>
+        </ScrollReveal>
+      </section>
+
+      {/* 5D. PRICING NOTE */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] text-center text-xs sm:text-sm text-neutral-300 font-mono flex items-center justify-center gap-2.5 shadow-sm">
+          <Info className="w-4 h-4 text-brand-gold shrink-0" />
+          <span>
+            <strong className="text-white font-semibold">Pricing Note:</strong> Software subscription charges are separate and not included in Professional Services or Managed Services plans.
+          </span>
+        </div>
+      </div>
+
       {/* 6. DETAILED FEATURE COMPARISON TABLE */}
       {showComparison && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
@@ -760,28 +1229,37 @@ export default function PricingSection({
         </section>
       )}
 
-      {/* 8. BOTTOM ENTERPRISE CTA BANNER */}
+      {/* 8. FINAL CUSTOM SOLUTION CTA */}
       <ScrollReveal>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-r from-black via-[#0a1808] to-black space-y-5 shadow-[0_20px_50px_rgba(24,179,0,0.15)]">
+          <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-brand-green/30 bg-gradient-to-r from-black via-[#0a1808] to-black space-y-6 shadow-[0_20px_50px_rgba(24,179,0,0.15)]">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-green/15 border border-brand-green/30 text-brand-green text-xs sm:text-sm font-mono font-bold uppercase tracking-widest">
+              <Sparkles className="w-4 h-4 text-brand-gold" />
+              <span>Custom Enterprise Transformations</span>
+            </div>
+
             <h3 className="text-3xl sm:text-5xl font-display font-extrabold text-white">
-              Still Have Questions? Talk to Our Solutions Team
+              Need a Custom Solution?
             </h3>
-            <p className="text-sm sm:text-base text-neutral-200 max-w-xl mx-auto leading-relaxed">
-              Schedule a 1-on-1 strategy session to calculate your exact software savings and get a customized demo for your industry.
+
+            <p className="text-sm sm:text-base text-neutral-200 max-w-2xl mx-auto leading-relaxed">
+              Talk with our experts to create a custom AI, automation, implementation, consulting, or enterprise transformation package tailored to your business.
             </p>
-            <div className="pt-3 flex flex-col sm:flex-row justify-center gap-4">
+
+            <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href="/simulator"
-                className="px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 shadow-glow-green/30"
+                href="/contact?type=demo"
+                className="px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 shadow-glow-green/30 flex items-center justify-center gap-2"
               >
-                Calculate ROI in Simulator
+                <span>Book a Demo</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/contact"
-                className="px-8 py-4 rounded-xl text-sm sm:text-base font-semibold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.12]"
+                href="/contact?type=expert"
+                className="px-8 py-4 rounded-xl text-sm sm:text-base font-semibold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.12] flex items-center justify-center gap-2"
               >
-                Schedule Founder Strategy Call
+                <span>Talk to an Expert</span>
+                <ArrowUpRight className="w-4 h-4 text-brand-gold" />
               </Link>
             </div>
           </div>
