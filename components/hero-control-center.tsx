@@ -31,13 +31,13 @@ export default function HeroControlCenter() {
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
 
-  const rotateX = useSpring(useTransform(mouseY, [0, 1], [10, -10]), {
-    stiffness: 200,
-    damping: 25,
+  const rotateX = useSpring(useTransform(mouseY, [0, 1], [2, -2]), {
+    stiffness: 120,
+    damping: 30,
   });
-  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-10, 10]), {
-    stiffness: 200,
-    damping: 25,
+  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-2, 2]), {
+    stiffness: 120,
+    damping: 30,
   });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -72,40 +72,37 @@ export default function HeroControlCenter() {
       className="perspective-1200 relative w-full max-w-2xl mx-auto lg:max-w-none"
     >
       {/* Outer ambient glow */}
-      <div className="absolute -inset-2 bg-gradient-to-r from-brand-green/30 via-brand-lime/20 to-brand-gold/30 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition duration-1000 animate-pulse-glow" />
+      <div className="absolute -inset-2 bg-gradient-to-r from-brand-green/15 via-brand-lime/10 to-brand-gold/15 rounded-3xl blur-2xl opacity-50" />
 
-      {/* Floating 3D Satellite Badge 1 (Top Left) */}
+      {/* Floating Satellite Badge 1 (Top Left) */}
       <motion.div
-        animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ y: [0, -4, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="hidden sm:flex absolute -top-5 -left-6 z-30 items-center gap-2 px-4 py-2 rounded-2xl bg-[#0a1808]/90 border border-brand-green/40 shadow-xl backdrop-blur-md text-xs sm:text-sm font-mono text-brand-green font-medium"
       >
-        <span className="w-2.5 h-2.5 rounded-full bg-brand-green animate-ping" />
+        <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
         <span>Sub-90s AI Lead Engagement</span>
       </motion.div>
 
-      {/* Floating 3D Satellite Badge 2 (Bottom Right) */}
+      {/* Floating Satellite Badge 2 (Bottom Right) */}
       <motion.div
-        animate={{ y: [0, 8, 0], rotate: [0, -2, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        animate={{ y: [0, 4, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="hidden sm:flex absolute -bottom-5 -right-6 z-30 items-center gap-2 px-4 py-2 rounded-2xl bg-[#141208]/90 border border-brand-gold/40 shadow-xl backdrop-blur-md text-xs sm:text-sm font-mono text-brand-gold font-medium"
       >
         <Sparkles className="w-4 h-4 text-brand-gold" />
         <span>₹80,000+ Disconnected SaaS Saved</span>
       </motion.div>
 
-      {/* Main 3D Glass Cockpit Frame */}
+      {/* Main Glass Cockpit Frame */}
       <motion.div
         style={{
           rotateX,
           rotateY,
           transformStyle: "preserve-3d",
         }}
-        className="relative rounded-3xl bg-[#080808]/90 border border-white/[0.14] p-5 sm:p-7 shadow-[0_30px_70px_rgba(0,0,0,0.8)] backdrop-blur-2xl overflow-hidden transition-shadow duration-500 hover:border-brand-green/40"
+        className="relative rounded-3xl bg-[#080808]/90 border border-white/[0.14] p-5 sm:p-7 shadow-[0_30px_70px_rgba(0,0,0,0.8)] backdrop-blur-2xl overflow-hidden transition-shadow duration-300 hover:border-brand-green/40"
       >
-        {/* Radar Scanner Line */}
-        <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-green to-transparent opacity-40 animate-radar-scan pointer-events-none z-10" />
-
         {/* Top Control Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/[0.08] pb-4 mb-5 relative z-20">
           <div className="flex items-center gap-3">

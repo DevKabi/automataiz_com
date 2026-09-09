@@ -109,20 +109,20 @@ body {
 }
 
 .glass-panel-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel-hover:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(24, 179, 0, 0.35);
-  box-shadow: 0 25px 50px -12px rgba(24, 179, 0, 0.2), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(24, 179, 0, 0.25);
+  box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 }
 
 .glass-panel-gold:hover {
-  border-color: rgba(244, 200, 0, 0.4);
-  box-shadow: 0 25px 50px -12px rgba(244, 200, 0, 0.2), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
-  transform: translateY(-4px);
+  border-color: rgba(244, 200, 0, 0.3);
+  box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Text Gradients */
@@ -172,10 +172,10 @@ body {
 /* 3D Floating Animations */
 @keyframes float3D {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg) translateZ(0px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px) rotate(1.5deg) translateZ(20px);
+    transform: translateY(-4px);
   }
 }
 
@@ -185,29 +185,29 @@ body {
 
 @keyframes float3DSlow {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg) translateZ(0px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-18px) rotate(-1.5deg) translateZ(30px);
+    transform: translateY(-5px);
   }
 }
 
 .animate-float-3d-slow {
-  animation: float3DSlow 9s ease-in-out infinite;
+  animation: float3DSlow 8s ease-in-out infinite;
 }
 
 /* Neon Glow Pulses */
 @keyframes neonPulseGreen {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(24, 179, 0, 0.2), inset 0 0 15px rgba(24, 179, 0, 0.1);
+    box-shadow: 0 0 10px rgba(24, 179, 0, 0.15), inset 0 0 10px rgba(24, 179, 0, 0.05);
   }
   50% {
-    box-shadow: 0 0 35px rgba(24, 179, 0, 0.5), inset 0 0 25px rgba(24, 179, 0, 0.25);
+    box-shadow: 0 0 20px rgba(24, 179, 0, 0.25), inset 0 0 15px rgba(24, 179, 0, 0.1);
   }
 }
 
 .animate-neon-green {
-  animation: neonPulseGreen 3s ease-in-out infinite;
+  animation: neonPulseGreen 4s ease-in-out infinite;
 }
 
 /* Radar Scan Line */

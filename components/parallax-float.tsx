@@ -11,16 +11,15 @@ interface ParallaxFloatProps {
 
 export default function ParallaxFloat({
   children,
-  speed = 40,
+  speed = 15,
   className = "",
 }: ParallaxFloatProps) {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, -speed]);
-  const rotate = useTransform(scrollY, [0, 1000], [0, speed > 0 ? 8 : -8]);
 
   return (
     <motion.div
-      style={{ y, rotate }}
+      style={{ y }}
       className={`pointer-events-none ${className}`}
     >
       {children}
