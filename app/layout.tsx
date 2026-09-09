@@ -65,6 +65,14 @@ export const metadata: Metadata = {
     description: "The AI-Powered Business Operating System for modern enterprises.",
     images: ["/images/logo.png"],
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
