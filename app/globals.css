@@ -146,13 +146,13 @@ body {
 
 /* Ambient glow blobs */
 .glow-orb-green {
-  background: radial-gradient(circle, rgba(24, 179, 0, 0.28) 0%, rgba(24, 179, 0, 0) 70%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(24, 179, 0, 0.12) 0%, rgba(24, 179, 0, 0) 70%);
+  filter: blur(80px);
 }
 
 .glow-orb-gold {
-  background: radial-gradient(circle, rgba(244, 200, 0, 0.22) 0%, rgba(244, 200, 0, 0) 70%);
-  filter: blur(45px);
+  background: radial-gradient(circle, rgba(244, 200, 0, 0.09) 0%, rgba(244, 200, 0, 0) 70%);
+  filter: blur(80px);
 }
 
 /* Border Beam Animation */
