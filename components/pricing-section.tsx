@@ -80,7 +80,7 @@ export default function PricingSection({
     },
     {
       q: "Can I pay yearly?",
-      a: "Yes! Choosing annual billing unlocks massive cost savings of over ₹55,000/year (save up to 58%) compared to month-to-month billing.",
+      a: "Yes! Choosing annual billing unlocks massive cost savings of up to ₹16,000/year (save 2 months free) compared to month-to-month billing.",
     },
     {
       q: "Can I switch currency?",
@@ -88,7 +88,7 @@ export default function PricingSection({
     },
     {
       q: "How is USD calculated?",
-      a: "USD rates displayed are standard fixed conversion benchmarks ($49/mo, $489/yr for Startup and $85/mo, $849/yr for Growth). Final billing amounts charged by international payment processors (Stripe/PayPal) may experience minor fluctuations based on real-time forex exchange rates.",
+      a: "USD rates displayed are standard fixed conversion benchmarks ($65/mo, $649/yr for Starter and $99/mo, $989/yr for Growth). Final billing amounts charged by international payment processors (Stripe/PayPal) may experience minor fluctuations based on real-time forex exchange rates.",
     },
   ];
 
@@ -202,7 +202,7 @@ export default function PricingSection({
                   : "bg-brand-green/20 text-brand-green border border-brand-green/40"
               }`}
             >
-              Save Up to 58%
+              Save 20%
             </span>
           </button>
         </div>
@@ -245,7 +245,7 @@ export default function PricingSection({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {/* ======================================================================
-              PLAN 01: STARTUP
+              PLAN 01: STARTER
              ====================================================================== */}
           <ScrollReveal delay={0.1}>
             <Card3D glowColor="green" className="h-full">
@@ -259,7 +259,7 @@ export default function PricingSection({
 
                   <div>
                     <h3 className="text-3xl sm:text-4xl font-display font-black text-white">
-                      Startup
+                      Starter
                     </h3>
                     <p className="text-sm sm:text-base text-neutral-300 mt-1 leading-relaxed">
                       For early-stage companies, solo founders, and growing MSMEs automating lead acquisition.
@@ -272,7 +272,7 @@ export default function PricingSection({
                       {/* Strikethrough Original Price */}
                       {!isUSD ? (
                         <span className="text-base sm:text-lg font-mono text-neutral-400 line-through">
-                          {isYearly ? "₹95,988/year" : "₹7,999/month"}
+                          {isYearly ? "₹1,19,988/year" : "₹9,999/month"}
                         </span>
                       ) : null}
 
@@ -280,11 +280,11 @@ export default function PricingSection({
                       <span className="text-5xl sm:text-6xl font-display font-black text-white tracking-tight">
                         {!isUSD
                           ? isYearly
-                            ? "₹39,999"
-                            : "₹3,999"
+                            ? "₹49,999"
+                            : "₹4,999"
                           : isYearly
-                          ? "$489"
-                          : "$49"}
+                          ? "$649"
+                          : "$65"}
                       </span>
 
                       <span className="text-sm text-neutral-300 font-mono">
@@ -296,13 +296,13 @@ export default function PricingSection({
                     {isYearly && !isUSD && (
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-xs font-bold">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Save ₹55,989/year</span>
+                        <span>Save ₹9,989/year (2 Months Free)</span>
                       </div>
                     )}
                     {isYearly && isUSD && (
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-green/20 border border-brand-green/40 text-brand-green font-mono text-xs font-bold">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Save 17% vs Monthly</span>
+                        <span>Save $131/year (17% OFF)</span>
                       </div>
                     )}
                   </div>
@@ -338,7 +338,7 @@ export default function PricingSection({
                 {/* CTA Button */}
                 <div className="pt-6">
                   <Link
-                    href="/contact?plan=startup"
+                    href="/contact?plan=starter"
                     className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-glow-green/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <span>Start Your Free Trial</span>
@@ -387,7 +387,7 @@ export default function PricingSection({
                       {/* Strikethrough Original Price */}
                       {!isUSD ? (
                         <span className="text-base sm:text-lg font-mono text-neutral-400 line-through">
-                          {isYearly ? "₹1,19,988/year" : "₹9,999/month"}
+                          {isYearly ? "₹1,79,988/year" : "₹14,999/month"}
                         </span>
                       ) : null}
 
@@ -395,11 +395,11 @@ export default function PricingSection({
                       <span className="text-5xl sm:text-6xl font-display font-black text-white tracking-tight">
                         {!isUSD
                           ? isYearly
-                            ? "₹69,999"
-                            : "₹6,999"
+                            ? "₹79,999"
+                            : "₹7,999"
                           : isYearly
-                          ? "$849"
-                          : "$85"}
+                          ? "$989"
+                          : "$99"}
                       </span>
 
                       <span className="text-sm text-neutral-300 font-mono">
@@ -411,13 +411,13 @@ export default function PricingSection({
                     {isYearly && !isUSD && (
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-xs font-bold">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Save ₹49,989/year</span>
+                        <span>Save ₹15,989/year (2 Months Free)</span>
                       </div>
                     )}
                     {isYearly && isUSD && (
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-gold/20 border border-brand-gold/40 text-brand-gold font-mono text-xs font-bold">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Save 17% vs Monthly</span>
+                        <span>Save $199/year (17% OFF)</span>
                       </div>
                     )}
                   </div>
@@ -425,7 +425,7 @@ export default function PricingSection({
                   {/* Feature Checklist */}
                   <div className="space-y-3 pt-4 border-t border-white/[0.08]">
                     <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-brand-gold font-bold flex items-center gap-1">
-                      <span>Everything in Startup, plus:</span>
+                      <span>Everything in Starter, plus:</span>
                     </div>
                     <ul className="space-y-3 text-sm sm:text-base text-neutral-100">
                       {[
@@ -637,12 +637,12 @@ export default function PricingSection({
                       Platform Modules &amp; Specs
                     </th>
                     <th className="p-5 text-base sm:text-lg font-display font-bold text-white w-1/5 text-center">
-                      <div className="text-brand-green font-mono text-xs sm:text-sm uppercase">Startup</div>
-                      <div>{!isUSD ? (isYearly ? "₹39,999/yr" : "₹3,999/mo") : (isYearly ? "$489/yr" : "$49/mo")}</div>
+                      <div className="text-brand-green font-mono text-xs sm:text-sm uppercase">Starter</div>
+                      <div>{!isUSD ? (isYearly ? "₹49,999/yr" : "₹4,999/mo") : (isYearly ? "$649/yr" : "$65/mo")}</div>
                     </th>
                     <th className="p-5 text-base sm:text-lg font-display font-bold text-brand-gold w-1/5 text-center bg-brand-gold/[0.04] border-x border-brand-gold/30">
                       <div className="text-brand-gold font-mono text-xs sm:text-sm uppercase">Growth ⭐</div>
-                      <div>{!isUSD ? (isYearly ? "₹69,999/yr" : "₹6,999/mo") : (isYearly ? "$849/yr" : "$85/mo")}</div>
+                      <div>{!isUSD ? (isYearly ? "₹79,999/yr" : "₹7,999/mo") : (isYearly ? "$989/yr" : "$99/mo")}</div>
                     </th>
                     <th className="p-5 text-base sm:text-lg font-display font-bold text-white w-1/5 text-center">
                       <div className="text-brand-lime font-mono text-xs sm:text-sm uppercase">Enterprise</div>
