@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import HeroControlCenter from "@/components/hero-control-center";
 import TestimonialsSection from "@/components/testimonials-section";
+import TypewriterHeadline from "@/components/typewriter-headline";
 import ScrollReveal from "@/components/scroll-reveal";
 import Card3D from "@/components/card-3d";
 
@@ -36,41 +37,49 @@ export default function HomePage() {
   return (
     <div className="space-y-0">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[92vh] flex items-center pt-28 pb-16 lg:py-32 overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 sm:pt-28 sm:pb-16 lg:py-32 overflow-hidden">
         {/* Ambient Top Lighting */}
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[500px] glow-orb-green opacity-25 pointer-events-none" />
         <div className="absolute top-20 right-10 w-[500px] h-[500px] glow-orb-gold opacity-15 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             {/* Left Hero Content (7 Cols) */}
             <div className="lg:col-span-7 text-center lg:text-left space-y-6">
               {/* Top Tag Pill */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono text-neutral-300 backdrop-blur-md shadow-inner">
+              <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono text-neutral-300 backdrop-blur-md shadow-inner">
                 <span className="w-2 h-2 rounded-full bg-brand-green animate-ping" />
                 <span className="text-brand-green font-bold">AUTOMATAIZ OS</span>
                 <span className="text-neutral-500">|</span>
                 <span>The AI Business Operating System</span>
               </div>
 
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-6xl xl:text-7xl font-display font-black text-white tracking-tight leading-[1.08]">
+              {/* Main Headline with Typewriter Keyboard Print Animation */}
+              <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-display font-black text-white tracking-tight leading-[1.12] sm:leading-[1.08]">
                 The Future of Business.{" "}
-                <span className="text-gradient-green-gold block mt-1">
-                  Automated.
+                <span className="block mt-1 sm:mt-2 min-h-[1.15em]">
+                  <TypewriterHeadline
+                    words={[
+                      "Automated.",
+                      "Unified.",
+                      "Autonomous.",
+                      "Predictable.",
+                      "Intelligent.",
+                    ]}
+                  />
                 </span>
               </h1>
 
               {/* Subheadline */}
-              <p className="text-base sm:text-xl text-neutral-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              <p className="text-sm sm:text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
                 Automataiz combines <strong className="text-white">Marketing, Sales, Operations, Finance, and AI</strong> into one intelligent Business Operating System. Replace 15+ disconnected tools with a unified digital brain.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-2">
                 <Link
                   href="/simulator"
-                  className="w-full sm:w-auto px-8 py-4 rounded-2xl text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all flex items-center justify-center gap-2.5 shadow-glow-green/50 hover:shadow-glow-gold/60"
+                  className="w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-xs sm:text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 transition-all flex items-center justify-center gap-2.5 shadow-glow-green/50 hover:shadow-glow-gold/60"
                 >
                   <Sparkles className="w-4 h-4 text-black" />
                   <span>Launch Growth Simulator™</span>
@@ -79,7 +88,7 @@ export default function HomePage() {
 
                 <Link
                   href="/contact"
-                  className="w-full sm:w-auto px-7 py-4 rounded-2xl text-sm font-semibold text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.12] transition-all flex items-center justify-center gap-2 backdrop-blur-md"
+                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl text-xs sm:text-sm font-semibold text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.12] transition-all flex items-center justify-center gap-2 backdrop-blur-md"
                 >
                   <Play className="w-4 h-4 text-brand-green fill-brand-green" />
                   <span>Book Strategy Demo</span>
