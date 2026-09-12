@@ -25,12 +25,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://automataiz.com"),
+  metadataBase: new URL("https://awazme.com"),
   title: "Automataiz – The Future of Business. Automated. | AI Business Operating System",
   description:
     "Automataiz combines Marketing, Sales, Operations, Finance and AI into one intelligent Business Operating System. Replace 15+ fragmented tools with one AI-first platform.",
   keywords: [
     "Automataiz",
+    "awazme",
     "AI Business Operating System",
     "AI CRM",
     "Marketing Automation",
@@ -40,13 +41,13 @@ export const metadata: Metadata = {
     "Nova AI",
     "AI SDR",
   ],
-  authors: [{ name: "Debasish Kabi", url: "https://automataiz.com" }],
+  authors: [{ name: "Debasish Kabi", url: "https://awazme.com" }],
   creator: "Automataiz",
   openGraph: {
     title: "Automataiz – The Future of Business. Automated.",
     description:
       "Automataiz brings Marketing, Sales, Operations, Finance, and AI into one connected ecosystem.",
-    url: "https://automataiz.com",
+    url: "https://awazme.com",
     siteName: "Automataiz",
     images: [
       {
