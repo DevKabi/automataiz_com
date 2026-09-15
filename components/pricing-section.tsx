@@ -43,6 +43,7 @@ import {
 } from "lucide-react";
 import Card3D from "@/components/card-3d";
 import ScrollReveal from "@/components/scroll-reveal";
+import LeadCaptureModal from "@/components/lead-capture-modal";
 
 interface PricingSectionProps {
   showTitle?: boolean;
@@ -63,6 +64,21 @@ export default function PricingSection({
   const [currency, setCurrency] = useState<"INR" | "USD">("INR");
   // FAQ accordion state
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // Pop-up booking modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalPlanName, setModalPlanName] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+
+  const openBookingModal = (planOrService: string, customTitle?: string) => {
+    setModalPlanName(planOrService);
+    if (customTitle) {
+      setModalTitle(customTitle);
+    } else {
+      setModalTitle(`Get Started with ${planOrService}`);
+    }
+    setIsModalOpen(true);
+  };
 
   const isYearly = billingPeriod === "yearly";
   const isUSD = currency === "USD";
@@ -586,13 +602,14 @@ export default function PricingSection({
 
                 {/* CTA Button */}
                 <div className="pt-6">
-                  <Link
-                    href="/contact?plan=starter"
-                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-glow-green/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                  <button
+                    type="button"
+                    onClick={() => openBookingModal("Starter Plan", "Start Your Starter Plan Trial")}
+                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-glow-green/30 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                   >
                     <span>Start Your Free Trial</span>
                     <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </Card3D>
@@ -702,13 +719,14 @@ export default function PricingSection({
 
                 {/* CTA Button */}
                 <div className="pt-6">
-                  <Link
-                    href="/contact?plan=growth"
-                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-gold via-[#ffd200] to-brand-green hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(244,200,0,0.4)] transition-all hover:scale-[1.03] active:scale-[0.98]"
+                  <button
+                    type="button"
+                    onClick={() => openBookingModal("Growth OS Plan", "Book a Growth Plan Demo")}
+                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-gold via-[#ffd200] to-brand-green hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(244,200,0,0.4)] transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
                   >
                     <span>Book a Demo</span>
                     <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </Card3D>
@@ -779,13 +797,14 @@ export default function PricingSection({
 
                 {/* CTA Button */}
                 <div className="pt-6">
-                  <Link
-                    href="/contact?plan=enterprise"
-                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-bold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] hover:border-brand-lime/50 text-center flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                  <button
+                    type="button"
+                    onClick={() => openBookingModal("Enterprise Custom OS", "Request Custom Enterprise Deployment")}
+                    className="w-full py-4.5 rounded-2xl text-sm sm:text-base font-bold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] hover:border-brand-lime/50 text-center flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                   >
                     <span>Talk to Sales</span>
                     <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </Card3D>
@@ -925,13 +944,14 @@ export default function PricingSection({
 
                     {/* CTA Button */}
                     <div className="pt-4 border-t border-white/[0.06]">
-                      <Link
-                        href={`/contact?service=${service.id}`}
-                        className="w-full py-3.5 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-glow-green/20 transition-all"
+                      <button
+                        type="button"
+                        onClick={() => openBookingModal(service.name, `Get Started with ${service.name}`)}
+                        className="w-full py-3.5 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-glow-green/20 transition-all cursor-pointer"
                       >
                         <span>Get Started</span>
                         <ArrowRight className="w-4 h-4" />
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </Card3D>
@@ -1002,13 +1022,14 @@ export default function PricingSection({
                     </div>
                   </div>
 
-                  <Link
-                    href="/contact?service=managed-services"
-                    className="w-full py-4 rounded-xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-gold via-[#ffd200] to-brand-green hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(244,200,0,0.4)] transition-all"
+                  <button
+                    type="button"
+                    onClick={() => openBookingModal("Managed Services Plan (₹24,999/mo)", "Get Started with Automataiz Managed Services")}
+                    className="w-full py-4 rounded-xl text-sm sm:text-base font-extrabold text-black bg-gradient-to-r from-brand-gold via-[#ffd200] to-brand-green hover:opacity-95 text-center flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(244,200,0,0.4)] transition-all cursor-pointer"
                   >
                     <span>Get Started</span>
                     <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </button>
                 </div>
               </div>
 
@@ -1247,24 +1268,34 @@ export default function PricingSection({
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                href="/contact?type=demo"
-                className="px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 shadow-glow-green/30 flex items-center justify-center gap-2"
+              <button
+                type="button"
+                onClick={() => openBookingModal("Custom Enterprise Solution", "Book a Custom Enterprise Strategy Demo")}
+                className="px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-black bg-gradient-to-r from-brand-green via-brand-lime to-brand-gold hover:opacity-95 shadow-glow-green/30 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Book a Demo</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact?type=expert"
-                className="px-8 py-4 rounded-xl text-sm sm:text-base font-semibold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.12] flex items-center justify-center gap-2"
+              </button>
+              <button
+                type="button"
+                onClick={() => openBookingModal("Expert Consultation", "Talk to an Enterprise Automation Expert")}
+                className="px-8 py-4 rounded-xl text-sm sm:text-base font-semibold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.12] flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Talk to an Expert</span>
                 <ArrowUpRight className="w-4 h-4 text-brand-gold" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </ScrollReveal>
+
+      {/* Embedded Lead Capture Pop-up Modal */}
+      <LeadCaptureModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        planName={modalPlanName}
+        title={modalTitle}
+      />
     </div>
   );
 }
