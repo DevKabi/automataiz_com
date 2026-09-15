@@ -51,9 +51,9 @@ export default function LeadCaptureForm({
         <iframe
           src="https://login.automataiz.com/form/automataiz-lead-capture-form-mu30ncl2"
           width="100%"
-          height="640"
+          height="620"
           frameBorder="0"
-          style={{ border: "none", minHeight }}
+          style={{ border: "none", minHeight: "580px" }}
           title="Automataiz Lead Capture Form"
           onLoad={() => setIsLoading(false)}
           className="w-full relative z-0 transition-opacity duration-300"
@@ -62,13 +62,13 @@ export default function LeadCaptureForm({
       </div>
 
       {/* Trust & Privacy Guarantee Bar */}
-      <div className="mt-3 flex items-center justify-between text-[11px] font-mono text-neutral-400 px-1">
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-neutral-400 px-1">
         <div className="flex items-center gap-1.5">
-          <Lock className="w-3.5 h-3.5 text-brand-green" />
+          <Lock className="w-3.5 h-3.5 text-brand-green shrink-0" />
           <span>256-bit Encrypted Transmission</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <ShieldCheck className="w-3.5 h-3.5 text-brand-gold" />
+          <ShieldCheck className="w-3.5 h-3.5 text-brand-gold shrink-0" />
           <span>15-Min Response SLA</span>
         </div>
       </div>
